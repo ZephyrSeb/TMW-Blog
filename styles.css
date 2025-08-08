@@ -1,0 +1,149 @@
+* { margin:0; padding:0 }
+
+.title-bar {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 5px gray;
+}
+
+.footer-bar {
+    display: inline-block;
+    margin-top: 50px;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 5px gray;
+    vertical-align: bottom;
+    box-shadow: 0px -5px 5px gray;
+}
+
+.button {
+    padding: 10px;
+    display: inline-block;
+    align-items: center;
+    height: auto;
+    width: fit-content;
+}
+
+.button:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.input-text {
+    padding: 10px;
+    margin-top: 4px;
+    border-color: gray;
+    font-size: 17px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+body {
+    background-image: linear-gradient(lightgray, white, white, white);
+    background-attachment: fixed;
+    font-family: Verdana;
+}
+
+.blog-post {
+    display: inline-flex;
+    border-radius: 10px;
+    background-image: linear-gradient(white, lightgray);
+    padding: 10px;
+    width: 350px;
+}
+
+h1 {
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+h3 {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 10px;
+}
+
+p {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.alignr {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 10px;
+    text-align: right;
+}
+
+td {
+    padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    p {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    h3 {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .alignr {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        text-align: right;
+    }
+}
+
+.centred {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+@font-face {
+    font-family: Beleren;
+    src: "assets/card-parts/beleren-bold.ttf";
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: BelerenSmallCaps;
+    src: "assets/card-parts/belerensmallcaps-bold.ttf";
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: MPlantin;
+    src: "assets/card-parts/mplantin.ttf";
+}
+
+@font-face {
+    font-family: MPlantin-Italic;
+    src: "assets/card-parts/mplantinit.ttf";
+    font-style: italic;
+}
+
+@font-face {
+    font-family: MPlantin-Bold;
+    src: "assets/card-parts/mplanti1.ttf";
+    font-weight: bold;
+}

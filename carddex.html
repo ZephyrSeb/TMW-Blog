@@ -1,0 +1,32 @@
+<head>
+    <title>TMW Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="carddex.js"></script>
+</head>
+<body onload="OnLoad()">
+    <div class="title-bar">
+                <a class="button" href="index.html"><img src="assets/home-icon.svg" height="30px"/></a>
+                <a class="button" href="carddex.html"><img src="assets/card-icon.svg" height="30px"/></a>
+                <input type="text" class="input-text" placeholder="Search..." id="search">
+                <a class="button"><img src="assets/search-icon.svg" height="30px" onclick="ResetSearch()"/></a>
+                <a class="button" href="info.html"><img src="assets/info-icon.svg" height="30px"/></a>
+    </div>
+    <p><label>Sort By:</label>
+        <select name="sort" id="sort" onchange="ResetSearch()">
+            <option value="name">Alphabetical</option>
+            <option value="color">Color</option>
+            <option value="mv">Mana Value</option>
+        </select>
+    </p>
+    <p class="alignr" id="card-count">Placeholder Text</p>
+    <div align="right" style="margin-right: 200px"><table border="0"><tr>
+        <td><a class="button" onclick="Prev()">Previous</a></td>
+        <td><a class="button" onclick="Next()">Next</a></td>
+    </tr></table></div>
+    <p><div id="cards" class="centred"><table id="card_table"></table></div></p>
+    <div align="right" style="margin-right: 200px"><table border="0"><tr>
+        <td><a class="button" onclick="Prev()">Previous</a></td>
+        <td><a class="button" onclick="Next()">Next</a></td>
+    </tr></table></div>
+    <div class="footer-bar"><p class="alignr"><i>Blog by ZephySeb</i></p></div>
+</body>
