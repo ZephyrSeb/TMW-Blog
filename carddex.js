@@ -140,15 +140,34 @@ function DrawCard(canvas, card) {
             context.drawImage(imgRarity, 432, 400, 32, 32);
         }
         if (type.includes("Saga")) {
+            chapter_dict = {
+                "1": "assets/card-parts/saga-chapter-1.svg",
+                "2": "assets/card-parts/saga-chapter-2.svg",
+                "3": "assets/card-parts/saga-chapter-3.svg",
+                "4": "assets/card-parts/saga-chapter-4.svg",
+                "5": "assets/card-parts/saga-chapter-5.svg",
+                "6": "assets/card-parts/saga-chapter-6.svg",
+                "7": "assets/card-parts/saga-chapter-7.svg"
+            }
             context.font="18pt Beleren";
             context.fillText(type, 48, 624, 384);
             context.drawImage(imgRarity, 432, 600, 32, 32);
             context.font="16pt MPlantin";
             let uniqueChapters = card.getElementsByTagName("text").length;
-            let chapters = card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(" — ")[0].split(",")[card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(" — ")[0].split(",").length - 1];
+            let chapters = card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(": ")[0].split(",")[card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(": ")[0].split(",").length - 1];
             wrapText(context, card.getElementsByTagName("text")[0].textContent, 42, 102, 206, 20, "Saga");
+            let chapterSeparator = new Image();
+            chapterSeparator.src = "assets/card-parts/chapter-separator.svg";
             for (let s = 0; s < uniqueChapters - 1; s++) {
-                wrapText(context, card.getElementsByTagName("text")[s + 1].textContent.split(" — ")[1], 64, 228 + (s * 428 / uniqueChapters), 184, 20, "Saga");
+                let chapterText = card.getElementsByTagName("text")[s + 1].textContent.split(": ")[1];
+                wrapText(context, chapterText, 64, 228 + (s * 428 / uniqueChapters), 184, 20, "Saga");
+                context.drawImage(chapterSeparator, 56, 208 + ((s+1) * 428 / uniqueChapters), 192, 4);
+                let currentChapters = card.getElementsByTagName("text")[s + 1].textContent.split(": ")[0].split(",");
+                for (let t = 0; t < currentChapters.length; t++) {
+                    let chapterBanner = new Image();
+                    chapterBanner.src = chapter_dict[currentChapters[t]];
+                    context.drawImage(chapterBanner, 18, 260 + (s * 428 / uniqueChapters) + (t * 46) - currentChapters.length * 23, 40, 46);
+                }
             }
         }
         context.font="Bold 22pt MPlantin"
@@ -351,7 +370,17 @@ function wrapText(context, text, x, y, maxWidth, lineHeight, type = "") {
         lineHeight = 14;
         y -= 6;
     }
-    if (lines >= 10) {
+    if (type == "Saga" && lines>=6) {
+        context.font = "14pt MPlantin";
+        lineHeight = 16;
+        y -= 6;
+    }
+    if (type == "Saga" && lines>=8) {
+        context.font = "12pt MPlantin";
+        lineHeight = 14;
+        y -= 6;
+    }
+    if (type != "Saga" && lines >= 10) {
         context.font="14pt MPlantin";
         lineHeight = 18;
     }

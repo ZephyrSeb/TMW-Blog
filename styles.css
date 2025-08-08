@@ -121,29 +121,29 @@ td {
 
 @font-face {
     font-family: "Beleren";
-    src: "assets/card-parts/beleren-bold.ttf";
+    src: url("assets/card-parts/beleren-bold.ttf");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "BelerenSmallCaps";
-    src: "assets/card-parts/belerensmallcaps-bold.ttf";
+    src: url("assets/card-parts/belerensmallcaps-bold.ttf");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "MPlantin";
-    src: "assets/card-parts/mplantin.ttf";
+    src: url("assets/card-parts/mplantin.ttf");
 }
 
 @font-face {
     font-family: "MPlantin";
-    src: "assets/card-parts/mplantinit.ttf";
+    src: url("assets/card-parts/mplantinit.ttf");
     font-style: italic;
 }
 
 @font-face {
     font-family: "MPlantin";
-    src: "assets/card-parts/mplanti1.ttf";
+    src: url("assets/card-parts/mplanti1.ttf");
     font-weight: bold;
 }

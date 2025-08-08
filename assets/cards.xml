@@ -876,8 +876,8 @@ Enchanted creature doesn't untap during its controller's untap step.</text>
         <card>
             <name>Chasing the Ghost Ship</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1,2 — Each opponent loses 3 life unless they discard a card.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1,2: Each opponent loses 3 life unless they discard a card.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>B</coloridentity>
                 <colors>B</colors>
@@ -940,9 +940,9 @@ Enchanted creature doesn't untap during its controller's untap step.</text>
         <card>
             <name>Climbing the Beanstalk</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Create three 0/1 green Plant creature tokens.</text>
-            <text>2,3 — Distribute four +1/+1 counters among any number of target Plants you control.</text>
-            <text>4 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Create three 0/1 green Plant creature tokens.</text>
+            <text>2,3: Distribute four +1/+1 counters among any number of target Plants you control.</text>
+            <text>4: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>G</coloridentity>
                 <colors>G</colors>
@@ -965,9 +965,9 @@ Enchanted creature doesn't untap during its controller's untap step.</text>
         <card>
             <name>Clock Strikes Midnight</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Target creature has base power and toughness 4/4 for as long as you control Clock Strikes Midnight.</text>
-            <text>2 — Target creature can't be blocked this turn.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Target creature has base power and toughness 4/4 for as long as you control Clock Strikes Midnight.</text>
+            <text>2: Target creature can't be blocked this turn.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>UB</coloridentity>
                 <colors>UB</colors>
@@ -1565,10 +1565,10 @@ Roses you control gain "1, @, Sacrifice this artifact: Target creature gets +X/+
         <card>
             <name>Down the Golden Path</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Create a 1/1 white Dog creature token.</text>
-            <text>2 — Put a skulk counter on target creature you control.</text>
-            <text>3 — Put a lifelink counter on target creature you control.</text>
-            <text>4 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Create a 1/1 white Dog creature token.</text>
+            <text>2: Put a skulk counter on target creature you control.</text>
+            <text>3: Put a lifelink counter on target creature you control.</text>
+            <text>4: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>W</coloridentity>
                 <colors>W</colors>
@@ -1916,8 +1916,8 @@ Draw a card.</text>
         <card>
             <name>Favola's Golden Age</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1,2 — Create a 1/1 white Human creature token.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1,2: Create a 1/1 white Human creature token.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>W</coloridentity>
                 <colors>W</colors>
@@ -2555,9 +2555,9 @@ Crew 2</text>
         <card>
             <name>Grevious Day</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Each opponent sacrifices a creature with the highest power among creatures they control.</text>
-            <text>2 — You gain 1 life for each creature card in all player's graveyards.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Each opponent sacrifices a creature with the highest power among creatures they control.</text>
+            <text>2: You gain 1 life for each creature card in all player's graveyards.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>B</coloridentity>
                 <colors>B</colors>
@@ -2624,9 +2624,9 @@ Whenever Guard of Selkie Bay outflanks a creature, untap that creature.</text>
         <card>
             <name>Guided by the Forest</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Search your library for up to two Forest cards, reveal them, put them into your hand, then shuffle.</text>
-            <text>2 — Whenever a land enters the battlefield under your control this turn, scry 1.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Search your library for up to two Forest cards, reveal them, put them into your hand, then shuffle.</text>
+            <text>2: Whenever a land enters the battlefield under your control this turn, scry 1.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>RG</coloridentity>
                 <colors>RG</colors>
@@ -2849,8 +2849,8 @@ Hunter of the Scent attacks each combat if able.</text>
         <card>
             <name>Hunting for Treasure</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1,2,3 — Scry 1, then exile the top card of your library face down with a mark counter on and create a treasure token. (You can't look at it.)</text>
-            <text>4 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1,2,3: Scry 1, then exile the top card of your library face down with a mark counter on and create a treasure token. (You can't look at it.)</text>
+            <text>4: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>UR</coloridentity>
                 <colors>UR</colors>
@@ -2873,9 +2873,9 @@ Hunter of the Scent attacks each combat if able.</text>
         <card>
             <name>Hunting the Beast</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Hunting the Beast deals 4 damage to target creature. That creature must attack during its controller's next turn is able.</text>
-            <text>2 — Until the beginning of your next tirn, whenever a creature attacks you, put a +1/+1 counter on target creature you control.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Hunting the Beast deals 4 damage to target creature. That creature must attack during its controller's next turn is able.</text>
+            <text>2: Until the beginning of your next tirn, whenever a creature attacks you, put a +1/+1 counter on target creature you control.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>R</coloridentity>
                 <colors>R</colors>
@@ -3302,9 +3302,9 @@ Raid — At the beginning of your end step, if you've attacked this turn, each o
         <card>
             <name>Locked in the Tower</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Tap target creature you don't control and put three stun counters on it.</text>
-            <text>2 — Choose a creature. For each type of counter on that creature, put another of that kind on it.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Tap target creature you don't control and put three stun counters on it.</text>
+            <text>2: Choose a creature. For each type of counter on that creature, put another of that kind on it.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>WU</coloridentity>
                 <colors>WU</colors>
@@ -3952,9 +3952,9 @@ Draw a card.</text>
         <card>
             <name>Our Story Begins</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Look at the top three cards of your library. You may reveal a creature or land card from among them and put it into your hand. Recycle the rest.</text>
-            <text>2 — When you cast your next creature spell this tirn, that creature enters the battlefield with an additional +1/+1 counter on it.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Look at the top three cards of your library. You may reveal a creature or land card from among them and put it into your hand. Recycle the rest.</text>
+            <text>2: When you cast your next creature spell this tirn, that creature enters the battlefield with an additional +1/+1 counter on it.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>G</coloridentity>
                 <colors>G</colors>
@@ -4124,9 +4124,9 @@ When Party Trickster enters the battlefield, you may attach up to one aura card 
         <card>
             <name>Pino Catches the Whale</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Create a 1/1 white Human creature token.</text>
-            <text>2 — Return target creature card from your graveyard to your hand.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Create a 1/1 white Human creature token.</text>
+            <text>2: Return target creature card from your graveyard to your hand.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>WG</coloridentity>
                 <colors>WG</colors>
@@ -4170,9 +4170,9 @@ At the beginning of your end step, you may pay {X}. When you do, return target n
         <card>
             <name>Pirate's Feud</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Each creature you control deals 1 damage to target creature you don't control.</text>
-            <text>2 — Create a treasure token and you lose 1 life.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Each creature you control deals 1 damage to target creature you don't control.</text>
+            <text>2: Create a treasure token and you lose 1 life.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>WB</coloridentity>
                 <colors>WB</colors>
@@ -4746,9 +4746,9 @@ Raid — Riposting Pirate enters the battlefield with a +1/+1 counter if you att
         <card>
             <name>Rise of the Sea Witch</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Gain control of target artifact.</text>
-            <text>2 — Artifact spells you cast cost {1} less to cast this turn.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Gain control of target artifact.</text>
+            <text>2: Artifact spells you cast cost {1} less to cast this turn.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>U</coloridentity>
                 <colors>U</colors>
@@ -5010,9 +5010,9 @@ Spellbind — Whenever an enchantment enters the battlefield under your control,
         <card>
             <name>Scared by the Spiders</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Prevent all combat damage that would be dealt to you until your next turn. You gain 3 life.</text>
-            <text>2 — Create two 1/2 green Spider creature tokens with reach.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Prevent all combat damage that would be dealt to you until your next turn. You gain 3 life.</text>
+            <text>2: Create two 1/2 green Spider creature tokens with reach.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>BG</coloridentity>
                 <colors>BG</colors>
@@ -5187,9 +5187,9 @@ Roses you control have " {T}, Sacrifice this artifact: Target creature gains out
         <card>
             <name>Search for the Sunken City</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Surveil 3, then draw a card.</text>
-            <text>2 — Return target noncreature, nonland card from your graveyard to your hand.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Surveil 3, then draw a card.</text>
+            <text>2: Return target noncreature, nonland card from your graveyard to your hand.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>U</coloridentity>
                 <colors>U</colors>
@@ -5968,9 +5968,9 @@ Spellbind — If you control three or more enchantments, create a Cursed Role to
         <card>
             <name>The Cat and the Rats</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Each opponent creates two 1/1 black Rat creature tokens with "This creature can't block."</text>
-            <text>2 — Create a 1/1 white Cat creature token with lifelink.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Each opponent creates two 1/1 black Rat creature tokens with "This creature can't block."</text>
+            <text>2: Create a 1/1 white Cat creature token with lifelink.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>WR</coloridentity>
                 <colors>WR</colors>
@@ -5994,8 +5994,8 @@ Spellbind — If you control three or more enchantments, create a Cursed Role to
         <card>
             <name>The Divine Trial</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1,2 — Put a +1/+1 counter and a flying counter on target creature you control.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1,2: Put a +1/+1 counter and a flying counter on target creature you control.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>UG</coloridentity>
                 <colors>UG</colors>
@@ -6170,9 +6170,9 @@ Whenever you would gain life, instead target creature gets +X/+X until end of tu
         <card>
             <name>The Queen's New Robes</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1 — Put a shadow counter on target creature. (It can block or be blocked only by creatures with shadow.)</text>
-            <text>2 — Whenever a creature deals combat damage to a player this turn, create a rose token.</text>
-            <text>3 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1: Put a shadow counter on target creature. (It can block or be blocked only by creatures with shadow.)</text>
+            <text>2: Whenever a creature deals combat damage to a player this turn, create a rose token.</text>
+            <text>3: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>BR</coloridentity>
                 <colors>BR</colors>
@@ -6770,8 +6770,8 @@ Come Alive (When enchanted permanent goes to the graveyard from the battlefield,
         <card>
             <name>Unexpected Trial</name>
             <text>(As this saga enters and after your draw step, add a lore counter.)</text>
-            <text>1,2,3 — Put a suspect counter on target creature without a suspect counter on it. That creature can't block as long as it has a suspect counter on it.</text>
-            <text>4 — Exile this saga, then return it to the battlefield transformed under your control.</text>
+            <text>1,2,3: Put a suspect counter on target creature without a suspect counter on it. That creature can't block as long as it has a suspect counter on it.</text>
+            <text>4: Exile this saga, then return it to the battlefield transformed under your control.</text>
             <prop>
                 <coloridentity>R</coloridentity>
                 <colors>R</colors>
