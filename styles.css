@@ -120,30 +120,30 @@ td {
 }
 
 @font-face {
-    font-family: Beleren;
+    font-family: "Beleren";
     src: "assets/card-parts/beleren-bold.ttf";
     font-weight: bold;
 }
 
 @font-face {
-    font-family: BelerenSmallCaps;
+    font-family: "BelerenSmallCaps";
     src: "assets/card-parts/belerensmallcaps-bold.ttf";
     font-weight: bold;
 }
 
 @font-face {
-    font-family: MPlantin;
+    font-family: "MPlantin";
     src: "assets/card-parts/mplantin.ttf";
 }
 
 @font-face {
-    font-family: MPlantin-Italic;
+    font-family: "MPlantin";
     src: "assets/card-parts/mplantinit.ttf";
     font-style: italic;
 }
 
 @font-face {
-    font-family: MPlantin-Bold;
+    font-family: "MPlantin";
     src: "assets/card-parts/mplanti1.ttf";
     font-weight: bold;
 }

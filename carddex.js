@@ -148,10 +148,10 @@ function DrawCard(canvas, card) {
             let chapters = card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(" — ")[0].split(",")[card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(" — ")[0].split(",").length - 1];
             wrapText(context, card.getElementsByTagName("text")[0].textContent, 42, 102, 206, 20, "Saga");
             for (let s = 0; s < uniqueChapters - 1; s++) {
-                wrapText(context, card.getElementsByTagName("text")[s + 1].textContent.split(" — ")[0], 64, 228 + (s * 428 / uniqueChapters), 184, 20, "Saga");
+                wrapText(context, card.getElementsByTagName("text")[s + 1].textContent.split(" — ")[1], 64, 228 + (s * 428 / uniqueChapters), 184, 20, "Saga");
             }
         }
-        context.font="Bold 22pt MPlantin-Bold"
+        context.font="Bold 22pt MPlantin"
         context.textAlign = "center";
         context.fillText(pt, 434, 656);
         if (type.includes("Planeswalker")) {
