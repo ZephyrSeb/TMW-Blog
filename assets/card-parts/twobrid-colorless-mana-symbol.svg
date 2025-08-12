@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="12"
+   height="12"
+   viewBox="0 0 3.1749999 3.1750001"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="twobrid-colorless-mana-symbol.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="64.75"
+     inkscape:cx="6"
+     inkscape:cy="6"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     units="px"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid833" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="translate(8.7312493,-15.08125)"
+       id="g1152">
+      <g
+         id="g2322-3"
+         transform="translate(-8.7312501,-1.8520833)">
+        <g
+           id="g1390-26-1"
+           transform="translate(20.108334,10.583333)">
+          <path
+             id="path1646-5-9-2-1"
+             style="fill:#c8c8c8;fill-opacity:1;stroke-width:0.06"
+             d="m -65.757812,25.757812 -8.484376,8.484376 A 5.9999996,5.9999996 0 0 0 -70,36 a 5.9999996,5.9999996 0 0 0 6,-6 5.9999996,5.9999996 0 0 0 -1.757812,-4.242188 z"
+             transform="scale(0.26458334)" />
+        </g>
+        <g
+           id="g2145-1-6"
+           transform="translate(10.583334,5.2916665)">
+          <path
+             id="path857-3-5-9-3-9-9-7"
+             style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.06;stroke-linecap:round;stroke-linejoin:bevel"
+             d="m -34,44 a 6.0000003,6.0000003 0 0 0 -6,6 6.0000003,6.0000003 0 0 0 1.757812,4.242188 l 8.484376,-8.484376 A 6.0000003,6.0000003 0 0 0 -34,44 Z"
+             transform="scale(0.26458334)" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.76379px;line-height:1.25;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.132284"
+             x="-9.5250006"
+             y="13.229167"
+             id="text987-8-5-4-4"><tspan
+               sodipodi:role="line"
+               id="tspan985-9-9-3-6"
+               x="-9.5250006"
+               y="13.229167"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.76379px;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.132284">2</tspan></text>
+        </g>
+      </g>
+      <g
+         id="g1088-8"
+         transform="matrix(0.50000001,0,0,0.50000001,-9.1281249,14.2875)">
+        <g
+           id="g1041-4">
+          <path
+             style="fill:#20181a;stroke-width:0.0158749"
+             d="M 4.9703718,6.984596 C 4.6971174,6.5023988 4.3818234,6.1763024 3.947049,5.926214 3.864393,5.87867 3.7967706,5.831246 3.7967706,5.82083 c 0,-0.01044 0.06762,-0.05784 0.1502784,-0.105384 C 4.1668086,5.5890356 4.314675,5.4734168 4.511145,5.2743656 4.6985202,5.0845304 4.8234942,4.9202168 4.9346766,4.717514 c 0.038316,-0.069852 0.079896,-0.1269996 0.0924,-0.1269996 0.012516,0 0.054096,0.057156 0.092412,0.1269996 0.11538,0.2103504 0.2388564,0.37095 0.4394064,0.5715 0.20055,0.20055 0.3611496,0.32403 0.5715,0.4394064 0.069852,0.038316 0.1269996,0.079896 0.1269996,0.0924 0,0.012516 -0.057156,0.054096 -0.1269996,0.0924 C 5.9276922,6.0244004 5.7633786,6.1493768 5.5735422,6.336752 5.374647,6.5330708 5.258871,6.681092 5.1328266,6.9002168 c -0.04734,0.082308 -0.093528,0.1521312 -0.102636,0.1551672 -0.00912,0.003 -0.036024,-0.028824 -0.05982,-0.0708 z M 5.103411,6.4598012 c 0.1352628,-0.226218 0.3364224,-0.4273776 0.5626404,-0.5626404 0.058932,-0.035244 0.10716,-0.069588 0.10716,-0.076332 0,-0.00672 -0.048216,-0.041088 -0.10716,-0.076332 C 5.4398334,5.609234 5.2386738,5.4080744 5.103411,5.1818564 5.068167,5.1229244 5.033823,5.0746964 5.027079,5.0746964 c -0.00672,0 -0.041088,0.048216 -0.076332,0.10716 -0.1352628,0.226218 -0.3364224,0.4273776 -0.5626404,0.5626404 -0.058932,0.035244 -0.10716,0.069588 -0.10716,0.076332 0,0.00672 0.048216,0.041088 0.10716,0.076332 0.226218,0.1352628 0.4273776,0.3364224 0.5626404,0.5626404 0.035244,0.058932 0.069588,0.10716 0.076332,0.10716 0.00672,0 0.041088,-0.048216 0.076332,-0.10716 z"
+             id="path848-2-8" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

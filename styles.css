@@ -32,6 +32,21 @@
     cursor: pointer;
 }
 
+.button-text {
+    padding: 10px;
+    margin-top: 0px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    align-items: center;
+    width: fit-content;
+}
+
+.button-text:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
 .input-text {
     padding: 10px;
     margin-top: 4px;
@@ -119,31 +134,45 @@ td {
     height: auto;
 }
 
+.alt-table {
+    border: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    tr:nth-child(odd) {
+        background-color: white;
+    }
+    tr:nth-child(even) {
+        background-color: lightgray;
+    }
+}
+
 @font-face {
     font-family: "Beleren";
-    src: url("assets/card-parts/beleren-bold.ttf");
+    src: url("assets/card-parts/beleren-bold.ttf"),  format('truetype');
     font-weight: bold;
 }
 
 @font-face {
-    font-family: "BelerenSmallCaps";
-    src: url("assets/card-parts/belerensmallcaps-bold.ttf");
+    font-family: "Beleren Small Caps";
+    src: url("assets/card-parts/belerensmallcaps-bold.ttf"),  format('truetype');
     font-weight: bold;
 }
 
 @font-face {
     font-family: "MPlantin";
-    src: url("assets/card-parts/mplantin.ttf");
+    src: url("assets/card-parts/mplantin.otf"),  format('opentype');
 }
 
 @font-face {
     font-family: "MPlantin";
-    src: url("assets/card-parts/mplantinit.ttf");
+    src: url("assets/card-parts/mplantinit.otf"),  format('opentype');
     font-style: italic;
 }
 
 @font-face {
     font-family: "MPlantin";
-    src: url("assets/card-parts/mplanti1.ttf");
+    src: url("assets/card-parts/mplanti1.otf"),  format('opentype');
     font-weight: bold;
 }

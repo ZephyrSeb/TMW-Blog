@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="12"
+   height="12"
+   viewBox="0 0 3.1749999 3.1750001"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="threebrid-gold-mana-symbol.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       gradientTransform="translate(26.458333,12.699998)"
+       spreadMethod="pad"
+       y2="5.0270834"
+       x2="2.3812499"
+       y1="6.6145835"
+       x1="0.79374993"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1344"
+       xlink:href="#linearGradient1310"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1310">
+      <stop
+         style="stop-color:#cca650;stop-opacity:1;"
+         offset="0"
+         id="stop1306" />
+      <stop
+         id="stop1316"
+         offset="0.5"
+         style="stop-color:#e0d4c0;stop-opacity:1" />
+      <stop
+         style="stop-color:#cca650;stop-opacity:1"
+         offset="1"
+         id="stop1308" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="64.75"
+     inkscape:cx="6"
+     inkscape:cy="6"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     units="px"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid833" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="translate(-26.458334,-16.933334)"
+       id="g1427">
+      <g
+         id="g2145-1-6-3"
+         transform="translate(37.041667,5.2916665)">
+        <path
+           id="path857-3-5-9-3-9-9-7-0"
+           style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.06;stroke-linecap:round;stroke-linejoin:bevel"
+           d="m -34,44 a 6.0000003,6.0000003 0 0 0 -6,6 6.0000003,6.0000003 0 0 0 1.757812,4.242188 l 8.484376,-8.484376 A 6.0000003,6.0000003 0 0 0 -34,44 Z"
+           transform="scale(0.26458334)" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.76379px;line-height:1.25;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.132284"
+           x="-9.5250006"
+           y="13.229167"
+           id="text987-8-5-4-4-8"><tspan
+             sodipodi:role="line"
+             id="tspan985-9-9-3-6-1"
+             x="-9.5250006"
+             y="13.229167"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.76379px;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.132284">3</tspan></text>
+      </g>
+      <g
+         id="g1417">
+        <path
+           d="m 29.168246,17.39842 -2.244825,2.244825 a 1.5875001,1.5875001 0 0 0 1.122413,0.465087 1.5875001,1.5875001 0 0 0 1.5875,-1.5875 1.5875001,1.5875001 0 0 0 -0.465088,-1.122412 z"
+           style="fill:url(#linearGradient1344);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel"
+           id="path857-3-5-9-3-9-4-9-4-5-0-1" />
+        <path
+           d="m 28.575113,18.431934 a 0.6181546,0.6181546 0 0 0 -0.618179,0.61818 0.6181546,0.6181546 0 0 0 0.618179,0.618179 0.6181546,0.6181546 0 0 0 0.61818,-0.618179 0.6181546,0.6181546 0 0 0 -0.61818,-0.61818 z m -0.0036,0.188232 a 0.42994792,0.42994792 0 0 1 0.0036,0 0.42994792,0.42994792 0 0 1 0.429948,0.429948 0.42994792,0.42994792 0 0 1 -0.429948,0.429948 0.42994792,0.42994792 0 0 1 -0.429948,-0.429948 0.42994792,0.42994792 0 0 1 0.426396,-0.429948 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.0330729;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:markers stroke fill"
+           id="path1262-4-5" />
+      </g>
+    </g>
+  </g>
+</svg>

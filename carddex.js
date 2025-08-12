@@ -1,5 +1,4 @@
 
-//var text = "<carddex><cards><card><name>Dawn Plaza Witch</name><text>Whenever you gain life, put a +1/+1 counter on Dawn Plaza Witch.</text><coloridentity>W</coloridentity><colors>W</colors><cmc>2</cmc><manacost>1W</manacost><pt>1/1</pt><type>Creature - Human Wizard</type><rarity>Common</rarity><set>KFS</set></card><card><name>Divine Arrow</name><text>Divine Arrow deals 4 damage to target attacking or blocking creature.</text><coloridentity>W</coloridentity><colors>W</colors><cmc>2</cmc><manacost>1W</manacost><pt></pt><type>Instant</type><rarity>Common</rarity><set>KFS</set></card><card><name>Herald of Good News</name><text>Flying \\n When Herald of Good News enters the battlefield, you gain 4 life.</text><coloridentity>W</coloridentity><colors>W</colors><cmc>4</cmc><manacost>2WW</manacost><pt>4/4</pt><type>Creature - Angel Faerie</type><rarity>Uncommon</rarity><set>KFS</set></card><card><name>Kindly Healer</name><text>Whenever another creature enters the battlefield under your control, you gain 1 life.</text><coloridentity>W</coloridentity><colors>W</colors><cmc>2</cmc><manacost>1W</manacost><pt>1/1</pt><type>Creature - Human Warlock</type><rarity>Common</rarity><set>KFS</set></card><card><name>Knight's Pledge</name><text>Enchant creature \\n Enchanted creature gets +2/+2.</text><coloridentity>W</coloridentity><colors>W</colors><cmc>2</cmc><manacost>1W</manacost><pt></pt><type>Enchantment - Aura</type><rarity>Common</rarity><set>KFS</set></card></cards></carddex>";
 canvas = [];
 
 var parser = new DOMParser();
@@ -12,6 +11,8 @@ async function OnLoad() {
     var xml = await fetch("assets/cards.xml");
     var text = await xml.text();
     xmlDoc = parser.parseFromString(text, "text/xml");
+    urlParams = new URLSearchParams(window.location.search)
+    document.getElementById("search").value = urlParams.get('search');
     Search();
 
     var input = document.getElementById("search")?.addEventListener("keypress", function(event) {
@@ -44,7 +45,7 @@ async function LoadCards(cards) {
     maxPage = Math.ceil(cards.length / 60);
     if (cards.length > 0) {
         for (let i = page * 60; i < cards.length && i < (page + 1) * 60; i++) {
-            if (i % 4 == 0) {
+            if (i % Math.max(1, Math.floor(innerWidth / 250)) == 0) {
                 row = cardTable.insertRow();
             }
             var newCell = row.insertCell(-1);
@@ -85,6 +86,9 @@ async function LoadCards(cards) {
                     
                 });
             }
+            canvas[i].addEventListener("click", function() {
+                window.location.href = "carddex.html?search=" + cards[i].getElementsByTagName("name")[0].textContent;
+            });
         }
 
         for (let i = page * 60; i < cards.length && i < (page + 1) * 60; i++) {
@@ -103,12 +107,27 @@ function DrawCard(canvas, card) {
     manaBack = new Image();
     var manaSymbol = [];
     manaBack.src = "assets/card-parts/mana-symbol-back.svg";
-    var manacost = card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent;
-            manaSymbol = [];
-            for (let j = 0; j < manacost.length; j++) {
-                manaSymbol[j] = new Image();
-                manaSymbol[j].src = findManaSymbol(manacost.at(manacost.length - 1 - j));
-            }
+    let manacost = card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent.split(" // ")[0];
+    let j = 0;
+    let pos = 0;
+    while (pos < manacost.length) {
+        manaSymbol[j] = new Image();
+        if (manacost.at(pos) == "{") {manaSymbol[j].src = findManaSymbol(manacost.substring(pos + 1, pos + 4)); pos += 5;}
+        else {manaSymbol[j].src = findManaSymbol(manacost.at(pos)); pos++;}
+        j++;
+    }
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "split") {
+        var manacost2 = card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent.split(" // ")[1];
+        var manaSymbol2 = [];
+        let j = 0;
+        let pos = 0;
+        while (pos < manacost2.length) {
+            manaSymbol2[j] = new Image();
+            if (manacost2.at(pos) == "{") {manaSymbol2[j].src = findManaSymbol(manacost2.substring(pos,3)); pos += 5}
+            else {manaSymbol2[j].src = findManaSymbol(manacost2.at(pos)); pos++;}
+            j++;
+        }
+    }
     let imgBack = new Image();
     imgBack.src = GetCardBack(card);
             
@@ -119,102 +138,129 @@ function DrawCard(canvas, card) {
         let textbox = card.getElementsByTagName("text")[0].textContent;
         let pt = card.getElementsByTagName("prop")[0].getElementsByTagName("pt")[0].textContent;
         let setno = "TMW-"+ card.getElementsByTagName("set")[0].getElementsByTagName("code")[0].textContent + " " + card.getElementsByTagName("set")[0].getElementsByTagName("rarity")[0].textContent.at(0);
-        let manacost = card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent;
         let manavalue = card.getElementsByTagName("prop")[0].getElementsByTagName("cmc")[0].textContent;
         let pw = 0;
         if (type.includes("Planeswalker")) pw = 10
         context.drawImage(imgBack, 0, 0, 504, 704);
-        if (type.includes("Creature") || type.includes("Vehicle")) context.drawImage(imgPT, 390, 626, 88, 42);
-        for (let j = 0; j < manacost.length; j++) {
-            context.drawImage(manaBack, 439.5 - 26 * j, 42 - pw, 24, 24);
-            context.drawImage(manaSymbol[j], 440 - 26 * j, 40 - pw, 24, 24);
-        }
-        context.font="20pt Beleren";
-        context.fillStyle = "#000000";
-        context.fillText(name, 48, 64 - pw, 396 - 20 * manacost.length);
-        if (!type.includes("Saga") && !type.includes("Planeswalker")) {
-            context.font="18pt Beleren";
-            context.fillText(type, 48, 424, 384);
-            context.font="16pt MPlantin";
-            wrapText(context, textbox, 48, 544, 408, 20);
-            context.drawImage(imgRarity, 432, 400, 32, 32);
-        }
-        if (type.includes("Saga")) {
-            chapter_dict = {
-                "1": "assets/card-parts/saga-chapter-1.svg",
-                "2": "assets/card-parts/saga-chapter-2.svg",
-                "3": "assets/card-parts/saga-chapter-3.svg",
-                "4": "assets/card-parts/saga-chapter-4.svg",
-                "5": "assets/card-parts/saga-chapter-5.svg",
-                "6": "assets/card-parts/saga-chapter-6.svg",
-                "7": "assets/card-parts/saga-chapter-7.svg"
-            }
-            context.font="18pt Beleren";
-            context.fillText(type, 48, 624, 384);
-            context.drawImage(imgRarity, 432, 600, 32, 32);
-            context.font="16pt MPlantin";
-            let uniqueChapters = card.getElementsByTagName("text").length;
-            let chapters = card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(": ")[0].split(",")[card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(": ")[0].split(",").length - 1];
-            wrapText(context, card.getElementsByTagName("text")[0].textContent, 42, 102, 206, 20, "Saga");
-            let chapterSeparator = new Image();
-            chapterSeparator.src = "assets/card-parts/chapter-separator.svg";
-            for (let s = 0; s < uniqueChapters - 1; s++) {
-                let chapterText = card.getElementsByTagName("text")[s + 1].textContent.split(": ")[1];
-                wrapText(context, chapterText, 64, 228 + (s * 428 / uniqueChapters), 184, 20, "Saga");
-                context.drawImage(chapterSeparator, 56, 208 + ((s+1) * 428 / uniqueChapters), 192, 4);
-                let currentChapters = card.getElementsByTagName("text")[s + 1].textContent.split(": ")[0].split(",");
-                for (let t = 0; t < currentChapters.length; t++) {
-                    let chapterBanner = new Image();
-                    chapterBanner.src = chapter_dict[currentChapters[t]];
-                    context.drawImage(chapterBanner, 18, 260 + (s * 428 / uniqueChapters) + (t * 46) - currentChapters.length * 23, 40, 46);
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "split") {
+            for (let sp = 0; sp < 2; sp++) {
+                if (sp == 0) {
+                    for (let j = 0; j < manaSymbol.length; j++) {
+                        context.drawImage(manaBack, 439.5 - 26 * (manaSymbol.length - j - 1), 42 + 312 * sp, 24, 24);
+                        context.drawImage(manaSymbol[j], 440 - 26 * (manaSymbol.length - j - 1), 40 + 312 * sp, 24, 24);
+                    }
                 }
-            }
-        }
-        context.font="Bold 22pt MPlantin"
-        context.textAlign = "center";
-        context.fillText(pt, 434, 656);
-        if (type.includes("Planeswalker")) {
-            context.textAlign = "left";
-            context.font="18pt Beleren";
-            context.fillText(type, 48, 424, 384);
-            context.drawImage(imgRarity, 432, 400, 32, 32);
-            for (let s = 0; s < card.getElementsByTagName("text").length; s++) {
-                let text = card.getElementsByTagName("text")[s].textContent;
-                if (card.getElementsByTagName("text")[s].textContent.indexOf(": ") > -1) {
-                    text = card.getElementsByTagName("text")[s].textContent.split(": ")[1];
+                else {
+                    for (let j = 0; j < manaSymbol2.length; j++) {
+                        context.drawImage(manaBack, 439.5 - 26 * (manaSymbol2.length - j - 1), 42 + 312 * sp, 24, 24);
+                        context.drawImage(manaSymbol2[j], 440 - 26 * (manaSymbol2.length - j - 1), 40 + 312 * sp, 24, 24);
+                    }
                 }
-                if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) > 0) {
-                    let img = new Image();
-                    img.src = "assets/card-parts/loyalty-up.svg";
-                    context.drawImage(img, 22, 448 + 64 * s, 64, 40);
-                    context.font="Bold 17pt Beleren";
-                    context.fillStyle = "#FFFFFF";
-                    context.textAlign = "center";
-                    context.fillText(card.getElementsByTagName("text")[s].textContent.split(": ")[0], 52, 477 + 64 * s);
-                }
-                if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) < 0) {
-                    let img = new Image();
-                    img.src = "assets/card-parts/loyalty-down.svg";
-                    context.drawImage(img, 22, 456 + 64 * s, 64, 40);
-                    context.font="Bold 17pt Beleren";
-                    context.fillStyle = "#FFFFFF";
-                    context.textAlign = "center";
-                    context.fillText(card.getElementsByTagName("text")[s].textContent.split(": ")[0], 52, 480 + 64 * s);
-                }
-                if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) == 0) {
-                    let img = new Image();
-                    img.src = "assets/card-parts/loyalty-0.svg";
-                    context.drawImage(img, 22, 456 + 64 * s, 64, 40);
-                }
-                context.textAlign = "left";
-                context.font="14pt MPlantin";
+                context.font="20pt Beleren";
                 context.fillStyle = "#000000";
-                wrapText(context, text, 92, 478 + s * 64, 460-92, 16, "Planeswalker");
+                context.fillText(card.getElementsByTagName("name")[0].textContent.split(" // ")[sp], 48, 64 + 312 * sp, 396 - 20 * manacost.length);
+                context.font="18pt Beleren";
+                context.fillText(type, 48, 312 + 312 * sp, 384);
+                context.font="16pt MPlantin";
+                wrapText(context, card.getElementsByTagName("text")[sp].textContent, 48, 104 + 312 * sp, 192, 20, "split");
+                context.drawImage(imgRarity, 432, 288 + 312 * sp, 32, 32);
             }
-            context.font="Bold 22pt Beleren";
+        }
+        else {
+            if (type.includes("Creature") || type.includes("Vehicle")) context.drawImage(imgPT, 390, 626, 88, 42);
+            for (let j = 0; j < manaSymbol.length; j++) {
+                context.drawImage(manaBack, 439.5 - 26 * (manaSymbol.length - j - 1), 42 - pw, 24, 24);
+                context.drawImage(manaSymbol[j], 440 - 26 * (manaSymbol.length - j - 1), 40 - pw, 24, 24);
+            }
+            context.font="20pt Beleren";
+            context.fillStyle = "#000000";
+            context.fillText(name, 48, 64 - pw, 396 - 20 * manacost.length);
+            if (!type.includes("Saga") && !type.includes("Planeswalker")) {
+                context.font="18pt Beleren";
+                context.fillText(type, 48, 424, 384);
+                context.font="16pt MPlantin";
+                wrapText(context, textbox, 48, 544, 408, 20);
+                context.drawImage(imgRarity, 432, 400, 32, 32);
+            }
+            if (type.includes("Saga")) {
+                chapter_dict = {
+                    "1": "assets/card-parts/saga-chapter-1.svg",
+                    "2": "assets/card-parts/saga-chapter-2.svg",
+                    "3": "assets/card-parts/saga-chapter-3.svg",
+                    "4": "assets/card-parts/saga-chapter-4.svg",
+                    "5": "assets/card-parts/saga-chapter-5.svg",
+                    "6": "assets/card-parts/saga-chapter-6.svg",
+                    "7": "assets/card-parts/saga-chapter-7.svg"
+                }
+                context.font="18pt Beleren";
+                context.fillText(type, 48, 624, 384);
+                context.drawImage(imgRarity, 432, 600, 32, 32);
+                context.font="16pt MPlantin";
+                let uniqueChapters = card.getElementsByTagName("text").length;
+                let chapters = card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(": ")[0].split(",")[card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(": ")[0].split(",").length - 1];
+                wrapText(context, card.getElementsByTagName("text")[0].textContent, 42, 102, 206, 20, "Saga");
+                let chapterSeparator = new Image();
+                chapterSeparator.src = "assets/card-parts/chapter-separator.svg";
+                for (let s = 0; s < uniqueChapters - 1; s++) {
+                    let chapterText = card.getElementsByTagName("text")[s + 1].textContent.split(": ")[1];
+                    wrapText(context, chapterText, 64, 228 + (s * 428 / uniqueChapters), 184, 20, "Saga");
+                    context.drawImage(chapterSeparator, 56, 208 + ((s+1) * 428 / uniqueChapters), 192, 4);
+                    let currentChapters = card.getElementsByTagName("text")[s + 1].textContent.split(": ")[0].split(",");
+                    for (let t = 0; t < currentChapters.length; t++) {
+                        let chapterBanner = new Image();
+                        chapterBanner.src = chapter_dict[currentChapters[t]];
+                        context.drawImage(chapterBanner, 18, 260 + (s * 428 / uniqueChapters) + (t * 46) - currentChapters.length * 23, 40, 46);
+                    }
+                }
+            }
+            context.font="Bold 22pt MPlantin"
             context.textAlign = "center";
-            context.fillStyle = "#FFFFFF";
-            context.fillText(card.getElementsByTagName("prop")[0].getElementsByTagName("loyalty")[0].textContent, 442, 654);
+            context.fillText(pt, 434, 656);
+            if (type.includes("Planeswalker")) {
+                let layout = 0;
+                if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "tall") layout = -48;
+                context.textAlign = "left";
+                context.font="18pt Beleren";
+                context.fillText(type, 48, 424 + layout, 384);
+                context.drawImage(imgRarity, 432, 400 + layout, 32, 32);
+                for (let s = 0; s < card.getElementsByTagName("text").length; s++) {
+                    let text = card.getElementsByTagName("text")[s].textContent;
+                    if (card.getElementsByTagName("text")[s].textContent.indexOf(": ") > -1) {
+                        text = card.getElementsByTagName("text")[s].textContent.split(": ")[1];
+                    }
+                    if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) > 0) {
+                        let img = new Image();
+                        img.src = "assets/card-parts/loyalty-up.svg";
+                        context.drawImage(img, 22, 448 + 64 * s + layout, 64, 40);
+                        context.font="Bold 17pt Beleren";
+                        context.fillStyle = "#FFFFFF";
+                        context.textAlign = "center";
+                        context.fillText(card.getElementsByTagName("text")[s].textContent.split(": ")[0], 52, 477 + 64 * s + layout);
+                    }
+                    if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) < 0) {
+                        let img = new Image();
+                        img.src = "assets/card-parts/loyalty-down.svg";
+                        context.drawImage(img, 22, 456 + 64 * s + layout, 64, 40);
+                        context.font="Bold 17pt Beleren";
+                        context.fillStyle = "#FFFFFF";
+                        context.textAlign = "center";
+                        context.fillText(card.getElementsByTagName("text")[s].textContent.split(": ")[0], 52, 480 + 64 * s + layout);
+                    }
+                    if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) == 0) {
+                        let img = new Image();
+                        img.src = "assets/card-parts/loyalty-0.svg";
+                        context.drawImage(img, 22, 456 + 64 * s + layout, 64, 40);
+                    }
+                    context.textAlign = "left";
+                    context.font="14pt MPlantin";
+                    context.fillStyle = "#000000";
+                    wrapText(context, text, 92, 478 + s * 64 + layout - 12, 460-92, 16, "Planeswalker");
+                }
+                context.font="Bold 22pt Beleren";
+                context.textAlign = "center";
+                context.fillStyle = "#FFFFFF";
+                context.fillText(card.getElementsByTagName("prop")[0].getElementsByTagName("loyalty")[0].textContent, 442, 654);
+            }
         }
         context.font="12pt Beleren Small Caps";
         context.textAlign = "left";
@@ -319,6 +365,7 @@ function wrapText(context, text, x, y, maxWidth, lineHeight, type = "") {
         "{R}": "assets/card-parts/red-mana-symbol.svg",
         "{G}": "assets/card-parts/green-mana-symbol.svg",
         "{C}": "assets/card-parts/colorless-mana-symbol.svg",
+        "{A}": "assets/card-parts/gold-mana-symbol.svg",
         "{T}": "assets/card-parts/tap-symbol.svg",
         "{1}": "assets/card-parts/generic-mana-symbol-1.svg",
         "{2}": "assets/card-parts/generic-mana-symbol-2.svg",
@@ -339,7 +386,15 @@ function wrapText(context, text, x, y, maxWidth, lineHeight, type = "") {
         "{U/R}": "assets/card-parts/izzet-mana-symbol.svg",
         "{B/G}": "assets/card-parts/golgari-mana-symbol.svg",
         "{R/W}": "assets/card-parts/boros-mana-symbol.svg",
-        "{G/U}": "assets/card-parts/simic-mana-symbol.svg"
+        "{G/U}": "assets/card-parts/simic-mana-symbol.svg",
+        "{A/P}": "assets/card-parts/prism-mana-symbol.svg",
+        "{2/W}": "assets/card-parts/twobrid-white-mana-symbol.svg",
+        "{2/U}": "assets/card-parts/twobrid-blue-mana-symbol.svg",
+        "{2/B}": "assets/card-parts/twobrid-black-mana-symbol.svg",
+        "{2/R}": "assets/card-parts/twobrid-red-mana-symbol.svg",
+        "{2/G}": "assets/card-parts/twobrid-green-mana-symbol.svg",
+        "{2/C}": "assets/card-parts/twobrid-colorless-mana-symbol.svg",
+        "{3/A}": "assets/card-parts/threebrid-gold-mana-symbol.svg"
     };
 
     for (let n = 0; n < words.length; n++) {
@@ -364,10 +419,15 @@ function wrapText(context, text, x, y, maxWidth, lineHeight, type = "") {
     }
     lines++;
     line = '';
-    if (type != "Saga") y = Math.max(y - ((lines - 1) / 2) * lineHeight, 232 * 2);
-    if (type == "Planeswalker" && lines>=5) {
+    if (type != "Saga" && type != "split"  && type != "Planeswalker") y = Math.max(y - ((lines - 1) / 2) * lineHeight, 232 * 2);
+    if (type == "Planeswalker" && lines>=4) {
         context.font = "12pt MPlantin";
         lineHeight = 14;
+        y -= 6;
+    }
+    if (type == "Planeswalker" && lines>=5) {
+        context.font = "10pt MPlantin";
+        lineHeight = 12;
         y -= 6;
     }
     if (type == "Saga" && lines>=6) {
@@ -438,6 +498,7 @@ function findManaSymbol(s) {
     else if (s == "B") return "assets/card-parts/black-mana-symbol.svg";
     else if (s == "R") return "assets/card-parts/red-mana-symbol.svg";
     else if (s == "G") return "assets/card-parts/green-mana-symbol.svg";
+    else if (s == "A") return "assets/card-parts/gold-mana-symbol.svg";
     else if (s == "1") return "assets/card-parts/generic-mana-symbol-1.svg";
     else if (s == "2") return "assets/card-parts/generic-mana-symbol-2.svg";
     else if (s == "3") return "assets/card-parts/generic-mana-symbol-3.svg";
@@ -448,6 +509,20 @@ function findManaSymbol(s) {
     else if (s == "8") return "assets/card-parts/generic-mana-symbol-8.svg";
     else if (s == "9") return "assets/card-parts/generic-mana-symbol-9.svg";
     else if (s == "X") return "assets/card-parts/generic-mana-symbol-x.svg";
+    else if (s == "C") return "assets/card-parts/colorless-mana-symbol.svg";
+    else if (s == "W/U") return "assets/card-parts/azorius-mana-symbol.svg";
+    else if (s == "U/B") return "assets/card-parts/dimir-mana-symbol.svg";
+    else if (s == "B/R") return "assets/card-parts/rakdos-mana-symbol.svg";
+    else if (s == "R/G") return "assets/card-parts/gruul-mana-symbol.svg";
+    else if (s == "G/W") return "assets/card-parts/selesnya-mana-symbol.svg";
+    else if (s == "W/B") return "assets/card-parts/orzhov-mana-symbol.svg";
+    else if (s == "U/R") return "assets/card-parts/izzet-mana-symbol.svg";
+    else if (s == "B/G") return "assets/card-parts/golgari-mana-symbol.svg";
+    else if (s == "R/W") return "assets/card-parts/boros-mana-symbol.svg";
+    else if (s == "G/U") return "assets/card-parts/simic-mana-symbol.svg";
+    else if (s == "A/P") return "assets/card-parts/prism-mana-symbol.svg";
+    else if (s == "2/C") return "assets/card-parts/twobrid-colorless-mana-symbol.svg";
+    else if (s == "3/A") return "assets/card-parts/threebrid-gold-mana-symbol.svg";
     else return "assets/card-parts/white-mana-symbol.svg";
 }
 
@@ -689,6 +764,7 @@ function Search() {
 function GetCardBack(card) {
     cardURL = "assets/card-parts/card";
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Legendary")) cardURL = cardURL + "-legend";
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent.includes("hybrid")) cardURL = cardURL + "-hybrid";
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Basic")) cardURL = cardURL + "-basic";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Land")) cardURL = cardURL + "-land";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Artifact")) cardURL = cardURL + "-artifact";
@@ -724,10 +800,27 @@ function GetCardBack(card) {
         return cardURL;
     }
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Planeswalker")) {
-        if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "W") cardURL = cardURL + "-planeswalker-white.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "U") cardURL = cardURL + "-planeswalker-blue.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BR") cardURL = cardURL + "-planeswalker-rakdos.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-planeswalker-simic.svg";
+        cardURL = cardURL + "-planeswalker";
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "tall") cardURL = cardURL + "-tall";
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "W") cardURL = cardURL + "-white.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "U") cardURL = cardURL + "-blue.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BR") cardURL = cardURL + "-rakdos.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "RG") cardURL = cardURL + "-gruul.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UR") cardURL = cardURL + "-izzet.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-simic.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "") cardURL = cardURL + "-colorless.svg";
+    }
+    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "split") {
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WU") cardURL = cardURL + "-split-azorius.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UB") cardURL = cardURL + "-split-dimir.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BR") cardURL = cardURL + "-split-rakdos.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "RG") cardURL = cardURL + "-split-gruul.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WG") cardURL = cardURL + "-split-selesnya.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WB") cardURL = cardURL + "-split-orzhov.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UR") cardURL = cardURL + "-split-izzet.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BG") cardURL = cardURL + "-split-golgari.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WR") cardURL = cardURL + "-split-boros.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-split-simic.svg";
     }
 
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "W") cardURL = cardURL + "-white.svg";
