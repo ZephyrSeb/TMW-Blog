@@ -47,6 +47,10 @@
     cursor: pointer;
 }
 
+.card:hover {
+    cursor: pointer;
+}
+
 .input-text {
     padding: 10px;
     margin-top: 4px;

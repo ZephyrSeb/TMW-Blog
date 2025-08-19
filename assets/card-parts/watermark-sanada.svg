@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="384"
+   inkscape:export-xdpi="384"
+   inkscape:export-filename="D:\My Documents\Pictures\Vector Art\Cards\MTG\Panham - Arnox\Watermarks\Watermark - Adventurers.png"
+   sodipodi:docname="watermark-sanada.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg1040"
+   version="1.1"
+   viewBox="0 0 16.933333 16.933334"
+   height="64"
+   width="64">
+  <defs
+     id="defs1034" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="32"
+     inkscape:cx="32"
+     inkscape:zoom="12.140625"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:snap-smooth-nodes="true">
+    <inkscape:grid
+       id="grid1603"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata1037">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       d="m 8.4666669,2.1166667 c -2e-7,6.3500002 -3.1750001,3.1750001 -3.1750001,3.1750001 0,0 3.1750003,3.1750001 -3.1750001,3.1750001 6.3500004,0 3.1750001,3.1750001 3.1750001,3.1750001 0,0 3.1750001,-3.1749989 3.1750001,3.175 0,-6.3499989 3.1750001,-3.175 3.1750001,-3.175 0,0 -3.1749993,-3.1750001 3.175,-3.1750001 -6.3499993,0 -3.175,-3.1750001 -3.175,-3.1750001 0,0 -3.1750003,3.1750001 -3.1750001,-3.1750001 z m 0,2.7781251 c 0.396875,2.7781251 2.1828121,1.3890625 2.1828121,1.3890625 0,0 -1.3890625,1.7859376 1.389063,2.1828126 -2.7781255,0.396875 -1.389063,2.1828121 -1.389063,2.1828121 0,0 -1.7859371,-1.3890625 -2.1828121,1.389063 -0.396875,-2.7781255 -2.1828126,-1.389063 -2.1828126,-1.389063 0,0 1.3890626,-1.7859371 -1.3890625,-2.1828121 2.7781251,-0.396875 1.3890625,-2.1828126 1.3890625,-2.1828126 0,0 1.7859376,1.3890626 2.1828126,-1.3890625 z m 0,1.984375 A 1.5875001,1.5875001 0 0 0 6.8791668,8.4666669 1.5875001,1.5875001 0 0 0 8.4666669,10.054167 1.5875001,1.5875001 0 0 0 10.054167,8.4666669 1.5875001,1.5875001 0 0 0 10.050679,8.3655102 1.3890625,1.3890625 0 0 1 8.6651044,9.6572919 1.3890625,1.3890625 0 0 1 7.2760419,8.2682294 1.3890625,1.3890625 0 0 1 8.5709242,6.882655 1.5875001,1.5875001 0 0 0 8.4666669,6.8791668 Z"
+       style="fill:#000000;fill-opacity:0.25;stroke:none;stroke-width:0.198437px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path835-3" />
+  </g>
+</svg>

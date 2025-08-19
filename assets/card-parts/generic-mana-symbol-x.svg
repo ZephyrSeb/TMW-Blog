@@ -7,41 +7,41 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="12"
-   height="12"
-   viewBox="0 0 3.1749999 3.1750001"
-   version="1.1"
-   id="svg8"
+   sodipodi:docname="generic-mana-symbol-x.svg"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="generic-mana-symbol-x.svg">
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 3.1749999 3.1750001"
+   height="12"
+   width="12">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     inkscape:snap-smooth-nodes="true"
-     inkscape:snap-object-midpoints="true"
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="37"
-     inkscape:cx="10.5"
-     inkscape:cy="10.5"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="true"
-     units="px"
-     inkscape:pagecheckerboard="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
+     inkscape:window-maximized="1"
      inkscape:window-y="-9"
-     inkscape:window-maximized="1">
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="10.5"
+     inkscape:cx="10.5"
+     inkscape:zoom="37"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-smooth-nodes="true">
     <inkscape:grid
-       type="xygrid"
-       id="grid833" />
+       id="grid833"
+       type="xygrid" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -51,34 +51,32 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Layer 1">
     <g
-       transform="translate(-13.493752,-4.2333335)"
-       id="g2042">
+       id="g2042"
+       transform="translate(-13.493752,-4.2333335)">
       <circle
-         style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel"
-         id="path857-3-5-9-7"
-         cx="15.081252"
+         r="1.5875001"
          cy="5.8208337"
-         r="1.5875001" />
-      <text
-         id="text987-3"
-         y="6.8791666"
-         x="15.081252"
+         cx="15.081252"
+         id="path857-3-5-9-7"
+         style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel" />
+      <g
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;line-height:1.25;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
-         xml:space="preserve"><tspan
+         id="text987-3"
+         aria-label="X">
+        <path
+           id="path835"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82223px;font-family:MPlantin;-inkscape-font-specification:MPlantin;text-align:center;text-anchor:middle;stroke-width:0.264568"
-           y="6.8791666"
-           x="15.081252"
-           id="tspan985-0"
-           sodipodi:role="line">X</tspan></text>
+           d="m 15.209311,5.8180081 0.584201,0.6970908 q 0.07902,0.095956 0.135467,0.1524004 0.05927,0.053622 0.115712,0.079022 0.03104,0.016933 0.06209,0.0254 0.03387,0.00564 0.07056,0.00564 v 0.1016003 h -0.92287 V 6.7747441 q 0.11289,-0.00282 0.16369,-0.031045 0.05362,-0.031045 0.05362,-0.087489 0,-0.016933 -0.0056,-0.033867 -0.0028,-0.016933 -0.0085,-0.033867 -0.0085,-0.016933 -0.01976,-0.033867 -0.0085,-0.016933 -0.02258,-0.033867 L 15.017399,6.038142 14.704132,6.3965653 q -0.05927,0.070556 -0.08749,0.1185336 -0.0254,0.047978 -0.02822,0.093134 0,0.00282 0,0.00564 0,0.00282 0,0.00564 0,0.073378 0.05645,0.1157115 0.05644,0.042333 0.160867,0.042333 V 6.8791666 H 14.026796 V 6.7747441 q 0.01411,0 0.0254,0 0.01129,-0.00282 0.01976,-0.00564 0.02822,-0.00282 0.0508,-0.00847 0.02258,-0.00564 0.04233,-0.014111 0.01129,-0.00564 0.02258,-0.011289 0.01129,-0.00564 0.0254,-0.014111 0.0085,-0.00564 0.01693,-0.011289 0.01129,-0.00564 0.01976,-0.011289 0.04233,-0.028222 0.09031,-0.0762 0.04798,-0.047978 0.129823,-0.1382893 l 0.471312,-0.5362237 -0.541868,-0.649113 q -0.05645,-0.064911 -0.09878,-0.1072447 -0.04233,-0.042333 -0.08467,-0.070556 -0.04516,-0.028222 -0.09313,-0.039511 -0.04798,-0.011289 -0.112889,-0.014111 V 4.9544057 h 0.91158 v 0.1100669 q -0.115711,0.014111 -0.160867,0.039511 -0.04516,0.0254 -0.04516,0.079022 0,0.00564 0,0.011289 0,0.00282 0.0028,0.00564 0.0028,0.022578 0.01411,0.047978 0.01411,0.022578 0.03951,0.053622 l 0.358423,0.4233345 0.29069,-0.3471343 q 0.03951,-0.045156 0.05927,-0.084667 0.01975,-0.042333 0.01975,-0.0762 0,-0.067734 -0.04798,-0.1044225 -0.04798,-0.036689 -0.146756,-0.045156 V 4.9544057 h 0.728135 v 0.1100669 q -0.02822,0.00847 -0.04798,0.011289 -0.01693,0.00282 -0.03104,0.00564 -0.0085,0.00282 -0.01693,0.00564 -0.0085,0.00282 -0.01693,0.00564 -0.0056,0.00282 -0.01129,0.00564 -0.0028,0 -0.0085,0.00282 -0.06491,0.028222 -0.1524,0.1044226 -0.08467,0.0762 -0.183445,0.1919116 l -0.355601,0.4205123 z" />
+      </g>
     </g>
   </g>
 </svg>

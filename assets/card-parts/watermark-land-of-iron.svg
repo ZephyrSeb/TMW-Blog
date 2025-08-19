@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="64"
+   height="64"
+   viewBox="0 0 16.933333 16.933334"
+   version="1.1"
+   id="svg1040"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="watermark-land-of-iron.svg"
+   inkscape:export-filename="D:\My Documents\Pictures\Vector Art\Cards\MTG\Panham - Arnox\Watermarks\Watermark - Order of Steel.png"
+   inkscape:export-xdpi="384"
+   inkscape:export-ydpi="384">
+  <defs
+     id="defs1034" />
+  <sodipodi:namedview
+     inkscape:snap-smooth-nodes="true"
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="12.140625"
+     inkscape:cx="32"
+     inkscape:cy="32"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     units="px"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1603" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata1037">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       transform="scale(0.26458334)"
+       d="M 32 12 L 33 15 C 45 19 46 28 46 28 C 46 28 45.999998 18 32 12 z M 28.015625 15.810547 C 25.205853 15.858664 21.866988 16.453205 18 18 L 20.828125 19.414062 C 32.141832 13.75721 39.212891 19.414073 39.212891 19.414062 C 39.212891 19.414062 35.871866 16.07293 29.1875 15.822266 C 28.807706 15.808023 28.417021 15.803673 28.015625 15.810547 z M 28 18 C 28 18 18.000002 17.999999 12 32 L 15 31 C 18.999999 19.000008 28 18 28 18 z M 46 18 L 44.585938 20.828125 C 50.242794 32.141834 44.585938 39.212891 44.585938 39.212891 C 44.585938 39.212891 51.656853 32.142133 46 18 z M 21 22.5 L 19.5 24 L 22 24 L 23.5 25.5 L 23.5 28.400391 L 21 31 L 19 33 L 33.5 33 L 32 36 L 34 36 L 35.5 33 L 37.5 33 L 36 36 L 38 36 L 39.5 33 L 43 33 L 45 31 L 40.5 31 L 42 28 L 40 28 L 38.5 31 L 36.5 31 L 38 28 L 36 28 L 34.5 31 L 23 31 L 25 29 L 25 25 L 22.5 22.5 L 21 22.5 z M 19.414062 24.787109 C 19.414062 24.787109 12.343149 31.857869 18 46 L 19.414062 43.171875 C 13.757209 31.858167 19.414062 24.787109 19.414062 24.787109 z M 52 32 L 49 33 C 44.999998 44.999994 36 46 36 46 C 36 46 45.999996 45.999998 52 32 z M 18 36 C 18 36 18.000003 46 32 52 L 31 49 C 19 45.000001 18 36 18 36 z M 24.787109 44.585938 C 24.787109 44.585938 31.857872 51.656853 46 46 L 43.171875 44.585938 C 31.858167 50.24279 24.787109 44.585938 24.787109 44.585938 z "
+       style="fill:#000000;fill-opacity:0.25;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path1099" />
+  </g>
+</svg>

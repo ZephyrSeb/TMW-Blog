@@ -7,39 +7,39 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="12"
-   height="12"
-   viewBox="0 0 3.1749999 3.1750001"
-   version="1.1"
-   id="svg8"
+   sodipodi:docname="generic-mana-symbol-1.svg"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="generic-mana-symbol-1.svg">
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 3.1749999 3.1750001"
+   height="12"
+   width="12">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="37"
-     inkscape:cx="10.5"
-     inkscape:cy="10.5"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="true"
-     units="px"
-     inkscape:pagecheckerboard="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
+     inkscape:window-maximized="1"
      inkscape:window-y="-9"
-     inkscape:window-maximized="1">
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="10.5"
+     inkscape:cx="10.5"
+     inkscape:zoom="37"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base">
     <inkscape:grid
-       type="xygrid"
-       id="grid833" />
+       id="grid833"
+       type="xygrid" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -54,31 +54,29 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Layer 1">
     <g
-       id="g1082"
-       transform="translate(0,-4.2333335)">
+       transform="translate(0,-4.2333335)"
+       id="g1082">
       <g
          id="g1037">
         <circle
-           style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel"
-           id="path857-3-5-9-3"
-           cx="1.5875"
+           r="1.5875001"
            cy="5.8208337"
-           r="1.5875001" />
-        <text
-           id="text987-8"
-           y="7.0112405"
-           x="1.587458"
+           cx="1.5875"
+           id="path857-3-5-9-3"
+           style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel" />
+        <g
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52758px;line-height:1.25;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
-           xml:space="preserve"><tspan
+           id="text987-8"
+           aria-label="1">
+          <path
+             id="path836"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52758px;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
-             y="7.0112405"
-             x="1.587458"
-             id="tspan985-9"
-             sodipodi:role="line">1</tspan></text>
+             d="M 1.8317705,4.6724549 V 6.418607 6.5985136 q 0,0.1375756 0.074079,0.2081272 0.077607,0.070552 0.2257651,0.070552 l 0.063496,-0.00353 V 7.0112405 H 1.0027892 V 6.8736649 h 0.038803 q 0.1975444,0.00353 0.2610409,-0.074079 0.063496,-0.077607 0.063496,-0.3104271 V 5.5190741 q 0,-0.2081272 -0.063496,-0.2822064 Q 1.2426646,5.1627886 1.062758,5.1627886 L 1.0027892,5.159261 V 5.0040474 q 0.052914,-0.010583 0.109355,-0.035276 0.059969,-0.024693 0.1199377,-0.052914 0.070552,-0.031748 0.134048,-0.067024 0.067024,-0.038803 0.1234653,-0.077607 0.038803,-0.024693 0.070552,-0.045859 0.031748,-0.024693 0.056441,-0.049386 l 0.2151824,-0.00353 z" />
+        </g>
       </g>
     </g>
   </g>

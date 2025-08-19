@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="generic-mana-symbol-7.svg"
+   sodipodi:docname="caby-c.svg"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    id="svg8"
    version="1.1"
-   viewBox="0 0 3.1749999 3.1750001"
-   height="12"
-   width="12">
+   viewBox="0 0 16.933333 16.933334"
+   height="64"
+   width="64">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -28,9 +28,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
-     inkscape:cy="10.5"
-     inkscape:cx="10.5"
-     inkscape:zoom="37"
+     inkscape:cy="32"
+     inkscape:cx="32"
+     inkscape:zoom="12.140625"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -49,7 +49,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -57,27 +57,9 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1">
-    <g
-       transform="translate(0,-4.2333335)"
-       id="g1082">
-      <g
-         id="g1037">
-        <circle
-           r="1.5875001"
-           cy="5.8208337"
-           cx="1.5875"
-           id="path857-3-5-9-3"
-           style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel" />
-        <g
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52758px;line-height:1.25;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
-           id="text987-8"
-           aria-label="7">
-          <path
-             id="path836"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52758px;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
-             d="M 2.3573799,4.7183135 1.5601468,7.0535714 H 1.3273265 L 1.9764013,5.1486782 H 1.3872954 q -0.2116548,0.00353 -0.2786788,0.031748 -0.063496,0.024693 -0.084662,0.1164101 l -0.010583,0.052914 H 0.86874114 L 1.0274822,4.7183135 h 1.3298977 z" />
-        </g>
-      </g>
-    </g>
+    <path
+       d="m 3.1749993,2.1166687 v 4.2333339 c 0,6.3499994 5.291667,8.4666664 5.291667,8.4666664 0,0 5.2916667,-2.116667 5.2916667,-8.4666664 V 2.1166687 c -2.645834,1.0583339 -5.2916667,0 -5.2916667,0 0,0 -2.645836,1.0583339 -5.291667,0 z m 2.7626231,3.2954069 c 0.984822,-0.06253 1.7352939,0.937927 1.7352939,0.937927 0,0 -1.5875001,-0.5291669 -3.1749998,0 0.4960937,-0.6614578 0.9920579,-0.909505 1.4397059,-0.937927 z m 4.8761866,0 c 0.0596,-0.0039 0.120351,-0.0039 0.181901,0 0.447648,0.02842 0.943612,0.2764692 1.439706,0.937927 -1.5875,-0.5291669 -3.1749997,0 -3.1749997,0 0,0 0.6594771,-0.8795359 1.5533927,-0.937927 z m -2.3471427,3.716052 c 0.9260422,0 1.8520827,0.6614581 2.6458327,1.9843754 -1.5874997,-1.058333 -3.7041655,-1.058333 -5.2916656,0 0.79375,-1.3229173 1.7197909,-1.9843754 2.6458329,-1.9843754 z"
+       style="fill:#00000d;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path930-78" />
   </g>
 </svg>

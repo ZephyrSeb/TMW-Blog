@@ -7,39 +7,39 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="12"
-   height="12"
-   viewBox="0 0 3.1749999 3.1750001"
-   version="1.1"
-   id="svg8"
+   sodipodi:docname="generic-mana-symbol-8.svg"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="generic-mana-symbol-8.svg">
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 3.1749999 3.1750001"
+   height="12"
+   width="12">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="37"
-     inkscape:cx="10.5"
-     inkscape:cy="10.5"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="true"
-     units="px"
-     inkscape:pagecheckerboard="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
+     inkscape:window-maximized="1"
      inkscape:window-y="-9"
-     inkscape:window-maximized="1">
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="10.5"
+     inkscape:cx="10.5"
+     inkscape:zoom="37"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base">
     <inkscape:grid
-       type="xygrid"
-       id="grid833" />
+       id="grid833"
+       type="xygrid" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -49,36 +49,34 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Layer 1">
     <g
-       id="g1082"
-       transform="translate(0,-4.2333335)">
+       transform="translate(0,-4.2333335)"
+       id="g1082">
       <g
          id="g1037">
         <circle
-           style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel"
-           id="path857-3-5-9-3"
-           cx="1.5875"
+           r="1.5875001"
            cy="5.8208337"
-           r="1.5875001" />
-        <text
-           id="text987-8"
-           y="7.0112405"
-           x="1.587458"
+           cx="1.5875"
+           id="path857-3-5-9-3"
+           style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel" />
+        <g
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52758px;line-height:1.25;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
-           xml:space="preserve"><tspan
+           id="text987-8"
+           aria-label="8">
+          <path
+             id="path836"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52758px;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
-             y="7.0112405"
-             x="1.587458"
-             id="tspan985-9"
-             sodipodi:role="line">8</tspan></text>
+             d="M 1.2920507,5.9282734 Q 1.1403648,5.8153909 1.0451201,5.7166186 0.95340306,5.6143188 0.90754452,5.5155466 0.88637904,5.4626329 0.87226872,5.4097192 q -0.0105827,-0.052914 -0.0105827,-0.109355 0,-0.261041 0.22223752,-0.4409475 0.2257651,-0.1834342 0.5467749,-0.1834342 0.2786789,0 0.4691682,0.1481584 0.1904893,0.1446307 0.1904893,0.3562856 0,0.01411 -0.00353,0.028221 0,0.01411 0,0.024693 -0.01411,0.084662 -0.059969,0.1657962 -0.045859,0.077607 -0.1269929,0.1481584 -0.017638,0.01411 -0.031748,0.028221 -0.01411,0.010583 -0.028221,0.021166 -0.00706,0.00706 -0.01411,0.01411 -0.00706,0.00353 -0.01411,0.010583 -0.028221,0.017638 -0.063497,0.042331 -0.031748,0.021166 -0.084662,0.052914 0.1940169,0.1128826 0.3210098,0.2575134 0.1305205,0.1446307 0.176379,0.2963167 0.01411,0.038803 0.021165,0.081134 0.00706,0.042331 0.00706,0.081134 0,0.2716236 -0.2328202,0.4480026 -0.2328203,0.1728514 -0.5961611,0.1728514 -0.3174822,0 -0.5220818,-0.1516859 -0.20459966,-0.1516859 -0.20459966,-0.3915614 0,-0.063496 0.0141103,-0.1199377 0.0176379,-0.059969 0.0564413,-0.1199377 0.0493861,-0.077607 0.14463076,-0.1587411 0.095245,-0.081134 0.243403,-0.1799066 z m 0.1799066,0.1305205 -0.049386,-0.035276 q -0.1269929,0.1022998 -0.1975445,0.2292927 -0.067024,0.1234653 -0.067024,0.2575133 0,0.1834342 0.098772,0.285734 0.1022999,0.1022998 0.2751513,0.1022998 0.1552135,0 0.2504582,-0.091717 0.098772,-0.091717 0.098772,-0.2363478 0,-0.042331 -0.010583,-0.081134 -0.00706,-0.042331 -0.024693,-0.074079 Q 1.8352981,6.3974416 1.8247153,6.3798037 1.8141326,6.3586382 1.8000223,6.3410003 1.7576913,6.284559 1.6836121,6.2245901 1.6095329,6.1610937 1.4719573,6.0623215 Z M 1.7224155,5.6072636 q 0.1234653,-0.056441 0.1869618,-0.1552135 0.067024,-0.1022998 0.067024,-0.2222375 0,-0.1657963 -0.1022998,-0.2786789 -0.098772,-0.1128825 -0.2469307,-0.1128825 -0.1234653,0 -0.2151823,0.088189 -0.08819,0.084662 -0.08819,0.2081272 0,0.042331 0.00706,0.077607 0.010583,0.035276 0.028221,0.070552 0.021165,0.035276 0.056441,0.074079 0.035276,0.038803 0.088189,0.084662 0.028221,0.024693 0.049386,0.045859 0.024693,0.017638 0.045859,0.035276 0.00706,0.00353 0.010583,0.010583 0.00706,0.00353 0.01411,0.00706 0.021165,0.017638 0.042331,0.035276 0.024693,0.01411 0.056441,0.035276 z" />
+        </g>
       </g>
     </g>
   </g>

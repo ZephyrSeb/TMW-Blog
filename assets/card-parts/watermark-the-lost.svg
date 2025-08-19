@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="384"
+   inkscape:export-xdpi="384"
+   inkscape:export-filename="D:\My Documents\Pictures\Vector Art\Cards\MTG\Panham - Arnox\Watermarks\Watermark - The Lost.png"
+   sodipodi:docname="watermark-the-lost.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg1040"
+   version="1.1"
+   viewBox="0 0 16.933333 16.933334"
+   height="64"
+   width="64">
+  <defs
+     id="defs1034" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="32"
+     inkscape:cx="32"
+     inkscape:zoom="12.140625"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:snap-smooth-nodes="true">
+    <inkscape:grid
+       id="grid1603"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata1037">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       transform="scale(0.26458334)"
+       d="M 7.171875 20.449219 C 6.3752449 20.395264 7.1875007 23.1875 8 24 C 6.0000018 23 6.9999991 27 9 28 C 6.9999991 28 9.0000018 29.999999 11 31 C 9.0000018 31 10.999999 33 13 34 C 10.999999 34 13.999999 37 16 37 C 13.999999 37 15.999999 39 18 39 C 19.999997 39 21.999999 36 24 34 C 24.999999 33 25.999997 31.000001 24 30 C 12.999999 26 8 21 8 21 C 7.6250003 20.625 7.3557127 20.46167 7.171875 20.449219 z M 56.828125 20.449219 C 56.644287 20.46167 56.375 20.625 56 21 C 56 21 51.000001 26 40 30 C 38.000003 31 39.000001 33 40 34 C 42.000001 36.000001 44.000003 39 46 39 C 48.000001 39 50.000001 37 48 37 C 50.000001 37 53.000001 34 51 34 C 53.000001 33 54.999997 31 53 31 C 54.999997 30 57.000001 28 55 28 C 57.000001 27 57.999997 23 56 24 C 56.812499 23.1875 57.624755 20.395264 56.828125 20.449219 z M 24 24 L 24 26 L 31 31 L 24 36 L 24 38 L 32 31 L 24 24 z M 40 26 L 32 33 L 40 40 L 40 38 L 33 33 L 40 28 L 40 26 z "
+       style="fill:#000000;fill-opacity:0.25274727;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path961" />
+  </g>
+</svg>

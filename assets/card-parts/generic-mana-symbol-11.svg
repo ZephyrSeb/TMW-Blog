@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="generic-mana-symbol-11.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 3.1749999 3.1750001"
+   height="12"
+   width="12">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="6"
+     inkscape:cx="6"
+     inkscape:zoom="64.75"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base">
+    <inkscape:grid
+       id="grid833"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <g
+       id="g1082"
+       transform="translate(8.4852092e-7,-4.2333335)">
+      <g
+         id="g1037">
+        <circle
+           r="1.5875001"
+           cy="5.8208337"
+           cx="1.5875"
+           id="path857-3-5-9-3"
+           style="fill:#c8c8c8;fill-opacity:0.992157;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel" />
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;letter-spacing:-0.264583px;text-anchor:middle;stroke-width:0.264568"
+           id="text987-8"
+           aria-label="11">
+          <path
+             id="path836"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
+             d="m 1.220698,4.8683343 v 1.3969989 0.1439332 q 0,0.1100666 0.059267,0.166511 0.062089,0.056444 0.1806221,0.056444 l 0.0508,-0.00282 V 6.7394662 H 0.55747628 V 6.6293996 h 0.0310444 q 0.15804432,0.00282 0.20884428,-0.059267 0.0508,-0.062089 0.0508,-0.2483554 V 5.5456671 q 0,-0.166511 -0.0508,-0.2257776 -0.0479777,-0.059267 -0.19191096,-0.059267 l -0.0479777,-0.00282 V 5.133623 q 0.0423333,-0.00847 0.0874888,-0.028222 0.0479777,-0.019756 0.0959555,-0.042333 0.0564444,-0.0254 0.10724436,-0.053622 0.0536222,-0.031044 0.0987777,-0.062089 0.0310444,-0.019756 0.0564444,-0.036689 0.0254,-0.019756 0.045155,-0.039511 l 0.1721554,-0.00282 z" />
+          <path
+             id="path838"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
+             d="m 2.4278587,4.8683343 v 1.3969989 0.1439332 q 0,0.1100666 0.059267,0.166511 0.062089,0.056444 0.1806221,0.056444 l 0.0508,-0.00282 V 6.7394662 H 1.764637 V 6.6293996 h 0.031044 q 0.1580443,0.00282 0.2088443,-0.059267 0.0508,-0.062089 0.0508,-0.2483554 V 5.5456671 q 0,-0.166511 -0.0508,-0.2257776 -0.047978,-0.059267 -0.191911,-0.059267 L 1.764637,5.2578006 V 5.133623 q 0.042333,-0.00847 0.087489,-0.028222 0.047978,-0.019756 0.095955,-0.042333 0.056444,-0.0254 0.1072444,-0.053622 0.053622,-0.031044 0.098778,-0.062089 0.031044,-0.019756 0.056444,-0.036689 0.0254,-0.019756 0.045155,-0.039511 l 0.1721554,-0.00282 z" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

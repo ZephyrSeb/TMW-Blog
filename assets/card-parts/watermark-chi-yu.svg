@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="384"
+   inkscape:export-xdpi="384"
+   inkscape:export-filename="D:\My Documents\Pictures\Vector Art\Cards\MTG\Panham - Arnox\Watermarks\Watermark - The Yu.png"
+   sodipodi:docname="watermark-chi-yu.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg1040"
+   version="1.1"
+   viewBox="0 0 16.933333 16.933334"
+   height="64"
+   width="64">
+  <defs
+     id="defs1034" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="32"
+     inkscape:cx="32"
+     inkscape:zoom="12.140625"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:snap-smooth-nodes="true">
+    <inkscape:grid
+       id="grid1603"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata1037">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       sodipodi:nodetypes="sscscsccccccccccscssccccccccscccsccccsscccccccs"
+       transform="scale(0.26458334)"
+       d="m 32,12.25 c -0.5,0 -1,0.25 -1,0.75 v 5 h -3 c -0.577798,0 -0.810606,0.664706 -0.720703,1.228516 -0.487707,-0.06257 -0.98329,-0.106235 -1.492188,-0.115235 C 22.446289,19.054199 18.75,20 16,20 v 14 h 14 c 0.354878,0.354878 0.8381,0.576686 1.355469,0.679688 C 31.502825,39.253739 31.694422,44.666131 32,52 32.305578,44.666131 32.497175,39.253739 32.644531,34.679688 33.1619,34.576686 33.645122,34.354878 34,34 H 48 V 20 C 44.831297,20 40.411079,18.752036 36.720703,19.224609 36.808894,18.661611 36.576489,18 36,18 h -3 v -5 c 0,-0.5 -0.5,-0.75 -1,-0.75 z M 30,20 h 1 c 0,0 0.0051,0.451087 0.0059,0.587891 C 30.62413,20.463969 30.273221,20.273221 30,20 Z m 3,0 h 1 c -0.273221,0.273221 -0.62413,0.463969 -1.005859,0.587891 C 32.99488,20.451087 33,20 33,20 Z m -7.183594,0.113281 C 27.304443,20.140137 28.75,20.375 30,21 c 0.275579,0.275579 0.630015,0.468105 1.015625,0.591797 0.02523,1.85006 0.120311,5.977191 0.306641,11.947265 C 28.57184,31.672319 25.95784,31.046875 23.738281,31.046875 19.734375,31.046875 17,33 17,33 c 0,0 5.648035,-2.401836 12.591797,0 H 17 V 21 c 2.0625,0 5.542725,-0.945801 8.816406,-0.886719 z m 12.367188,0 C 41.457275,20.054199 44.937499,21 47,21 V 33 H 34.408203 C 41.351966,30.598164 47,33 47,33 47,33 40.389178,28.322946 32.677734,33.554688 32.86446,27.574569 32.959124,23.443595 32.984375,21.591797 33.369985,21.468105 33.724421,21.275579 34,21 c 1.25,-0.625 2.695557,-0.859863 4.183594,-0.886719 z"
+       style="fill:#000000;fill-opacity:0.24542123;stroke:none;stroke-width:0.999999px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path1012" />
+  </g>
+</svg>

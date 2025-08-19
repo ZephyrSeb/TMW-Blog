@@ -7,39 +7,39 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="12"
-   height="12"
-   viewBox="0 0 3.1749999 3.1750001"
-   version="1.1"
-   id="svg8"
+   sodipodi:docname="generic-mana-symbol-2.svg"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="generic-mana-symbol-2.svg">
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 3.1749999 3.1750001"
+   height="12"
+   width="12">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="37"
-     inkscape:cx="10.5"
-     inkscape:cy="10.5"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="true"
-     units="px"
-     inkscape:pagecheckerboard="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
+     inkscape:window-maximized="1"
      inkscape:window-y="-9"
-     inkscape:window-maximized="1">
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="10.5"
+     inkscape:cx="10.5"
+     inkscape:zoom="37"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base">
     <inkscape:grid
-       type="xygrid"
-       id="grid833" />
+       id="grid833"
+       type="xygrid" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -54,31 +54,29 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Layer 1">
     <g
-       id="g1082"
-       transform="translate(0,-4.2333335)">
+       transform="translate(0,-4.2333335)"
+       id="g1082">
       <g
          id="g1037">
         <circle
-           style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel"
-           id="path857-3-5-9-3"
-           cx="1.5875"
+           r="1.5875001"
            cy="5.8208337"
-           r="1.5875001" />
-        <text
-           id="text987-8"
-           y="7.0112405"
-           x="1.587458"
+           cx="1.5875"
+           id="path857-3-5-9-3"
+           style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel" />
+        <g
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52758px;line-height:1.25;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
-           xml:space="preserve"><tspan
+           id="text987-8"
+           aria-label="2">
+          <path
+             id="path836"
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52758px;font-family:MPlantin-Bold;-inkscape-font-specification:MPlantin-Bold;text-align:center;text-anchor:middle;stroke-width:0.264568"
-             y="7.0112405"
-             x="1.587458"
-             id="tspan985-9"
-             sodipodi:role="line">2</tspan></text>
+             d="M 2.339742,6.3868588 2.13867,7.0112405 H 0.78055164 V 6.8524994 q 0.0141103,-0.010583 0.0246931,-0.017638 0.0105827,-0.010583 0.0211655,-0.021165 0,0 0,0 0.003528,0 0.003528,-0.00353 0.0176379,-0.01411 0.0352758,-0.031748 0.0211655,-0.021166 0.0564413,-0.052914 Q 1.062758,6.5844033 1.1580027,6.4856311 1.2532474,6.3833312 1.3308541,6.2916142 q 0.024693,-0.031748 0.045859,-0.059969 0.024693,-0.031748 0.049386,-0.063496 0.021165,-0.031748 0.042331,-0.063497 0.024693,-0.035276 0.049386,-0.070552 0.1234653,-0.1834341 0.1799065,-0.3210098 0.059969,-0.1411032 0.059969,-0.2645685 0,-0.1869617 -0.1269929,-0.310427 -0.1269929,-0.1234653 -0.3210098,-0.1234653 -0.070552,0 -0.134048,0.017638 -0.059969,0.01411 -0.1199377,0.049386 -0.035276,0.021166 -0.0705516,0.049386 -0.0317482,0.024693 -0.0705516,0.059969 L 0.81935502,5.0781266 Q 0.98515128,4.8841097 1.1791682,4.7818099 1.3731851,4.6759825 1.5777847,4.6759825 q 0.2645685,0 0.4480027,0.1622687 0.1834342,0.1622687 0.1834342,0.3986165 0,0.038803 -0.00353,0.077607 -0.00353,0.035276 -0.010583,0.074079 -0.024693,0.1305204 -0.095245,0.2645685 -0.067024,0.1305204 -0.176379,0.2504582 -0.059969,0.067024 -0.151686,0.1587411 -0.08819,0.091717 -0.1869617,0.1904893 -0.01411,0.01411 -0.028221,0.028221 -0.010583,0.010583 -0.024693,0.024693 -0.059969,0.059969 -0.1199377,0.1164101 -0.059969,0.056441 -0.1128826,0.1058274 l -0.052914,0.045859 h 0.596161 q 0.1657963,0.00353 0.2292927,-0.031748 0.067024,-0.038803 0.109355,-0.1516859 l 0.1587411,-0.00353 z" />
+        </g>
       </g>
     </g>
   </g>
