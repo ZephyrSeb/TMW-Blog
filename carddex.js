@@ -157,6 +157,10 @@ async function LoadCards(cards) {
 function DrawCard(canvas, card, size) {
     let imgPT = new Image();
     imgPT.src = GetCardPT(card);
+    let imgPotency = new Image();
+    imgPotency.src = "assets/card-parts/potency-symbol-large.svg";
+    let imgDefense = new Image();
+    imgDefense.src = "assets/card-parts/defense-symbol-large.svg";
     let imgRarity = new Image();
     imgRarity.src = GetSetSymbol(card.getElementsByTagName("set")[0].getElementsByTagName("code")[0].textContent, card.getElementsByTagName("set")[0].getElementsByTagName("rarity")[0].textContent);
     manaBack = new Image();
@@ -205,9 +209,16 @@ function DrawCard(canvas, card, size) {
     let name = card.getElementsByTagName("name")[0].textContent;
     let type = card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent;
     let textbox = card.getElementsByTagName("text")[0].textContent;
-    let pt = card.getElementsByTagName("prop")[0].getElementsByTagName("pt")[0].textContent;
+    let pt = "";
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("pt").length > 0) {
+        pt = card.getElementsByTagName("prop")[0].getElementsByTagName("pt")[0].textContent;
+    }
     let setno = "TMW-"+ card.getElementsByTagName("set")[0].getElementsByTagName("code")[0].textContent + " " + card.getElementsByTagName("set")[0].getElementsByTagName("rarity")[0].textContent.at(0);
     let manavalue = card.getElementsByTagName("prop")[0].getElementsByTagName("cmc")[0].textContent;
+    let potency = "";
+    let defense = "";
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("potency").length > 0) potency = card.getElementsByTagName("prop")[0].getElementsByTagName("potency")[0].textContent;
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("defense").length > 0) defense = card.getElementsByTagName("prop")[0].getElementsByTagName("defense")[0].textContent;
     let pw = 0;
 
     let img_dict = {
@@ -270,12 +281,27 @@ function DrawCard(canvas, card, size) {
         }
         else {
             if (type.includes("Creature") || type.includes("Vehicle")) context.drawImage(imgPT, 390 * size, 626 * size, 88 * size, 42 * size);
+            if (type.includes("Mystical")) {
+                context.drawImage(imgPotency, 440 * size, 588 * size, 44 * size, 76 * size);
+                context.font = 20 * size + "pt Beleren";
+                context.fillStyle = "#FFF";
+                context.textAlign = "center";
+                context.fillText(potency, 462 * size, 652 * size);
+            }
+            if (type.includes("Battle")) {
+                context.drawImage(imgDefense, 436 * size, 616 * size, 52 * size, 52 * size);
+                context.font = 20 * size + "pt Beleren";
+                context.fillStyle = "#FFF";
+                context.textAlign = "center";
+                context.fillText(defense, 462 * size, 652 * size);
+            }
             for (let j = 0; j < manaSymbol.length; j++) {
                 context.drawImage(manaBack, (439.5 - 26 * (manaSymbol.length - j - 1)) * size, (42 - pw) * size, 24 * size, 24 * size);
                 context.drawImage(manaSymbol[j], (440 - 26 * (manaSymbol.length - j - 1)) * size, (40 - pw) * size, 24 * size, 24 * size);
             }
             context.font=20 * size + "pt Beleren";
             context.fillStyle = "#000000";
+            context.textAlign = "left";
             context.fillText(name, 48 * size, (64 - pw) * size, (396 - 20 * manalength) * size);
             if (!type.includes("Saga") && !type.includes("Planeswalker")) {
                 context.font=18 * size + "pt Beleren";
@@ -505,7 +531,15 @@ function wrapText(context, text, x, y, maxWidth, lineHeight, size, type = "") {
         "{2/G}": "assets/card-parts/twobrid-green-mana-symbol.svg",
         "{2/C}": "assets/card-parts/twobrid-colorless-mana-symbol.svg",
         "{3/A}": "assets/card-parts/threebrid-gold-mana-symbol.svg",
-        "{1/P}": "assets/card-parts/phyrexian-mana-symbol.svg"
+        "{1/P}": "assets/card-parts/phyrexian-mana-symbol.svg",
+        "{L}": "assets/card-parts/land-mana-symbol.svg",
+        "{S}": "assets/card-parts/snow-mana-symbol.svg",
+        "{F}": "assets/card-parts/fiery-mana-symbol.svg",
+        "{P}": "assets/card-parts/potency-symbol.svg",
+        "{P/1}": "assets/card-parts/potency-symbol-1.svg",
+        "{P/2}": "assets/card-parts/potency-symbol-2.svg",
+        "{P/3}": "assets/card-parts/potency-symbol-3.svg",
+        "{P/4}": "assets/card-parts/potency-symbol-4.svg"
     };
 
     for (let n = 0; n < Object.entries(mana_dict).length; n++) {
@@ -649,6 +683,14 @@ function findManaSymbol(s) {
     else if (s == "2/C") return "assets/card-parts/twobrid-colorless-mana-symbol.svg";
     else if (s == "3/A") return "assets/card-parts/threebrid-gold-mana-symbol.svg";
     else if (s == "1/P") return "assets/card-parts/phyrexian-mana-symbol.svg";
+    else if (s == "L") return "assets/card-parts/land-mana-symbol.svg";
+    else if (s == "S") return "assets/card-parts/snow-mana-symbol.svg";
+    else if (s == "F") return "assets/card-parts/fiery-mana-symbol.svg";
+    else if (s == "P") return "assets/card-parts/potency-symbol.svg";
+    else if (s == "P/1") return "assets/card-parts/potency-symbol-1.svg";
+    else if (s == "P/2") return "assets/card-parts/potency-symbol-2.svg";
+    else if (s == "P/3") return "assets/card-parts/potency-symbol-3.svg";
+    else if (s == "P/4") return "assets/card-parts/potency-symbol-4.svg";
     else return "assets/card-parts/white-mana-symbol.svg";
 }
 
@@ -940,7 +982,9 @@ function GetCardBack(card) {
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Legendary")) cardURL = cardURL + "-legend";
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent.includes("hybrid")) cardURL = cardURL + "-hybrid";
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Basic")) cardURL = cardURL + "-basic";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Land")) cardURL = cardURL + "-land";
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Snow")) cardURL = cardURL + "-snow";
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Fiery")) cardURL = cardURL + "-fiery";
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Land")) cardURL = cardURL + "-land";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Artifact")) cardURL = cardURL + "-artifact";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Saga")) cardURL = cardURL + "-saga";
 
@@ -978,12 +1022,18 @@ function GetCardBack(card) {
         if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "tall") cardURL = cardURL + "-tall";
         if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "W") cardURL = cardURL + "-white.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "U") cardURL = cardURL + "-blue.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "B") cardURL = cardURL + "-black.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "R") cardURL = cardURL + "-red.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "G") cardURL = cardURL + "-green.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WU") cardURL = cardURL + "-azorius.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UB") cardURL = cardURL + "-dimir.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BR") cardURL = cardURL + "-rakdos.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "RG") cardURL = cardURL + "-gruul.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WG") cardURL = cardURL + "-selesnya.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WB") cardURL = cardURL + "-orzhov.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UR") cardURL = cardURL + "-izzet.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BG") cardURL = cardURL + "-golgari.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WR") cardURL = cardURL + "-boros.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-simic.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "") cardURL = cardURL + "-colorless.svg";
     }
@@ -1044,5 +1094,8 @@ function GetSetName(code) {
     if (code == "CCRO") setName = "Chromatopia Commander";
     if (code == "ABY") setName = "Tales From the Abyss - Adventures in Nautilus";
     if (code == "CABY") setName = "Tales From the Abyss Commander";
+    if (code == "WOG") setName = "Garrem";
+    if (code == "GEX") setName = "Garrem Expeditions";
+    if (code == "CWOG") setName = "Garrem Commander";
     return setName;
 }

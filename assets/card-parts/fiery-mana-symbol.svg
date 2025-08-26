@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="12"
+   height="12"
+   viewBox="0 0 3.1749999 3.1750001"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="fiery-mana-symbol.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="64.75"
+     inkscape:cx="6"
+     inkscape:cy="6"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     units="px"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid833" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="translate(-10.31875,-21.166667)"
+       id="g1042">
+      <g
+         transform="translate(10.31875,16.933333)"
+         id="g1082-9-4">
+        <g
+           id="g1037-7-2">
+          <circle
+             style="fill:#c8c8c8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.015875;stroke-linecap:round;stroke-linejoin:bevel"
+             id="path857-3-5-9-3-6-6"
+             cx="1.5875"
+             cy="5.8208337"
+             r="1.5875001" />
+        </g>
+      </g>
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.132292;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 11.244792,22.489584 c 0,0 -0.132292,0.264583 -0.132292,0.529166 0,0.529166 0.529167,0.529167 0.529167,0.529167 0.529166,0 0.529166,-0.529167 0.529166,-0.529167 0,-0.529166 -0.529166,-0.79375 -0.529166,-1.5875 C 12.170833,22.225 12.7,22.357292 12.7,23.01875 c 0,1.058334 -0.79375,1.058334 -0.79375,1.058334 -1.058333,0 -1.058333,-0.79375 -1.058333,-0.79375 0,-0.529167 0.396875,-0.79375 0.396875,-0.79375 z"
+         id="path2611"
+         sodipodi:nodetypes="ccccccccc" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0661458;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 11.377084,23.283334 c 0.264583,0.264583 0.793749,0 0.529166,-0.529167 0,0.264583 -0.264583,0.529167 -0.529166,0.529167 z"
+         id="path2613"
+         sodipodi:nodetypes="ccc" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0661458;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 12.633854,23.8125 c 0.529167,-0.264583 0.595313,-1.058333 -0.06615,-1.5875 0.396875,0.529167 0.330729,1.322917 0.06615,1.5875 z"
+         id="path2615"
+         sodipodi:nodetypes="ccc" />
+    </g>
+  </g>
+</svg>
