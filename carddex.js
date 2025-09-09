@@ -303,12 +303,24 @@ function DrawCard(canvas, card, size) {
             context.fillStyle = "#000000";
             context.textAlign = "left";
             context.fillText(name, 48 * size, (64 - pw) * size, (396 - 20 * manalength) * size);
-            if (!type.includes("Saga") && !type.includes("Planeswalker")) {
+            if (!type.includes("Saga") && !type.includes("Planeswalker") && !type.includes("Class")) {
                 context.font=18 * size + "pt Beleren";
                 context.fillText(type, 48 * size, 424 * size, 384 * size);
                 context.font=16 * size + "pt MPlantin";
                 wrapText(context, textbox, 48 * size, 544 * size, 408 * size, 20 * size, size);
                 context.drawImage(imgRarity, 432 * size, 400 * size, 32 * size, 32 * size);
+            }
+            if (type.includes("Class")) {
+                context.font="Italic " + 14 * size + "pt MPlantin";
+                context.fillStyle = "#000000";
+                context.textAlign = "left";
+                wrapText(context, card.getElementsByTagName("text")[0].textContent, 258 * size, 104 * size, 206 * size, 20 * size, size, "Saga");
+                context.font=14 * size + "pt MPlantin";
+                wrapText(context, card.getElementsByTagName("text")[1].textContent, 258 * size, 160 * size, 206 * size, 20 * size, size, "Saga");
+                wrapText(context, card.getElementsByTagName("text")[3].textContent, 258 * size, 328 * size, 206 * size, 20 * size, size, "Saga");
+                wrapText(context, card.getElementsByTagName("text")[5].textContent, 258 * size, 488 * size, 206 * size, 20 * size, size, "Saga");
+                wrapText(context, card.getElementsByTagName("text")[2].textContent, 258 * size, 296 * size, 206 * size, 20 * size, size, "Saga");
+                wrapText(context, card.getElementsByTagName("text")[4].textContent, 258 * size, 456 * size, 206 * size, 20 * size, size, "Saga");
             }
             if (type.includes("Saga")) {
                 chapter_dict = {
@@ -353,7 +365,7 @@ function DrawCard(canvas, card, size) {
                 context.drawImage(imgRarity, 432 * size, (400 + layout) * size, 32 * size, 32 * size);
                 for (let s = 0; s < card.getElementsByTagName("text").length; s++) {
                     let text = card.getElementsByTagName("text")[s].textContent;
-                    if (card.getElementsByTagName("text")[s].textContent.indexOf(": ") > -1) {
+                    if (card.getElementsByTagName("text")[s].textContent.indexOf(": ") > -1 && card.getElementsByTagName("text")[s].textContent.indexOf(": ") < 5) {
                         text = card.getElementsByTagName("text")[s].textContent.split(": ")[1];
                     }
                     if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) > 0) {
@@ -382,7 +394,7 @@ function DrawCard(canvas, card, size) {
                     context.textAlign = "left";
                     context.font=14 * size + "pt MPlantin";
                     context.fillStyle = "#000000";
-                    wrapText(context, text, 92 * size, (478 + s * 64 + layout - 12) * size, (460-92) * size, 16 * size, size, "Planeswalker");
+                    wrapText(context, text, 92 * size, (472 + s * 64 + layout - 12) * size, (460-92) * size, 16 * size, size, "Planeswalker");
                 }
                 context.font="Bold " + 22 * size + "pt Beleren";
                 context.textAlign = "center";
@@ -539,7 +551,19 @@ function wrapText(context, text, x, y, maxWidth, lineHeight, size, type = "") {
         "{P/1}": "assets/card-parts/potency-symbol-1.svg",
         "{P/2}": "assets/card-parts/potency-symbol-2.svg",
         "{P/3}": "assets/card-parts/potency-symbol-3.svg",
-        "{P/4}": "assets/card-parts/potency-symbol-4.svg"
+        "{P/4}": "assets/card-parts/potency-symbol-4.svg",
+        "{S/+1}": "assets/card-parts/spark-up-1.svg",
+        "{S/+2}": "assets/card-parts/spark-up-2.svg",
+        "{S/-1}": "assets/card-parts/spark-down-1.svg",
+        "{S/-2}": "assets/card-parts/spark-down-2.svg",
+        "{S/-3}": "assets/card-parts/spark-down-3.svg",
+        "{S/-4}": "assets/card-parts/spark-down-4.svg",
+        "{S/-5}": "assets/card-parts/spark-down-5.svg",
+        "{S/-6}": "assets/card-parts/spark-down-6.svg",
+        "{S/-7}": "assets/card-parts/spark-down-7.svg",
+        "{S/-8}": "assets/card-parts/spark-down-8.svg",
+        "{S/-9}": "assets/card-parts/spark-down-9.svg",
+        "{S/-10}": "assets/card-parts/spark-down-10.svg"
     };
 
     for (let n = 0; n < Object.entries(mana_dict).length; n++) {
@@ -571,16 +595,24 @@ function wrapText(context, text, x, y, maxWidth, lineHeight, size, type = "") {
         lines++;
         line = '';
         if (type != "Saga" && type != "split"  && type != "Planeswalker") y = Math.max(y - ((lines - 1) / 2) * lineHeight, 232 * 2 * size);
-        if (type == "Planeswalker" && lines>=4) {
-            context.font = 12 * size + "pt MPlantin";
-            lineHeight = 14 * size;
-            y -= 6;
+        if (type == "Planeswalker") {
+            if (lines>=4) {
+                context.font = 12 * size + "pt MPlantin";
+                lineHeight = 14 * size;
+                y -= 4;
+            }
+            if (lines>=5) {
+                context.font = 10 * size + "pt MPlantin";
+                lineHeight = 12 * size;
+                y -= 4;
+            }
+            if (lines>=6) {
+                context.font = 8 * size + "pt MPlantin";
+                lineHeight = 10 * size;
+                y -= 4;
+            }
         }
-        if (type == "Planeswalker" && lines>=5) {
-            context.font = 10 * size + "pt MPlantin";
-            lineHeight = 12 * size;
-            y -= 6;
-        }
+        
         if (type == "Saga" && lines>=6) {
             context.font = 14 * size + "pt MPlantin";
             lineHeight = 16 * size;
@@ -594,6 +626,10 @@ function wrapText(context, text, x, y, maxWidth, lineHeight, size, type = "") {
         if (type != "Saga" && lines >= 10) {
             context.font = 14 * size + "pt MPlantin";
             lineHeight = 18 * size;
+        }
+        if (type != "Saga" && lines >= 14) {
+            context.font = 12 * size + "pt MPlantin";
+            lineHeight = 14 * size;
         }
 
         for(let n = 0; n < words.length; n++) {
@@ -621,7 +657,14 @@ function wrapText(context, text, x, y, maxWidth, lineHeight, size, type = "") {
             else if (words[n].substring(0,1) == "{") {
                 let img = new Image;
                 img.src = mana_dict[words[n].substring(0, words[n].indexOf("}") + 1)]
-                context.drawImage(img, x + context.measureText(line).width + 1, y - lineHeight + 4, 18 * size, 18 * size);
+                let height = 1;
+                let width = 1;
+                let woffset = 0;
+                let hoffset = 0;
+                if (words[n].substring(0,2) == "{P") {height *= 1.5; hoffset = -6;}
+                if (words[n].substring(0,3) == "{S/") {width *= 3; height *= 1.8; woffset = -5; hoffset = -6;}
+                context.drawImage(img, x + context.measureText(line).width + 1 + woffset * size, y - lineHeight + 4 + hoffset * size, width * (lineHeight - 2), height * (lineHeight - 2));
+                if (words[n].substring(0,3) == "{S/") line = line + '    ';
                 words[n] = words[n].slice(words[n].indexOf("}") + 1);
                 n--;
                 line = line + '    ';
@@ -987,6 +1030,7 @@ function GetCardBack(card) {
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Land")) cardURL = cardURL + "-land";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Artifact")) cardURL = cardURL + "-artifact";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Saga")) cardURL = cardURL + "-saga";
+    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Class")) cardURL = cardURL + "-class";
 
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Basic")) {
         if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "W") cardURL = cardURL + "-plains.svg";
@@ -1097,5 +1141,6 @@ function GetSetName(code) {
     if (code == "WOG") setName = "Garrem";
     if (code == "GEX") setName = "Garrem Expeditions";
     if (code == "CWOG") setName = "Garrem Commander";
+    if (code == "CTMW") setName = "The Many Worlds Origins";
     return setName;
 }

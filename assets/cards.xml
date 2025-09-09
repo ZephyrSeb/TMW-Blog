@@ -35,6 +35,10 @@
                 <code>WOG</code>
                 <rarity>Common</rarity>
             </set>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
         </card>
         <card>
             <name>Island</name>
@@ -68,6 +72,10 @@
             </set>
             <set>
                 <code>WOG</code>
+                <rarity>Common</rarity>
+            </set>
+            <set>
+                <code>CTMW</code>
                 <rarity>Common</rarity>
             </set>
         </card>
@@ -105,6 +113,10 @@
                 <code>WOG</code>
                 <rarity>Common</rarity>
             </set>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
         </card>
         <card>
             <name>Mountain</name>
@@ -140,6 +152,10 @@
                 <code>WOG</code>
                 <rarity>Common</rarity>
             </set>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
         </card>
         <card>
             <name>Forest</name>
@@ -173,6 +189,10 @@
             </set>
             <set>
                 <code>WOG</code>
+                <rarity>Common</rarity>
+            </set>
+            <set>
+                <code>CTMW</code>
                 <rarity>Common</rarity>
             </set>
         </card>
@@ -2874,7 +2894,7 @@ When a creature an opponent controls dies, it's controller loses 1 life.</text>
                 <manacost>3</manacost>
                 <pt></pt>
                 <maintype>Artifact</maintype>
-                <type>Artifact</type>
+                <type>Artifact — Horn</type>
                 <side>front</side>
                 <layout>normal</layout>
             </prop>
@@ -3246,7 +3266,7 @@ Channel — {1}{R}, Discard Krux: Target creature gains defiant until end of tur
                 <manacost>2BB</manacost>
                 <pt></pt>
                 <maintype>Artifact</maintype>
-                <type>Legendary Artifact</type>
+                <type>Legendary Artifact — Staff</type>
                 <side>front</side>
                 <layout>normal</layout>
             </prop>
@@ -14087,6 +14107,10 @@ When this creature dies, it deals 1 damage to any target.</text>
                 <code>WOG</code>
                 <rarity>Common</rarity>
             </set>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
             <tablerow>1</tablerow>
             <token>1</token>
         </card>
@@ -14106,6 +14130,10 @@ When this creature dies, it deals 1 damage to any target.</text>
             </prop>
             <set>
                 <code>KOF</code>
+                <rarity>Common</rarity>
+            </set>
+            <set>
+                <code>CTMW</code>
                 <rarity>Common</rarity>
             </set>
             <tablerow>1</tablerow>
@@ -14400,7 +14428,7 @@ Enchanted permanent is a Dragon creature with base power and toughness 5/5, and 
                 <manacost>1</manacost>
                 <pt></pt>
                 <maintype>Artifact</maintype>
-                <type>Artifact</type>
+                <type>Artifact — Map</type>
                 <side>front</side>
                 <layout>normal</layout>
             </prop>
@@ -14915,7 +14943,7 @@ Bountiful Supplies enters the battlefield with a charge counter on it. If it was
                 <manacost>2G</manacost>
                 <pt></pt>
                 <maintype>Artifact</maintype>
-                <type>Artifact</type>
+                <type>Artifact — Food</type>
                 <side>front</side>
                 <layout>normal</layout>
             </prop>
@@ -18162,7 +18190,7 @@ Equip {4}</text>
                 <manacost>1</manacost>
                 <pt></pt>
                 <maintype>Artifact</maintype>
-                <type>Artifact — Equipment</type>
+                <type>Artifact — Equipment Sword</type>
                 <side>front</side>
                 <layout>normal</layout>
             </prop>
@@ -18383,7 +18411,7 @@ Equip {1}{R}</text>
                 <manacost>2R</manacost>
                 <pt></pt>
                 <maintype>Artifact</maintype>
-                <type>Artifact — Equipment</type>
+                <type>Artifact — Equipment Ring</type>
                 <side>front</side>
                 <layout>normal</layout>
             </prop>
@@ -19159,7 +19187,7 @@ Equip {2}{G}</text>
                 <manacost>2G</manacost>
                 <pt></pt>
                 <maintype>Artifact</maintype>
-                <type>Artifact — Equipment</type>
+                <type>Artifact — Equipment Staff</type>
                 <side>front</side>
                 <layout>normal</layout>
             </prop>
@@ -22198,7 +22226,7 @@ Choose {P/2}. If this spell was cast for its pinnacle cost, you may choose the s
 • Create two 1/1 white snow Spirit creature tokens with flying.
 • Destroy target artifact or enchantment.
 • Put a +1/+1 counter on target creature. It gains indestructible until end of turn.
-• You gain 4 life. (</text>
+• You gain 4 life.</text>
             <prop>
                 <coloridentity>W</coloridentity>
                 <colors>W</colors>
@@ -22330,7 +22358,7 @@ Whenever you discard a land card, each opponent loses 1 life.</text>
         <card>
             <name>Deadly Enlightenment</name>
             <text>Pinnacle {3}{B}{B} (You may cast this spell for its pinnacle cost. If you do, its potency becomes equal to the greatest power among creatures you control.)
-Target player draws {P/2} cards and loses {P/2}) life. ( {P} represents this spell's potency.)</text>
+Target player draws {P/2} cards and loses {P/2} life. ( {P} represents this spell's potency.)</text>
             <prop>
                 <coloridentity>B</coloridentity>
                 <colors>B</colors>
@@ -22604,7 +22632,7 @@ Return target creature with mana value {P/3} or less to its owner's hand, then t
         <card>
             <name>Edrick's Cultivation</name>
             <text>Pinnacle {2}{G}{G} (You may cast this spell for its pinnacle cost. If you do, its potency becomes equal to the greatest power among creatures you control.)
-Search your library for up to {P/2} basic land cards and reveal them. Put one onto the battlefield tapped and the rest into your hand. Then shuffle. ( {P} represents this spell’s potency.) Z</text>
+Search your library for up to {P/2} basic land cards and reveal them. Put one onto the battlefield tapped and the rest into your hand. Then shuffle. ( {P} represents this spell’s potency.)</text>
             <prop>
                 <coloridentity>G</coloridentity>
                 <colors>G</colors>
@@ -22869,7 +22897,7 @@ Whenever Felix, Elemental Master transforms, put a loyalty counter on it.</text>
             <text>Shift
 Whenever Felix, Wilds Adventurer transforms, put a loyalty counter on it.</text>
             <text>0: Add {U} or {R}. Spend this mana only to cast instant or sorcery spells.</text>
-            <text>Tap target creature and put a stun counter on it.</text>
+            <text>-2: Tap target creature and put a stun counter on it.</text>
             <prop>
                 <coloridentity>UR</coloridentity>
                 <colors>UR</colors>
@@ -24844,7 +24872,7 @@ Shift (When a land enters the battlefield under your control, transform this car
         <card>
             <name>Okaron's Persuasion</name>
             <text>Pinnacle {2}{R}{R} (You may cast this spell for its pinnacle cost. If you do, its potency becomes equal to the greatest power among creatures you control.)
-Gain control of target creature with mana value {P/4} or less until end of turn. Untap it. It gains haste. (( {P} represents this spell’s potency.) 4</text>
+Gain control of target creature with mana value {P/4} or less until end of turn. Untap it. It gains haste. ( {P} represents this spell’s potency.)</text>
             <prop>
                 <coloridentity>R</coloridentity>
                 <colors>R</colors>
@@ -25407,7 +25435,7 @@ Mountaincycling {2} ( {2}, Discard this card: Search your library for a Mountain
         <card>
             <name>Restore to Life</name>
             <text>Pinnacle {3}{W}{W} (You may cast this spell for its pinnacle cost. If you do, its potency becomes equal to the greatest power among creatures you control.)
-Return, target permanent card with mana value {P/3} or less from your graveyard to the battlefield. ( {P} represents this spell's potency.) ,</text>
+Return, target permanent card with mana value {P/3} or less from your graveyard to the battlefield. ( {P} represents this spell's potency.)</text>
             <prop>
                 <coloridentity>W</coloridentity>
                 <colors>W</colors>
@@ -26039,7 +26067,7 @@ At the beginning of your end step, if you both own and control Staff of Fire and
                 <manacost>2</manacost>
                 <pt></pt>
                 <maintype>Artifact</maintype>
-                <type>Fiery Artifact — Equipment</type>
+                <type>Fiery Artifact — Equipment Staff</type>
                 <side>front</side>
                 <layout>meld</layout>
             </prop>
@@ -26062,7 +26090,7 @@ Equip {2}{U}{R}</text>
                 <manacost></manacost>
                 <pt></pt>
                 <maintype>Artifact</maintype>
-                <type>Artifact — Equipment</type>
+                <type>Artifact — Equipment Staff</type>
                 <side>back</side>
                 <layout>meld</layout>
             </prop>
@@ -26085,7 +26113,7 @@ Melds with Staff of Fire</text>
                 <manacost>2</manacost>
                 <pt></pt>
                 <maintype>Artifact</maintype>
-                <type>Snow Artifact — Equipment</type>
+                <type>Snow Artifact — Equipment Staff</type>
                 <side>front</side>
                 <layout>meld</layout>
             </prop>
@@ -27229,7 +27257,7 @@ Destroy target artifact or enchantment.</text>
         <card>
             <name>Vital Blessing</name>
             <text>Pinnacle {W} (You may cast this spell for its pinnacle cost. If you do, its potency becomes equal to the greatest power among creatures you control.)
-You gain {P/4} life. If this spell was cast for its pinnacle cost, you gain hexproof until end of turn. ( {P} represents this spell's potency.) y"</text>
+You gain {P/4} life. If this spell was cast for its pinnacle cost, you gain hexproof until end of turn. ( {P} represents this spell's potency.)</text>
             <prop>
                 <coloridentity>W</coloridentity>
                 <colors>W</colors>
@@ -28565,6 +28593,1878 @@ Whenever you attack one or more players, for each player you attacked, create a 
                 <rarity>Common</rarity>
             </set>
             <tablerow>1</tablerow>
+            <token>1</token>
+        </card>
+		<card>
+            <name>Amateur Sleuth</name>
+            <text>Commander creatures you own have "Whenever this creature deals combat damage to a player, investigate."</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>1</cmc>
+                <manacost>U</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Legendary Enchantment — Background</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+			<related>Clue Token</related>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Backup Operative</name>
+            <text>Flash
+When Backup Operative enters the battlefield, return up to one target nonland permanent to its owner's hand.</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>2</cmc>
+                <manacost>1U</manacost>
+                <pt>1/3</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Human Wizard</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Bail Outᴹᵂ</name>
+            <text>Destroy target nontoken creature or enchantment. Its controller creates a treasure token.</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>2</cmc>
+                <manacost>1W</manacost>
+                <pt></pt>
+                <maintype>Instant</maintype>
+                <type>Instant</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+			<related>Treasure Token</related>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Blood Sacrifice</name>
+            <text>As an additional cost to cast this spell, sacrifice a creature.
+Target creature gets -X/-X until end of turn, where X is the sacrificed creature's power. You gain X life.</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>2</cmc>
+                <manacost>BB</manacost>
+                <pt></pt>
+                <maintype>Instant</maintype>
+                <type>Instant</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Blossom Club</name>
+            <text>Equipped creature gets +3/+3 and gains infiltrate. (Whenever it deals combat damage to a player, draw a card.)
+Landfall — Whenever a land enters them battlefield under your control, you may attach Blossom Club to target creature you control.
+Equip {3}{G}</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>4</cmc>
+                <manacost>2GG</manacost>
+                <pt></pt>
+                <maintype>Artifact</maintype>
+                <type>Artifact — Equipment Staff</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Break the Mirror</name>
+            <text>Target creature gains haste and myriad until end of turn. (Whenever it attacks, for each opponent other than defending player, you may create a token copy that’s tapped and attacking that player or a planeswalker they control. Exile the tokens at end of combat.)
+Draw a card.</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>1</cmc>
+                <manacost>R</manacost>
+                <pt></pt>
+                <maintype>Sorcery</maintype>
+                <type>Sorcery</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Charcoal Diamond</name>
+            <text>Charcoal Diamond enters the battlefield tapped.
+{T}: Add {B}.</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors></colors>
+                <cmc>2</cmc>
+                <manacost>2</manacost>
+                <pt></pt>
+                <maintype>Artifact</maintype>
+                <type>Artifact</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Cleric Class</name>
+            <text>(Gain the next level as a sorcery to add its ability.)</text>
+            <text>If you would gain life, you gain that much life plus 1 instead.</text>
+            <text>{3}{W}:</text>
+            <text>Whenever you gain life, put a +1/+1 counter on target creature you control.</text>
+            <text>{4}{W}:</text>
+            <text>When this Class becomes level 3, return target creature card from your graveyard to the battlefield. You gain life equal to that creature’s toughness.</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>1</cmc>
+                <manacost>W</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment — Class</type>
+                <side>front</side>
+                <layout>class</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Commander's Sphere</name>
+            <text>{T}: Add one mana of any color in your commander's color identity.
+Sacrifice this artifact: Draw a card.</text>
+            <prop>
+                <coloridentity></coloridentity>
+                <colors></colors>
+                <cmc>3</cmc>
+                <manacost>3</manacost>
+                <pt></pt>
+                <maintype>Artifact</maintype>
+                <type>Artifact</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Compulsive Research Paper</name>
+            <text>Whenever Compulsive Research Paper becomes untapped, discard a card.
+{T}: Draw a card.</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>3</cmc>
+                <manacost>2U</manacost>
+                <pt></pt>
+                <maintype>Artifact</maintype>
+                <type>Artifact</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Crack the Case</name>
+            <text>Draw a card for each Clue you control, then return all nonland permanents to their owner's hands.</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>6</cmc>
+                <manacost>4UU</manacost>
+                <pt></pt>
+                <maintype>Sorcery</maintype>
+                <type>Sorcery</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Creeping Shadows</name>
+            <text>Return target creature card from your graveyard to your hand.
+You get two spark counters.</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>1</cmc>
+                <manacost>B</manacost>
+                <pt></pt>
+                <maintype>Sorcery</maintype>
+                <type>Sorcery</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Criminal Past</name>
+            <text>Commander creatures you own have menace and “This creature gets +X/+0, where X is the number of creature cards in your graveyard.” (A creature with menace can’t be blocked except by two or more creatures.)</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>3</cmc>
+                <manacost>2B</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Legendary Enchantment — Background</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Demon Mastermind</name>
+            <text>Improvise (Your artifacts can help you cast this spell. Each artifact you tap after you're donre activating mana abilities pays for {1}.) 
+Flying
+Clue Specialist (This creature gets + 1/+0 for each Clue you control.)
+{1}{U}: Investigate.</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>7</cmc>
+                <manacost>6U</manacost>
+                <pt>0/7</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Demon</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+			<related>Clue Token</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Dreselia of the Pine Grove</name>
+            <text>Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+1}: You may play an additional land this turn.
+{S/-3}: Until end of turn, Dreselia's power and toughness become equal to the number of lands you control.</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>3</cmc>
+                <manacost>2G</manacost>
+                <pt>3/3</pt>
+                <maintype>Creature</maintype>
+                <type>Legendary Creature — Dryad</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Dreselia's Kindness</name>
+            <text>When Dreselia's Kindness enters the battlefield, you get two spark counters.
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/-8}: You get an emblem with "If you tap a land for mana, it produces twice as much of that mana instead."</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>2</cmc>
+                <manacost>GG</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+			<related>Spark Counter</related>
+			<related>Dreselia's Kindness Emblem</related>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Dreselia, Blossom Soldier</name>
+            <text>Reach, Vigilance
+Landfall — Whenever a land enters the battlefield under your control, you may pay {2}. When you do, Dreselia deals damage to target creature equal to its power.
+Choose a Background (You can have a Background as a second commander.)</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>4</cmc>
+                <manacost>3G</manacost>
+                <pt>3/3</pt>
+                <maintype>Creature</maintype>
+                <type>Legendary Creature — Dryad Soldier</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Druid Class</name>
+            <text>(Gain the next level as a sorcery to add its ability.)</text>
+            <text>Landfall — Whenever a land you control enters, you gain 1 life.</text>
+            <text>{2}{G}:</text>
+            <text>You may play an additional land on each of your turns.</text>
+            <text>{4}{G}:</text>
+            <text>When this Class becomes level 3, target land you control becomes a creature with haste and “This creature’s power and toughness are each equal to the number of lands you control.” It’s still a land.</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <cmc>2</cmc>
+                <colors>G</colors>
+                <side>front</side>
+                <layout>class</layout>
+                <manacost>1G</manacost>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment — Class</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Expressive Elemental</name>
+            <text>Prowess, Prowess
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+2}: Exile the top card of your library. You may play that card this turn.
+Channel — {R}, Discard Expressive Elemental: You get a spark counter.</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>6</cmc>
+                <manacost>4RR</manacost>
+                <pt>4/4</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Elemental</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Fire Diamond</name>
+            <text>Fire Diamond enters the battlefield tapped.
+{T}: Add {R}.</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors></colors>
+                <cmc>2</cmc>
+                <manacost>2</manacost>
+                <pt></pt>
+                <maintype>Artifact</maintype>
+                <type>Artifact</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Forest's Protector</name>
+            <text>Commander creatures you own have "Whenever this creature deals combat damage to a player, you may put a land card from your hand onto the battlefield."</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>2</cmc>
+                <manacost>1G</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Legendary Enchantment — Background</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Gaze into the Future</name>
+            <text>Draw two cards.
+You get two spark counters.</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>4</cmc>
+                <manacost>3U</manacost>
+                <pt></pt>
+                <maintype>Instant</maintype>
+                <type>Instant</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Guard's Ambush</name>
+            <text>Create two 1/1 white Soldier creature tokens.
+You get two spark counters.</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>3</cmc>
+                <manacost>2W</manacost>
+                <pt></pt>
+                <maintype>Instant</maintype>
+                <type>Instant</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related count="2">Soldier Token</related>
+			<related>Spark Counter</related>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Hive of Shadows</name>
+            <text>Shade spells you cast cost {1} less to cast.
+{B}{B}: Shades you control get +1/+1 until end of turn.</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>3</cmc>
+                <manacost>1BB</manacost>
+                <pt>3/3</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Shade</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Idrasa Alma, Shadelord</name>
+            <text>Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+1}: Each player mills a card.
+{S/-2}: Exile target card from a graveyard. You gain life equal to its mana value.</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>4</cmc>
+                <manacost>3B</manacost>
+                <pt>4/3</pt>
+                <maintype>Creature</maintype>
+                <type>Legendary Creature — Elf Warlock</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Idrasa Alma, Underworld Boss</name>
+            <text>At the beginning of combat on your turn, you may sacrifice another creature with power X. When you do, choose one —
+• Draw X cards and you lose X life.
+• Target creature gets -X/-X until end of turn.
+• Create an X/X black Shade creature token.
+Choose a Background (You can have a Background as a second commander.)</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>5</cmc>
+                <manacost>4B</manacost>
+                <pt>4/3</pt>
+                <maintype>Creature</maintype>
+                <type>Legendary Creature — Elf Warlock</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+			<related>Shade Token</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Idrasa's Informant</name>
+            <text>{1}{B}: Idrasa's Informant connives. (Draw a card, then discard a card. If you discarded a nonland card, put a +1/+1 counter on this creature.)</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>2</cmc>
+                <manacost>1B</manacost>
+                <pt>1/1</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Shade</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Idrasa's Will</name>
+            <text>When Idrasa's Will enters the battlefield, you get two spark counters.
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/-10}: Return all creatures from your graveyard to the battlefield.</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>2</cmc>
+                <manacost>BB</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Interplanar Spy</name>
+            <text>Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+1}: Scry 2.
+{S/-1}: Target creature can't be blocked this turn.</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>2</cmc>
+                <manacost>1U</manacost>
+                <pt>1/1</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Human Rogue</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Jarad Killian, Tavaran Exile</name>
+            <text>Haste
+Whenever you cast an instant or sorcery spell, Jarad Killian gets +1/+0 until end of turn.
+As long as Jarad Killian's power is 4 or greater, it has double strike.
+Choose a Background (You can have a Background as a second commander.)</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>1</cmc>
+                <manacost>R</manacost>
+                <pt>1/1</pt>
+                <maintype>Creature</maintype>
+                <type>Legendary Creature — Tiefling Artificer</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Jarad Killian, Travelling Artist</name>
+            <text>Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+1}: Add {R}. Spend this mana only to cast instant or sorcery spells.
+{S/-2}: The next time you cast an instant or sorcery spell this turn, copy it. You may choose new targets for the copy.</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>2</cmc>
+                <manacost>1R</manacost>
+                <pt>2/2</pt>
+                <maintype>Creature</maintype>
+                <type>Legendary Creature — Tiefling Artificer</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Jarad's Creativity</name>
+            <text>When Jarad's Creativity enters the battlefield, you get two spark counters.
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/-7}: Add six {R}. Instant and sorcery spells in your graveyard gain flashback until end of turn.</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>2</cmc>
+                <manacost>RR</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Jarad's Journey</name>
+            <text>When Jarad's Journey enters the battlefield and at the beginning of your upkeep, exile the top card of your library. You may play that card this turn.
+At the beginning of your end step, if there are any cards exiled with Jarad's Journey, put those cards in their owner's graveyard.</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>3</cmc>
+                <manacost>2R</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Knight of the White Rose</name>
+            <text>When Knight of the White Rose enters the battlefield, create a Rose token. (It's an artifact with " {1}, {T}, Sacrifice this artifact: Target creature gains lifelink until end of turn.")</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>1</cmc>
+                <manacost>W</manacost>
+                <pt>1/1</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Human Knight</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Rose Token</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Land of the Dead</name>
+            <text>Whenever a creature dies, return it to the battlefield under its owner's control with a shadow counter and a finality counter on it. (It can only block or be blocked by creatures with shadow. If it would die, exile it instead.)</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>3</cmc>
+                <manacost>1BB</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Living Masterpiece</name>
+            <text>Whenever you cast a spell, if you've cast more spells this turn than there are masterpiece counters on Living Masterpiece, put a masterpiece counter on Living Masterpiece.
+At the beginning of your upkeep, if there are five or more masterpiece counters on Living Masterpiece, exile the top card of each player's library. You may play those cards this turn, and mana can be spent as though it were mana of any color to cast these spells.</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>5</cmc>
+                <manacost>2RRR</manacost>
+                <pt>5/5</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Elemental</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Lord Labine, Outpost Captain</name>
+            <text>Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+1}: Put a +1/+1 counter on target creature.
+{S/-1}: Create a 1/1 white Soldier creature token.</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>2</cmc>
+                <manacost>1W</manacost>
+                <pt>2/2</pt>
+                <maintype>Creature</maintype>
+                <type>Legendary Creature — Human Soldier</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+			<related>Spark Counter</related>
+			<related>Soldier Token</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Lord of Shadow</name>
+            <text>Flying
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+2}: Target creature gains shadow until end of turn.
+Channel — {B}, Discard Lord of Shadow: You get a spark counter.</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>7</cmc>
+                <manacost>5BB</manacost>
+                <pt>7/5</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Demon</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Lumen Archer</name>
+            <text>Reach
+When Lumen Archer enters the battlefield, choose one —
+• Destroy target artifact or enchantment.
+• Lumen Archer deals 2 damage to up to one target creature with flying and you gain 2 life.</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>3</cmc>
+                <manacost>2G</manacost>
+                <pt>2/2</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Elf Ranger</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Marble Diamond</name>
+            <text>Marble Diamond enters the battlefield tapped.
+{T}: Add {W}.</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors></colors>
+                <cmc>2</cmc>
+                <manacost>2</manacost>
+                <pt></pt>
+                <maintype>Artifact</maintype>
+                <type>Artifact</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Moss Diamond</name>
+            <text>Moss Diamond enters the battlefield tapped.
+{T}: Add {G}.</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors></colors>
+                <cmc>2</cmc>
+                <manacost>2</manacost>
+                <pt></pt>
+                <maintype>Artifact</maintype>
+                <type>Artifact</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Orchid Mantis</name>
+            <text>Landfall — Whenever a land enters the battlefield under your control, create a Rose token. (It's an artifact with " {1}, {T}, Sacrifice this artifact: Target creature gains lifelink until end of turn.")</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>2</cmc>
+                <manacost>1G</manacost>
+                <pt>1/1</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Plant Insect</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+			<related>Rose Token</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Outpost Quartermaster</name>
+            <text>Whenever another Soldier enters the battlefield under your control, choose two of the following counters and put one of each of those counters on that creature —
+• +1/+1 counter
+• Lifelink counter
+• Shield counter
+• Vigilance counter</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>3</cmc>
+                <manacost>1WW</manacost>
+                <pt>2/3</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Human Soldier</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Outpost Watchman</name>
+            <text>Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+1}: Untap target creature.
+{S/-1}: Target creature gains double strike until end of turn.</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>3</cmc>
+                <manacost>2W</manacost>
+                <pt>2/2</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Human Soldier</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Paladin Class</name>
+            <text>(Gain the next level as a sorcery to add its ability.)</text>
+            <text>Spells your opponents cast during your turn cost {1} more to cast.</text>
+            <text>{2}{W}:</text>
+            <text>Creatures you control get +1/+1.</text>
+            <text>{4}{W}:</text>
+            <text>Whenever you attack, until end of turn, target attacking creature gets +1/+1 for each other attacking creature and gains double strike.</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <cmc>1</cmc>
+                <colors>W</colors>
+                <side>front</side>
+                <layout>class</layout>
+                <manacost>W</manacost>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment — Class</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Parry</name>
+            <text>Choose one —
+• Target attacking or blocking creature gets +1/+1 and gains first strike until end of turn.
+• Prevent all combat damage that would be dealt by target creature this turn.</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>1</cmc>
+                <manacost>W</manacost>
+                <pt></pt>
+                <maintype>Instant</maintype>
+                <type>Instant</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Pine Grove Elder</name>
+            <text>When Pine Grove Elder enters the battlefield, search your library for a basic land card, put it on the battlefield tapped, then shuffle.
+If a land entering the battlefield under your control would trigger an ability of a permanent you control, that ability triggers an additional time.</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>7</cmc>
+                <manacost>4GGG</manacost>
+                <pt>5/6</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Treefolk</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Planar Journey</name>
+            <text>Search your library for a basic land card, put it on the battlefield tapped, then shuffle.
+You get two spark counters.</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>3</cmc>
+                <manacost>2G</manacost>
+                <pt></pt>
+                <maintype>Sorcery</maintype>
+                <type>Sorcery</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Prison Guard</name>
+            <text>When Prison Guard enters the battlefield, exile target creature you don't control until Prison Guard leaves the battlefield.</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>3</cmc>
+                <manacost>2W</manacost>
+                <pt>1/4</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Human Soldier</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Read the Shadows</name>
+            <text>As an additional cost to cast this spell, sacrifice a creature.
+Look at the top X cards of your library, where X is the sacrificed creature's power. Put up to two of those cards into your hand and recycle the rest.</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>2</cmc>
+                <manacost>1B</manacost>
+                <pt></pt>
+                <maintype>Instant</maintype>
+                <type>Instant</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Robert Labine, Lost Soldier</name>
+            <text>Vigilance
+{T}, Exile Robert Labine: Put a shield counter on target creature you control.
+Whenever you attack with three or more creatures, if Robert Labine is in exile, you may put it on the battlefield attacking.
+Choose a Background (You can have a Background as a second commander.)</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>3</cmc>
+                <manacost>2W</manacost>
+                <pt>2/3</pt>
+                <maintype>Creature</maintype>
+                <type>Legendary Creature — Human Soldier</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Robert's Decree</name>
+            <text>When Robert's Decree enters the battlefield, you get two spark counters.
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/-6}: You get an emblem with "Creatures you control get +1/+1."</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>2</cmc>
+                <manacost>WW</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+			<related>Spark Counter</related>
+			<related>Robert's Decree Emblem</related>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Rosie Mason, Private Investigator</name>
+            <text>Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+1}: Investigate.
+{S/-2}: Tap target creature and put a stun counter on it.</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>4</cmc>
+                <manacost>3U</manacost>
+                <pt>2/4</pt>
+                <maintype>Creature</maintype>
+                <type>Legendary Creature — Human Wizard</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+			<related>Spark Counter</related>
+			<related>Clue Token</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Rosie Mason, Seeker of Truth</name>
+            <text>Whenever you draw your second card each turn, put a +1/+1 counter on Rosie Mason.
+Rosie Mason has hexproof as long as it has ten or more +1/+1 counters on it.
+Choose a Background (You can have a Background as a second commander.)</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>2</cmc>
+                <manacost>1U</manacost>
+                <pt>1/1</pt>
+                <maintype>Creature</maintype>
+                <type>Legendary Creature — Human Wizard</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Rosie's Curiosity</name>
+            <text>When Rosie's Curiosity enters the battlefield, you get two spark counters.
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/-7}: Draw seven cards. You get an emblem with "You have no maximum hand size."</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>2</cmc>
+                <manacost>UU</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+			<related>Spark Counter</related>
+			<related>Rosie's Curiosity Emblem</related>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Shade of Spilled Blood</name>
+            <text>Flying
+Whenever a creature you control dies, create a number of blood tokens equal to its power.
+{B}: Shade of Spilled Blood gets +1/+1 until end of turn.</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>5</cmc>
+                <manacost>2BBB</manacost>
+                <pt>4/4</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Shade</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+			<related count="x">Blood Token</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Shadow of Power</name>
+            <text>Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+1}: Put a +1/+1 counter on target creature.
+{S/-1}: Sacrifice a creature. Put X +1/+1 counters on target creature, where X is the sacrificed creature's power.</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <colors>B</colors>
+                <cmc>4</cmc>
+                <manacost>3B</manacost>
+                <pt>3/3</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Shade</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Sky Diamond</name>
+            <text>Sky Diamond enters the battlefield tapped.
+{T}: Add {U}.</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors></colors>
+                <cmc>2</cmc>
+                <manacost>2</manacost>
+                <pt></pt>
+                <maintype>Artifact</maintype>
+                <type>Artifact</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Solver of Riddles</name>
+            <text>Flying
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+2}: Until end of turn, target creature gains "Whenever this creature deals combat damage to a player, draw a card."
+Channel — {U}, Discard Solver of Riddles: You get a spark counter.</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <colors>U</colors>
+                <cmc>7</cmc>
+                <manacost>5UU</manacost>
+                <pt>4/7</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Sphinx</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Spark of Inspiration</name>
+            <text>Exile the top two cards of your library. Until your next end step, you may play those cards.
+You get two spark counters.</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>2</cmc>
+                <manacost>1R</manacost>
+                <pt></pt>
+                <maintype>Instant</maintype>
+                <type>Instant</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Spellslinger Class</name>
+            <text>(Gain the next level as a sorcery to add its ability.)</text>
+            <text>When Spellslinger Class enters the battlefield, return up to one target instant or sorcery card with mana value 2 or less from your graveyard to your hand.</text>
+            <text>{1}{R}:</text>
+            <text>Whenever you cast your third spell each turn, create a treasure token.</text>
+            <text>{3}{R}:</text>
+            <text>At the beginning of your end step, Spellslinger Class deals X damage to target opponent, where X is the number of spells you cast this turn.</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>1</cmc>
+                <manacost>R</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment — Class</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+			<related>Treasure Token</related>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Stalwart Griffin</name>
+            <text>Flying
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+2}: Target creature gets +1/+1 and gains flying until end of turn.
+Channel — {W}, Discard Stalwart Griffin: You get a spark counter. mrara</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>6</cmc>
+                <manacost>4WW</manacost>
+                <pt>5/6</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Griffin</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Teeming Tanglevine</name>
+            <text>Reach, Trample
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+2}: Put a +1/+1 counter on target creature.
+Channel — {G}, Discard Teeming Tanglevine: You get a spark counter.</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>8</cmc>
+                <manacost>6GG</manacost>
+                <pt>8/8</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Plant</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>The Ardentia</name>
+            <text>Flying
+{2/W}{2/U}{2/B}{2/R}{2/G}: Reveal cards from the top of your library until you reveal a planeswalker card or card with spark. Put that card on the battlefield and the recycle the rest.
+Remove two loyalty counters from among planeswalkers you control and/or spark counters from you: The Ardentia becomes an artifact creature until end of turn.</text>
+            <prop>
+                <coloridentity>WUBRG</coloridentity>
+                <colors></colors>
+                <cmc>5</cmc>
+                <manacost>5</manacost>
+                <pt>4/4</pt>
+                <maintype>Artifact</maintype>
+                <type>Legendary Artifact — Vehicle</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Mythic</rarity>
+            </set>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Traveller's Companion</name>
+            <text>When Traveller's Companion enters the battlefield, you get a spark counter.
+Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/-1}: Search your library for a basic land card, put it into your hand, then shuffle. You gain 1 life.</text>
+            <prop>
+                <coloridentity></coloridentity>
+                <colors></colors>
+                <cmc>2</cmc>
+                <manacost>2</manacost>
+                <pt>1/1</pt>
+                <maintype>Creature</maintype>
+                <type>Artifact Creature — Construct</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Unwitting Accomplice</name>
+            <text>Instant and sorcery spells you cast cost {1} less to cast.
+When you cast your third spell each turn, copy it twice. You may choose new targets for the copies.
+Plot {4}{R} (You may pay {4}{R} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.)</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>4</cmc>
+                <manacost>3R</manacost>
+                <pt>3/2</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Tiefling Soldier</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Veteran Soldier</name>
+            <text>Commander creatures you own have “Whenever this creature attacks a player, if no opponent has more life than that player, for each opponent, create a 1/1 white Soldier creature token that’s tapped and attacking that opponent.”</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <colors>W</colors>
+                <cmc>2</cmc>
+                <manacost>1W</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Legendary Enchantment — Background</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Wandering Artist</name>
+            <text>Commander creatures you own have prowess and "Whenever you an instant or sorcery spell, you may discard a card. If you do, draw a card."</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>2</cmc>
+                <manacost>1R</manacost>
+                <pt></pt>
+                <maintype>Enchantment</maintype>
+                <type>Legendary Enchantment — Background</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Warlock Class</name>
+            <text>(Gain the next level as a sorcery to add its ability.)</text>
+            <text>At the beginning of your end step, if a creature died this turn, each opponent loses 1 life.</text>
+            <text>{1}{B}:</text>
+            <text>When this Class becomes level 2, look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.</text>
+            <text>{6}{B}:</text>
+            <text>At the beginning of your end step, each opponent loses life equal to the life they lost this turn. (Damage causes loss of life.)</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <cmc>1</cmc>
+                <colors>B</colors>
+                <side>front</side>
+                <layout>class</layout>
+                <manacost>B</manacost>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment — Class</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Wisened Maestro</name>
+            <text>Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+1}: Wisened Maestro deals 1 damage to each opponent.
+{S/-1}: Create a treasure token.</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>2</cmc>
+                <manacost>1R</manacost>
+                <pt>1/3</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Human Artificer</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+			<related>Spark Counter</related>
+			<related>Treasure Token</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Wizard Class</name>
+            <text>(Gain the next level as a sorcery to add its ability.)</text>
+            <text>You have no maximum hand size.</text>
+            <text>{2}{U}:</text>
+            <text>When this Class becomes level 2, draw two cards.</text>
+            <text>{4}{U}:</text>
+            <text>Whenever you draw a card, put a +1/+1 counter on target creature you control.</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <cmc>1</cmc>
+                <colors>U</colors>
+                <side>front</side>
+                <layout>class</layout>
+                <manacost>U</manacost>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment — Class</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+        </card>
+        <card>
+            <name>Worldsoul's Spirit</name>
+            <text>Spark (Activate spark abilities by gaining or spending spark counters. Activate only one spark ability each turn, and only as a sorcery.)
+{S/+1}: Mill two cards. You may put a land card from among the cards milled this way into your hand.
+{S/-1}: Return target permanent card from your graveyard to your hand.</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <colors>G</colors>
+                <cmc>4</cmc>
+                <manacost>3G</manacost>
+                <pt>3/4</pt>
+                <maintype>Creature</maintype>
+                <type>Creature — Elemental Spirit</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+			<related>Spark Counter</related>
+            <tablerow>2</tablerow>
+        </card>
+        <card>
+            <name>Zion War Paint</name>
+            <text>Target creature gets +3/+0 until end of turn.
+Escape — {R}, Exile five other cards from your graveyard. (You may cast this card from your graveyard for its escape cost.)</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <colors>R</colors>
+                <cmc>2</cmc>
+                <manacost>1R</manacost>
+                <pt></pt>
+                <maintype>Instant</maintype>
+                <type>Instant</type>
+                <side>front</side>
+                <layout>normal</layout>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Uncommon</rarity>
+            </set>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Adventurer Class</name>
+            <text>(Gain the next level as a sorcery to add its ability.)</text>
+            <text>Imprint - When Adventurer Class enters the battlefield, search your library for a noncreature artifact card, exile it, then shuffle.</text>
+            <text>{1}{G}{U}:</text>
+            <text>Adventurer Class has all activated abilities of the exiled artifact.</text>
+            <text>{2}{G}{U}:</text>
+            <text>Whenever you cast an instant or sorcery spell with mana value 5 or greater, untap Adventurer Class and create a treasure token.</text>
+            <prop>
+                <coloridentity>UG</coloridentity>
+                <cmc>2</cmc>
+                <colors>UG</colors>
+                <side>front</side>
+                <layout>class</layout>
+                <manacost>GU</manacost>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment — Class</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+			<related>Treasure Token</related>
+            <tablerow>1</tablerow>
+        </card>
+        <card>
+            <name>Spirit Artist Class</name>
+            <text>(Gain the next level as a sorcery to add its ability.)</text>
+            <text>When Spirit Artist Class enters the battlefield, you may return target Aura card from your graveyard to your hand.</text>
+            <text>{R}{W}:</text>
+            <text>Each creature you control gets +1/+1 for each Aura attached to it.</text>
+            <text>{2}{R}{W}:</text>
+            <text>Auras you control have Umbra Armor. (If enchanted permanent would be destroyed, instead remove all damage marked on it and destroy an Aura with Umbra Armor attached to it.)</text>
+            <prop>
+                <coloridentity>WR</coloridentity>
+                <cmc>2</cmc>
+                <colors>WR</colors>
+                <side>front</side>
+                <layout>class</layout>
+                <manacost>RW</manacost>
+                <maintype>Enchantment</maintype>
+                <type>Enchantment — Class</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow></tablerow>
+        </card>
+        <card>
+            <name>Ritual of Health</name>
+            <text>You gain 10 life.
+Suspend 3 — {W}, Pay 3 life. (Rather than cast this card from your hand, pay teh suspend cost and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost.)</text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <cmc>0</cmc>
+                <colors>W</colors>
+                <side>front</side>
+                <layout>normal</layout>
+                <manacost></manacost>
+                <maintype>Sorcery</maintype>
+                <type>Sorcery</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Ritual of Knowledge</name>
+            <text>Draw three cards.
+Suspend 3 — {U}, Discard a card. (Rather than cast this card from your hand, pay teh suspend cost and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost.)</text>
+            <prop>
+                <coloridentity>U</coloridentity>
+                <cmc>0</cmc>
+                <colors>U</colors>
+                <side>front</side>
+                <layout>normal</layout>
+                <manacost></manacost>
+                <maintype>Sorcery</maintype>
+                <type>Sorcery</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Ritual of the Grave</name>
+            <text>Target player mills ten cards.
+Suspend 3 — {B}, Exile a card from your graveyard. (Rather than cast this card from your hand, pay teh suspend cost and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost.)</text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <cmc>0</cmc>
+                <colors>B</colors>
+                <side>front</side>
+                <layout>normal</layout>
+                <manacost></manacost>
+                <maintype>Sorcery</maintype>
+                <type>Sorcery</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Ritual of Magic</name>
+            <text>Create three treasure tokens.
+Suspend 3 — {R}, Sacrifice an artifact. (Rather than cast this card from your hand, pay teh suspend cost and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost.)</text>
+            <prop>
+                <coloridentity>R</coloridentity>
+                <cmc>0</cmc>
+                <colors>R</colors>
+                <side>front</side>
+                <layout>normal</layout>
+                <manacost></manacost>
+                <maintype>Sorcery</maintype>
+                <type>Sorcery</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+			<related count="3">Treasure Token</related>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Ritual of Power</name>
+            <text>Create three 3/3 green Beast creature tokens. They gain haste until end of turn.
+Suspend 3 — {G}, Sacrifice a creature. (Rather than cast this card from your hand, pay teh suspend cost and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost.)</text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <cmc>0</cmc>
+                <colors>G</colors>
+                <side>front</side>
+                <layout>normal</layout>
+                <manacost></manacost>
+                <maintype>Sorcery</maintype>
+                <type>Sorcery</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Rare</rarity>
+            </set>
+			<related>Beast Token</related>
+            <tablerow>3</tablerow>
+        </card>
+        <card>
+            <name>Soldier Token</name>
+            <text></text>
+            <prop>
+                <coloridentity>W</coloridentity>
+                <cmc></cmc>
+                <colors>W</colors>
+                <side>front</side>
+                <layout>normal</layout>
+                <manacost></manacost>
+                <pt>1/1</pt>
+                <maintype>Creature</maintype>
+                <type>Token Creature — Soldier</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+            <tablerow>2</tablerow>
+            <token>1</token>
+        </card>
+        <card>
+            <name>Shade Token</name>
+            <text></text>
+            <prop>
+                <coloridentity>B</coloridentity>
+                <cmc></cmc>
+                <colors>B</colors>
+                <side>front</side>
+                <layout>normal</layout>
+                <manacost></manacost>
+                <pt>X/X</pt>
+                <maintype>Creature</maintype>
+                <type>Token Creature — Shade</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+            <tablerow>2</tablerow>
+            <token>1</token>
+        </card>
+        <card>
+            <name>Beast Token</name>
+            <text></text>
+            <prop>
+                <coloridentity>G</coloridentity>
+                <cmc></cmc>
+                <colors>G</colors>
+                <side>front</side>
+                <layout>normal</layout>
+                <manacost></manacost>
+                <pt>3/3</pt>
+                <maintype>Creature</maintype>
+                <type>Token Creature — Beast</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+            <tablerow>2</tablerow>
+            <token>1</token>
+        </card>
+        <card>
+            <name>Blood Token</name>
+            <text>{1}, {T}, Discard a card, Sacrifice this artifact: Draw a card.</text>
+            <prop>
+                <coloridentity></coloridentity>
+                <cmc></cmc>
+                <colors></colors>
+                <side>front</side>
+                <layout>normal</layout>
+                <manacost></manacost>
+                <pt></pt>
+                <maintype>Artifact</maintype>
+                <type>Token Artifact — Blood</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+            <tablerow>1</tablerow>
+            <token>1</token>
+        </card>
+        <card>
+            <name>Spark Counter</name>
+            <text>(Place your spark counters in this area.)</text>
+            <prop>
+                <coloridentity></coloridentity>
+                <cmc></cmc>
+                <colors></colors>
+                <side>front</side>
+                <layout>normal</layout>
+                <manacost></manacost>
+                <pt></pt>
+                <maintype>Counter</maintype>
+                <type>Token Counter</type>
+            </prop>
+            <set>
+                <code>CTMW</code>
+                <rarity>Common</rarity>
+            </set>
+            <tablerow>2</tablerow>
             <token>1</token>
         </card>
 	</cards>
