@@ -94,8 +94,45 @@ async function LoadCards(cards) {
                         DrawCard(canvas[i], cards[i], size);
                         transformed = false;
                     }
-                    
                 });
+            }
+            if (cards[i].getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "restore") {
+                let div = document.createElement('div');
+                div.style.justifySelf = "center";
+                newCell.appendChild(div);
+                for (let j = 0; j < 6; j++) {
+                    let button = document.createElement('button');
+                    div.appendChild(button);
+                    button.style.paddingLeft = 5;
+                    button.style.paddingRight = 5;
+                    button.style.paddingTop = 5;
+                    button.style.paddingBottom = 5;
+                    if (j == 0) {button.innerHTML = "<img src='assets/card-parts/colorless-mana-symbol.svg' width='25'>";}
+                    if (j == 1) {button.innerHTML = "<img src='assets/card-parts/white-mana-symbol.svg' width='25'>";}
+                    if (j == 2) {button.innerHTML = "<img src='assets/card-parts/blue-mana-symbol.svg' width='25'>";}
+                    if (j == 3) {button.innerHTML = "<img src='assets/card-parts/black-mana-symbol.svg' width='25'>";}
+                    if (j == 4) {button.innerHTML = "<img src='assets/card-parts/red-mana-symbol.svg' width='25'>";}
+                    if (j == 5) {button.innerHTML = "<img src='assets/card-parts/green-mana-symbol.svg' width='25'>";}
+                    button.style.border = 0;
+                    button.style.display = "flex"
+                    button.style.justifySelf = "center";
+                    button.style.float = "left";
+                    button.addEventListener("click", function(){
+                        let newCard;
+                        let rawCards = xmlDoc.getElementsByTagName("carddex")[0].getElementsByTagName("cards")[0].getElementsByTagName("card");
+                        if (j == 0) {
+                            newCard = cards[i];
+                        }
+                        else {
+                            for (let k = 0; k < rawCards.length; k++) {
+                                if (rawCards[k].getElementsByTagName("name")[0].textContent == cards[i].getElementsByTagName('backface')[j-1].textContent) {
+                                    newCard = rawCards[k];
+                                }
+                            }
+                        }
+                        DrawCard(canvas[i], newCard, size);
+                    });
+                }
             }
             canvas[i].addEventListener("click", function() {
                 window.location.href = "carddex.html?search=" + cards[i].getElementsByTagName("name")[0].textContent;
@@ -298,6 +335,9 @@ async function DrawCard(canvas, card, size) {
             context.drawImage(imgRarity, 432 * size, 400 * size, 32 * size, 32 * size);
         }
         if (type.includes("Class")) {
+            context.font=18 * size + "pt Beleren";
+            context.fillText(type, 48 * size, 624 * size, 384 * size);
+            context.drawImage(imgRarity, 432 * size, 600 * size, 32 * size, 32 * size);
             context.font="Italic " + 14 * size + "pt MPlantin";
             context.fillStyle = "#000000";
             context.textAlign = "left";
@@ -520,6 +560,7 @@ async function wrapText(context, text, x, y, maxWidth, lineHeight, size, type = 
         "{G/U}": "assets/card-parts/simic-mana-symbol.svg",
         "{A/P}": "assets/card-parts/prism-mana-symbol.svg",
         "{A/T}": "assets/card-parts/treasure-mana-symbol.svg",
+        "{A/C}": "assets/card-parts/clue-mana-symbol.svg",
         "{2/W}": "assets/card-parts/twobrid-white-mana-symbol.svg",
         "{2/U}": "assets/card-parts/twobrid-blue-mana-symbol.svg",
         "{2/B}": "assets/card-parts/twobrid-black-mana-symbol.svg",
@@ -717,6 +758,7 @@ function findManaSymbol(s) {
     else if (s == "G/U") return "assets/card-parts/simic-mana-symbol.svg";
     else if (s == "A/P") return "assets/card-parts/prism-mana-symbol.svg";
     else if (s == "A/T") return "assets/card-parts/treasure-mana-symbol.svg";
+    else if (s == "A/C") return "assets/card-parts/clue-mana-symbol.svg";
     else if (s == "2/C") return "assets/card-parts/twobrid-colorless-mana-symbol.svg";
     else if (s == "3/A") return "assets/card-parts/threebrid-gold-mana-symbol.svg";
     else if (s == "1/P") return "assets/card-parts/phyrexian-mana-symbol.svg";
@@ -769,168 +811,258 @@ function Search() {
         terms = searchCriteria.toLowerCase().split(" ");
         var newCards = [];
         for (let i = 0; i < cards.length; i++) {
-            var include = true;
+            var include = [];
             for (let j = 0; j < terms.length; j++) {
+                include.push(true);
                 var negate = false;
                 var check = terms[j];
                 if (terms[j].substring(0,1) == "-") {
                     negate = true;
                     check = terms[j].slice(1);
                 }
-                if (!check.includes(":") && !check.includes("<") && !check.includes(">") && !check.includes("=") && !cards[i].getElementsByTagName("name")[0].textContent.toLowerCase().includes(check)) include = false;
+                if (!check.includes(":") && !check.includes("<") && !check.includes(">") && !check.includes("=") && !cards[i].getElementsByTagName("name")[0].textContent.toLowerCase().includes(check)) include[j] = false;
                 if (check.substring(0,4) == "set:") {
                     var temp = false;
                     for (let k = 0; k < cards[i].getElementsByTagName("set").length; k++) {
                         if (cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent.toLowerCase() == check.split(":")[1].toLowerCase()) temp = true;
                     }
-                    if (!temp) include = false;
+                    if (!temp) include[j] = false;
                 }
                 if (check.substring(0,2) == "c:" || check.substring(0,6) == "color:") {
-                    for (let k = 0; k < check.split(":")[1].length; k++) {
-                        if (!(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().includes(check.split(":")[1][k]))) include = false;
+                    if (!isNaN(check.split(":")[1])) {
+                        if (!(check.split(":")[1] == cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length)) include[j] = false;
+                    }
+                    else {
+                        for (let k = 0; k < check.split(":")[1].length; k++) {
+                            if (!(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().includes(check.split(":")[1][k]))) include[j] = false;
+                        }
                     }
                 }
                 if (check.substring(0,3) == "c=" || check.substring(0,6) == "color=") {
-                    if (!(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase() == check.split("=")[1])) include = false;
-                }
-                if (check.substring(0,2) == "c>" || check.substring(0,6) == "color>") {
-                    for (let k = 0; k < check.split(">")[1].length; k++) {
-                        if (!(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().includes(check.split(">")[1][k]))) include = false;
+                    if (!isNaN(check.split("=")[1])) {
+                        if (!(check.split("=")[1] == cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length)) include[j] = false;
                     }
-                    if (cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase() == check.split(">")[1]) include = false;
+                    else if (!(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase() == check.split("=")[1])) include[j] = false;
                 }
-                else if (check.substring(0,3) == "c>=" || check.substring(0,7) == "color>=") {
-                    for (let k = 0; k < check.split(">=")[1].length; k++) {
-                        if (!(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().includes(check.split(">=")[1][k]))) include = false;
+                if (check.substring(0,3) == "c>=" || check.substring(0,7) == "color>=") {
+                    if (!isNaN(check.split(">=")[1])) {
+                        if (!(check.split(">=")[1] <= cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length)) include[j] = false;
+                    }
+                    else {
+                        for (let k = 0; k < check.split(">=")[1].length; k++) {
+                            if (!(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().includes(check.split(">=")[1][k]))) include[j] = false;
+                        }
                     }
                 }
-                if (check.substring(0,2) == "c<" || check.substring(0,6) == "color<") {
-                    for (let k = 0; k < cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length; k++) {
-                        if (!check.split("<")[1].includes(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase()[k])) include = false;
+                else if (check.substring(0,2) == "c>" || check.substring(0,6) == "color>") {
+                    if (!isNaN(check.split(">")[1])) {
+                        if (!(check.split(">")[1] < cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length)) include[j] = false;
                     }
-                    if (cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase() == check.split("<")[1]) include = false;
+                    else {
+                        for (let k = 0; k < check.split(">")[1].length; k++) {
+                            if (!(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().includes(check.split(">")[1][k]))) include[j] = false;
+                        }
+                        if (cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase() == check.split(">")[1]) include[j] = false;
+                    }
                 }
-                else if (check.substring(0,3) == "c<=" || check.substring(0,7) == "color<=") {
-                    for (let k = 0; k < cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length; k++) {
-                        if (!check.split("<=")[1].includes(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase()[k])) include = false;
+                if (check.substring(0,3) == "c<=" || check.substring(0,7) == "color<=") {
+                    if (!isNaN(check.split("<=")[1])) {
+                        if (!(check.split("<=")[1] >= cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length)) include[j] = false;
+                    }
+                    else {
+                        for (let k = 0; k < cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length; k++) {
+                            if (!check.split("<=")[1].includes(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase()[k])) include[j] = false;
+                        }
+                    }
+                }
+                else if (check.substring(0,2) == "c<" || check.substring(0,6) == "color<") {
+                    if (!isNaN(check.split("<")[1])) {
+                        if (!(check.split("<")[1] > cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length)) include[j] = false;
+                    }
+                    else {
+                        for (let k = 0; k < cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length; k++) {
+                            if (!check.split("<")[1].includes(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase()[k])) include[j] = false;
+                        }
+                        if (cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase() == check.split("<")[1]) include[j] = false;
                     }
                 }
                 if (check.substring(0,3) == "ci:") {
                     for (let k = 0; k < check.split(":")[1].length; k++) {
-                        if (!(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase().includes(check.split(":")[1][k]))) include = false;
+                        if (!(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase().includes(check.split(":")[1][k]))) include[j] = false;
                     }
                 }
                 if (check.substring(0,3) == "ci=") {
-                    if (!(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase() == check.split("=")[1])) include = false;
+                    if (!(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase() == check.split("=")[1])) include[j] = false;
                 }
-                if (check.substring(0,3) == "ci>") {
-                    for (let k = 0; k < check.split(">")[1].length; k++) {
-                        if (!(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase().includes(check.split(">")[1][k]))) include = false;
-                    }
-                    if (cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase() == check.split(">")[1]) include = false;
-                }
-                else if (check.substring(0,4) == "ci>=") {
+                if (check.substring(0,4) == "ci>=") {
                     for (let k = 0; k < check.split(">=")[1].length; k++) {
-                        if (!(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase().includes(check.split(">=")[1][k]))) include = false;
+                        if (!(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase().includes(check.split(">=")[1][k]))) include[j] = false;
                     }
                 }
-                if (check.substring(0,3) == "ci<") {
-                    for (let k = 0; k < cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase().length; k++) {
-                        if (!check.split("<")[1].includes(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase()[k])) include = false;
+                else if (check.substring(0,3) == "ci>") {
+                    for (let k = 0; k < check.split(">")[1].length; k++) {
+                        if (!(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase().includes(check.split(">")[1][k]))) include[j] = false;
                     }
-                    if (cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase() == check.split("<")[1]) include = false;
+                    if (cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase() == check.split(">")[1]) include[j] = false;
                 }
-                else if (check.substring(0,4) == "ci<=") {
+                if (check.substring(0,4) == "ci<=") {
                     for (let k = 0; k < cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase().length; k++) {
-                        if (!check.split("<=")[1].includes(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase()[k])) include = false;
+                        if (!check.split("<=")[1].includes(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase()[k])) include[j] = false;
                     }
+                }
+                else if (check.substring(0,3) == "ci<") {
+                    for (let k = 0; k < cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase().length; k++) {
+                        if (!check.split("<")[1].includes(cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase()[k])) include[j] = false;
+                    }
+                    if (cards[i].getElementsByTagName("coloridentity")[0].textContent.toLowerCase() == check.split("<")[1]) include[j] = false;
                 }
                 if (check.substring(0,3) == "mv:") {
-                    if (!(cards[i].getElementsByTagName("cmc")[0].textContent.toLowerCase() == check.split(":")[1])) include = false;
+                    if (!(cards[i].getElementsByTagName("cmc")[0].textContent.toLowerCase() == check.split(":")[1])) include[j] = false;
                 }
                 if (check.substring(0,3) == "mv=") {
-                    if (!(cards[i].getElementsByTagName("cmc")[0].textContent.toLowerCase() == check.split("=")[1])) include = false;
-                }
-                if (check.substring(0,3) == "mv<") {
-                    if (!(Number(cards[i].getElementsByTagName("cmc")[0].textContent) < Number(check.split("<")[1]))) include = false;
+                    if (!(cards[i].getElementsByTagName("cmc")[0].textContent.toLowerCase() == check.split("=")[1])) include[j] = false;
                 }
                 if (check.substring(0,4) == "mv<=") {
-                    if (!(Number(cards[i].getElementsByTagName("cmc")[0].textContent) <= Number(check.split("<=")[1]))) include = false;
+                    if (!(Number(cards[i].getElementsByTagName("cmc")[0].textContent) <= Number(check.split("<=")[1]))) include[j] = false;
                 }
-                if (check.substring(0,3) == "mv>") {
-                    if (!(Number(cards[i].getElementsByTagName("cmc")[0].textContent) > Number(check.split(">")[1]))) include = false;
+                else if (check.substring(0,3) == "mv<") {
+                    if (!(Number(cards[i].getElementsByTagName("cmc")[0].textContent) < Number(check.split("<")[1]))) include[j] = false;
                 }
                 if (check.substring(0,4) == "mv>=") {
-                    if (!(Number(cards[i].getElementsByTagName("cmc")[0].textContent) >= Number(check.split(">=")[1]))) include = false;
+                    if (!(Number(cards[i].getElementsByTagName("cmc")[0].textContent) >= Number(check.split(">=")[1]))) include[j] = false;
+                }
+                else if (check.substring(0,3) == "mv>") {
+                    if (!(Number(cards[i].getElementsByTagName("cmc")[0].textContent) > Number(check.split(">")[1]))) include[j] = false;
                 }
                 if (check.substring(0,2) == "t:" || check.substring(0,5) == "type:") {
-                    if (!cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes(check.split(":")[1])) include = false;
+                    if (!cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes(check.split(":")[1])) include[j] = false;
                 }
                 if (check.substring(0,2) == "o:" || check.substring(0,5) == "oracle:") {
-                    if (!cards[i].getElementsByTagName("text")[0].textContent.toLowerCase().includes(check.split(":")[1])) include = false;
+                    if (!cards[i].getElementsByTagName("text")[0].textContent.toLowerCase().includes(check.split(":")[1])) include[j] = false;
                 }
                 if (check.substring(0,2) == "p:" || check.substring(0,4) == "pow:") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] == check.split(":")[1])) include = false;
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] == check.split(":")[1])) include[j] = false;
                 }
                 if (check.substring(0,2) == "p=" || check.substring(0,4) == "pow=") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] == check.split("=")[1])) include = false;
-                }
-                if (check.substring(0,2) == "p<" || check.substring(0,4) == "pow<") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] < check.split("<")[1])) include = false;
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] == check.split("=")[1])) include[j] = false;
                 }
                 if (check.substring(0,3) == "p<=" || check.substring(0,5) == "pow<=") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] <= check.split("<=")[1])) include = false;
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] <= check.split("<=")[1])) include[j] = false;
                 }
-                if (check.substring(0,2) == "p>" || check.substring(0,4) == "pow>") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] > check.split(">")[1])) include = false;
+                else if (check.substring(0,2) == "p<" || check.substring(0,4) == "pow<") {
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] < check.split("<")[1])) include[j] = false;
                 }
                 if (check.substring(0,3) == "p>=" || check.substring(0,5) == "pow>=") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] >= check.split(">=")[1])) include = false;
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] >= check.split(">=")[1])) include[j] = false;
+                }
+                else if (check.substring(0,2) == "p>" || check.substring(0,4) == "pow>") {
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[0] > check.split(">")[1])) include[j] = false;
                 }
                 if (check.substring(0,4) == "tou:") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] == check.split(":")[1])) include = false;
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] == check.split(":")[1])) include[j] = false;
                 }
                 if (check.substring(0,4) == "tou=") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] == check.split("=")[1])) include = false;
-                }
-                if (check.substring(0,4) == "tou<") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] < check.split("<")[1])) include = false;
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] == check.split("=")[1])) include[j] = false;
                 }
                 if (check.substring(0,5) == "tou<=") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] <= check.split("<=")[1])) include = false;
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] <= check.split("<=")[1])) include[j] = false;
                 }
-                if (check.substring(0,4) == "tou>") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] > check.split(">")[1])) include = false;
+                else if (check.substring(0,4) == "tou<") {
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] < check.split("<")[1])) include[j] = false;
                 }
                 if (check.substring(0,5) == "tou>=") {
-                    if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] >= check.split(">=")[1])) include = false;
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] >= check.split(">=")[1])) include[j] = false;
+                }
+                else if (check.substring(0,4) == "tou>") {
+                    if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("pt")[0].textContent.toLowerCase().split("/")[1] > check.split(">")[1])) include[j] = false;
+                }
+                if (check.substring(0,8) == "potency:") {
+                    if (cards[i].getElementsByTagName("potency").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("potency")[0].textContent.toLowerCase() == check.split(":")[1])) include[j] = false;
+                }
+                if (check.substring(0,8) == "potency=") {
+                    if (cards[i].getElementsByTagName("potency").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("potency")[0].textContent.toLowerCase() == check.split("=")[1])) include[j] = false;
+                }
+                if (check.substring(0,9) == "potency<=") {
+                    if (cards[i].getElementsByTagName("potency").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("potency")[0].textContent.toLowerCase() <= check.split("<=")[1])) include[j] = false;
+                }
+                else if (check.substring(0,8) == "potency<") {
+                    if (cards[i].getElementsByTagName("potency").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("potency")[0].textContent.toLowerCase() < check.split("<")[1])) include[j] = false;
+                }
+                if (check.substring(0,9) == "potency>=") {
+                    if (cards[i].getElementsByTagName("potency").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("potency")[0].textContent.toLowerCase() >= check.split(">=")[1])) include[j] = false;
+                }
+                else if (check.substring(0,8) == "potency>") {
+                    if (cards[i].getElementsByTagName("potency").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("potency")[0].textContent.toLowerCase() > check.split(">")[1])) include[j] = false;
+                }
+                if (check.substring(0,8) == "loyalty:") {
+                    if (cards[i].getElementsByTagName("loyalty").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("loyalty")[0].textContent.toLowerCase() == check.split(":")[1])) include[j] = false;
+                }
+                if (check.substring(0,8) == "loyalty=") {
+                    if (cards[i].getElementsByTagName("loyalty").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("loyalty")[0].textContent.toLowerCase() == check.split("=")[1])) include[j] = false;
+                }
+                if (check.substring(0,9) == "loyalty<=") {
+                    if (cards[i].getElementsByTagName("loyalty").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("loyalty")[0].textContent.toLowerCase() <= check.split("<=")[1])) include[j] = false;
+                }
+                else if (check.substring(0,8) == "loyalty<") {
+                    if (cards[i].getElementsByTagName("loyalty").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("loyalty")[0].textContent.toLowerCase() < check.split("<")[1])) include[j] = false;
+                }
+                if (check.substring(0,9) == "loyalty>=") {
+                    if (cards[i].getElementsByTagName("loyalty").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("loyalty")[0].textContent.toLowerCase() >= check.split(">=")[1])) include[j] = false;
+                }
+                else if (check.substring(0,8) == "loyalty>") {
+                    if (cards[i].getElementsByTagName("loyalty").length == 0) include[j] = false;
+                    else if (!(cards[i].getElementsByTagName("loyalty")[0].textContent.toLowerCase() > check.split(">")[1])) include[j] = false;
                 }
                 if (check == "is:dfc") {
-                    if (cards[i].getElementsByTagName("layout")[0].textContent.toLowerCase() != "transform") include = false;
+                    if (cards[i].getElementsByTagName("layout")[0].textContent.toLowerCase() != "transform" &&
+                        cards[i].getElementsByTagName("layout")[0].textContent.toLowerCase() != "restore") include[j] = false;
                 }
                 if (check == "is:split") {
-                    if (cards[i].getElementsByTagName("layout")[0].textContent.toLowerCase() != "split") include = false;
+                    if (cards[i].getElementsByTagName("layout")[0].textContent.toLowerCase() != "split") include[j] = false;
                 }
                 if (check == "is:permanent") {
                     if (cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "instant" ||
                         cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "sorcery" ||
-                        cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "condition") include = false;
+                        cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "condition") include[j] = false;
                 }
                 if (check == "is:historic") {
                     if (!cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "artifact" &&
                         !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "legendary" &&
-                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "saga") include = false;
+                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "saga") include[j] = false;
                 }
                 if (check == "is:vanilla") {
-                    if (!cards[i].getElementsByTagName("text")[0].textContent == "") include = false;
+                    if (!cards[i].getElementsByTagName("text")[0].textContent == "") include[j] = false;
                 }
                 if (check == "is:watermark") {
-                    if (cards[i].getElementsByTagName("prop")[0].getElementsByTagName("watermark").length == 0) include = false;
+                    if (cards[i].getElementsByTagName("prop")[0].getElementsByTagName("watermark").length == 0) include[j] = false;
                 }
                 if (check.substring(0,2) == "w:") {
-                    if (cards[i].getElementsByTagName("prop")[0].getElementsByTagName("watermark").length == 0) include = false;
+                    if (cards[i].getElementsByTagName("prop")[0].getElementsByTagName("watermark").length == 0) include[j] = false;
                     else {
-                        if (!cards[i].getElementsByTagName("prop")[0].getElementsByTagName("watermark")[0].textContent.toLowerCase().includes(check.split(":")[1].toLowerCase())) include = false;
+                        if (!cards[i].getElementsByTagName("prop")[0].getElementsByTagName("watermark")[0].textContent.toLowerCase().includes(check.split(":")[1].toLowerCase())) include[j] = false;
                     }
                 }
                 var cardRarityNo;
@@ -945,43 +1077,61 @@ function Search() {
                     if (rarity.toLowerCase() == "uncommon" || rarity.toLowerCase() == "u") rarityNo = 1;
                     if (rarity.toLowerCase() == "rare" || rarity.toLowerCase() == "r") rarityNo = 2;
                     if (rarity.toLowerCase() == "mythic" || rarity.toLowerCase() == "m") rarityNo = 3;
-                    if (cardRarityNo != rarityNo) include = false;
+                    if (cardRarityNo != rarityNo) include[j] = false;
                 }
-                if (check.substring(0,2) == "r<" || check.substring(0,7) == "rarity<") {
-                    var rarity = check.split("<")[1];
-                    var rarityNo;
-                    if (rarity.toLowerCase() == "common" || rarity.toLowerCase() == "c") rarityNo = 0;
-                    if (rarity.toLowerCase() == "uncommon" || rarity.toLowerCase() == "u") rarityNo = 1;
-                    if (rarity.toLowerCase() == "rare" || rarity.toLowerCase() == "r") rarityNo = 2;
-                    if (rarity.toLowerCase() == "mythic" || rarity.toLowerCase() == "m") rarityNo = 3;
-                    if (cardRarityNo >= rarityNo) include = false;
-                }
-                else if (check.substring(0,3) == "r<=" || check.substring(0,8) == "rarity<=") {
+                if (check.substring(0,3) == "r<=" || check.substring(0,8) == "rarity<=") {
                     var rarity = check.split("<=")[1];
                     var rarityNo;
                     if (rarity.toLowerCase() == "common" || rarity.toLowerCase() == "c") rarityNo = 0;
                     if (rarity.toLowerCase() == "uncommon" || rarity.toLowerCase() == "u") rarityNo = 1;
                     if (rarity.toLowerCase() == "rare" || rarity.toLowerCase() == "r") rarityNo = 2;
                     if (rarity.toLowerCase() == "mythic" || rarity.toLowerCase() == "m") rarityNo = 3;
-                    if (cardRarityNo > rarityNo) include = false;
+                    if (cardRarityNo > rarityNo) include[j] = false;
                 }
-                if (check.substring(0,2) == "r>" || check.substring(0,7) == "rarity>") {
-                    var rarity = check.split(">")[1];
+                else if (check.substring(0,2) == "r<" || check.substring(0,7) == "rarity<") {
+                    var rarity = check.split("<")[1];
                     var rarityNo;
                     if (rarity.toLowerCase() == "common" || rarity.toLowerCase() == "c") rarityNo = 0;
                     if (rarity.toLowerCase() == "uncommon" || rarity.toLowerCase() == "u") rarityNo = 1;
                     if (rarity.toLowerCase() == "rare" || rarity.toLowerCase() == "r") rarityNo = 2;
                     if (rarity.toLowerCase() == "mythic" || rarity.toLowerCase() == "m") rarityNo = 3;
-                    if (cardRarityNo <= rarityNo) include = false;
+                    if (cardRarityNo >= rarityNo) include[j] = false;
                 }
-                else if (check.substring(0,3) == "r>=" || check.substring(0,8) == "rarity>=") {
+                if (check.substring(0,3) == "r>=" || check.substring(0,8) == "rarity>=") {
                     var rarity = check.split(">=")[1];
                     var rarityNo;
                     if (rarity.toLowerCase() == "common" || rarity.toLowerCase() == "c") rarityNo = 0;
                     if (rarity.toLowerCase() == "uncommon" || rarity.toLowerCase() == "u") rarityNo = 1;
                     if (rarity.toLowerCase() == "rare" || rarity.toLowerCase() == "r") rarityNo = 2;
                     if (rarity.toLowerCase() == "mythic" || rarity.toLowerCase() == "m") rarityNo = 3;
-                    if (cardRarityNo < rarityNo) include = false;
+                    if (cardRarityNo < rarityNo) include[j] = false;
+                }
+                else if (check.substring(0,2) == "r>" || check.substring(0,7) == "rarity>") {
+                    var rarity = check.split(">")[1];
+                    var rarityNo;
+                    if (rarity.toLowerCase() == "common" || rarity.toLowerCase() == "c") rarityNo = 0;
+                    if (rarity.toLowerCase() == "uncommon" || rarity.toLowerCase() == "u") rarityNo = 1;
+                    if (rarity.toLowerCase() == "rare" || rarity.toLowerCase() == "r") rarityNo = 2;
+                    if (rarity.toLowerCase() == "mythic" || rarity.toLowerCase() == "m") rarityNo = 3;
+                    if (cardRarityNo <= rarityNo) include[j] = false;
+                }
+                if (check.substring(0,7) == "create:" || check.substring(0,8) == "creates:") {
+                    var tokenType = check.split(":")[1];
+                    if (cards[i].getElementsByTagName("related").length > 0) {
+                        for (let k = 0; k < cards[i].getElementsByTagName("related").length; k++) {
+                            var tempCards = xmlDoc.getElementsByTagName("carddex")[0].getElementsByTagName("cards")[0].getElementsByTagName("card");
+                            var tokens = [];
+                            for (let l = 0; l < tempCards.length; l++) {
+                                if (tempCards[l].getElementsByTagName("name")[0].textContent == cards[i].getElementsByTagName("related")[0].textContent) {
+                                        if (tempCards[l].getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.toLowerCase().includes(tokenType)) {
+                                            tokens.push(tempCards[l]);
+                                        }
+                                }
+                            }
+                            if (tokens.length == 0) include[j] = false;
+                        }
+                    }
+                    else include[j] = false;
                 }
                 if (check == "legal:standard") {
                     let format = false;
@@ -997,15 +1147,18 @@ function Search() {
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "NAT" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "VCL") format = true;
                     }
-                    if (!format) include = false;
+                    if (!format) include[j] = false;
                 }
                 if (negate) {
-                    if (include) include = false;
-                    else include = true;
+                    if (include[j]) {include[j] = false;}
+                    else {include[j] = true;}
                 }
             }
-                
-            if (include) newCards.push(cards[i]);
+            let inclusion = true;
+            for (let j = 0; j < terms.length; j++) {
+                if (include[j] == false) inclusion = false;
+            }
+            if (inclusion) newCards.push(cards[i]);
         }
         if (random) {
             let index = Math.floor(Math.random() * newCards.length);
@@ -1140,5 +1293,13 @@ function GetSetName(code) {
     if (code == "GEX") setName = "Garrem Expeditions";
     if (code == "CWOG") setName = "Garrem Commander";
     if (code == "CTMW") setName = "The Many Worlds Origins";
+    if (code == "VCL") setName = "Vlad's Castle";
+    if (code == "NAT") setName = "Naturia";
+    if (code == "SKA") setName = "Shinkara";
+    if (code == "EXS") setName = "Excavation Site";
+    if (code == "MSS") setName = "Murders at the Swingin' Speakeasy";
+    if (code == "DRT") setName = "Dogan: The Rose and the Tower";
+    if (code == "AZU") setName = "Azure Archives";
+    if (code == "AZA") setName = "Azure Mystical Archives";
     return setName;
 }

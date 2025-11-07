@@ -5,8 +5,12 @@
 </head>
 <body>
     <div class="title-bar">
-                <a class="button" href="index.html"><img src="assets/home-icon.svg" height="30px"/></a>
-                <a class="button" href="carddex.html"><img src="assets/card-icon.svg" height="30px"/></a>
+                <a class="button" href="index.html"><div class="tooltip"><img src="assets/home-icon.svg" height="30px"/><span class="tooltiptext">Home</span></div></a>
+                <a class="button" href="carddex.html"><div class="tooltip"><img src="assets/card-icon.svg" height="30px"/><span class="tooltiptext">Cards</span></div></a>
+                <a class="button" href="info.html"><div class="tooltip"><img src="assets/info-icon.svg" height="30px"/><span class="tooltiptext">Information</span></div></a>
+                <a class="button-text" href="rules.html"><div class="tooltip"><img src="assets/rules-icon.svg" height="30px"/><span class="tooltiptext">Rules</span></div></a>
+                <a class="button-text" href="sets.html"><div class="tooltip"><img src="assets/sets-icon.svg" height="30px"/><span class="tooltiptext">Sets</span></div></a>
+                <a class="button-text" href="formats.html"><div class="tooltip"><img src="assets/formats-icon.svg" height="30px"/><span class="tooltiptext">Formats</span></div></a>
     </div>
     <h2>Search Tips and Syntax</h2>
     <p>The search includes a number of expressions you can use to filter cards, as follows.</p>
@@ -39,10 +43,19 @@
             <td><p><code>tou:</code></td><td>Searches for cards with the corresponding toughness.</p></td>
         </tr>
         <tr>
+            <td><p><code>potency:</code></td><td>Searches for cards with the corresponding potency.</p></td>
+        </tr>
+        <tr>
+            <td><p><code>loyalty:</code></td><td>Searches for cards with the corresponding loyalty.</p></td>
+        </tr>
+        <tr>
             <td><p><code>r:, rarity:</code></td><td>Searches for cards with the corresponding rarity.</p></td>
         </tr>
         <tr>
             <td><p><code>w:</code></td><td>Searches for cards with the corresponding watermark.</p></td>
+        </tr>
+        <tr>
+            <td><p><code>create:</code></td><td>Searches for cards that create tokens or conjure cards of the corresponding type.</p></td>
         </tr>
         <tr>
             <td><p><code>is:</code></td><td>Searches for cards with the corresponding property. currently, you can check for <code>is:permanent</code>, <code>is:historic</code>, <code>is:dfc</code>, <code>is:split</code>, or <code>is:vanilla</code>.</p></td>

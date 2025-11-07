@@ -1,0 +1,300 @@
+<head>
+    <title>TMW Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="rule-script.js"></script>
+</head>
+<body>
+    <div class="title-bar">
+                <a class="button" href="index.html"><div class="tooltip"><img src="assets/home-icon.svg" height="30px"/><span class="tooltiptext">Home</span></div></a>
+                <a class="button" href="carddex.html"><div class="tooltip"><img src="assets/card-icon.svg" height="30px"/><span class="tooltiptext">Cards</span></div></a>
+                <a class="button" href="info.html"><div class="tooltip"><img src="assets/info-icon.svg" height="30px"/><span class="tooltiptext">Information</span></div></a>
+                <a class="button-text" href="rules.html"><div class="tooltip"><img src="assets/rules-icon.svg" height="30px"/><span class="tooltiptext">Rules</span></div></a>
+                <a class="button-text" href="sets.html"><div class="tooltip"><img src="assets/sets-icon.svg" height="30px"/><span class="tooltiptext">Sets</span></div></a>
+                <a class="button-text" href="formats.html"><div class="tooltip"><img src="assets/formats-icon.svg" height="30px"/><span class="tooltiptext">Formats</span></div></a>
+    </div>
+    <h2>Custom Mechanics</h2>
+    <h3 class="collapsible" onclick="Accordion(this)">Talent Keywords</h3>
+    <div class="content"><p>Many keyword abilities on permanents are referred to as 'talent' keywords. This has no inherent meaning, though it refers to the following keywords:<br>
+&nbsp;&bull; Changeling, Chilltouch, Deathtouch, Defender, Defiant, Devoid, Double Strike, Etiquette, First Strike, Flourish, Flying, Haste, Hexproof, Horsemanship, Illusory, Indestructible, Infiltrate, Lifelink, Menace, Outflank, Pickpocket, Prowess, Reach, Shadow, Skulk, Specialist, Stasis, Toxic, Trample, Vigilance, Ward, Wither</p>
+    <p><table border="0" class="alt-table"><tr><td>Talent Keyword</td><td>Rulings</td></tr>
+        <tr>
+            <td>Chilltouch</td>
+            <td>Some attacks are inhibitively cold. So cold, you can't do anything for a while you're so cold. Chilltouch is a new keyword ability that lets you tap down creatures for a few turns by dealing damage to them.<br>
+A creature with chilltouch deals its damage to creatures as stun counters, instead of damage. As a creature is dealt chilltouch damage, it also becomes tapped, if it isn't already.<br>
+&nbsp;&bull; Chilltouch replaces the damage, however, damage is still dealt for the purposes of lifelink and effects that modify how much damage is dealt, or trigger when a creature is dealt damage. However, as damage is not assigned, the creature being dealt the chilltouch damage won't die.<br>
+&nbsp;&bull; If an effect would modify the number of counters put on a permanent, this is determined after the chilltouch damage is dealt.<br>
+&nbsp;&bull; Chilltouch functions the same regardless of which zone the object with chilltouch is in.<br>
+&nbsp;&bull; Multiple instances of chilltouch on an object are redundant.
+            </td>
+        </tr>
+        <tr>
+            <td>Defiant</td>
+            <td>Defiant is a keyword ability on creatures that triggers whenever that creature deals combat damage to a player. The creature's controller targets a creature or planeswalker that player controls, or a battle they protect, and the creature with defiant deals damage to the chosen permanent equal to the damage dealt to the player.<br>
+Usually, the amount of damage the defiant trigger deals is equal to its power, however, for example, if a creature with trample is blocked, the defiant trigger only deals as much damage as was dealt to the player, which would be less than the creature's power in this case.<br>
+If the defending player controls no creatures or planeswalkers, and protects no battles, the defiant trigger fails to resolve.<br>
+In a multiplayer game, you can't target a permanent not controlled/protected by the defending player.<br>
+Likewise, you can't target a creature or planeswalker you control, or a battle you protect, even if that battle is controlled by the defending player.
+            </td>
+        </tr>
+        <tr>
+            <td>Devoid</td>
+            <td>Devoid returns in this set representing the Ectropian faction. Ectropians have a resistance to color. If a color counter is put on a permanent with devoid, the color counter doesn't confer any colors to the permanent, and remains colorless. This effect only applies to color counters, and not to other replacement effects.</td>
+        </tr>
+        <tr>
+            <td>Etiquette</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Flourish</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Illusory</td>
+            <td>Illusory is a keyword ability that causes you to sacrifice a permanent whenever it becomes the target of a spell or ability. This can be both yours or the opponents.</td>
+        </tr>
+        <tr>
+            <td>Infiltrate</td>
+            <td>How do the bad guys always seem to be one step ahead of you? Well, they know how to infiltrate. Infiltrate is a new keyword that lets you draw a card whenever the creature with infiltrate deals combat damage to a player.</td>
+        </tr>
+        <tr>
+            <td>Outflank</td>
+            <td>The selkie in Favola rarely fight alone. Where one advances, it opens the way for another to slip by enemy defenses unnoticed.<br>
+Outflank is a keyword ability that appears on creatures. As you attack with a creature (it doesn't have to have outflank), you can tap two creatures you control with outflank to prevent the attacking creature from being blocked this turn.<br>
+Outflank isn't a triggered ability, you tap the creatures as you declare attackers, and it can't be responded to.<br>
+The outflank effect isn't an ability, a creature that loses all abilities after being outflanked still can't be blocked this turn.<br>
+Some creatures have the line of text "When this creature outflanks a creature". These abilities trigger when the creature is tapped as part of the outflank ability. These abilities do go on the stack, but whether they resolve is unrelated to the outflank effect taking place.
+            </td>
+        </tr>
+        <tr>
+            <td>Pickpocket</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Specialist</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Stasis</td>
+            <td>Many things in the archives are suspended in time. Stasis is a new keyword that lets you choose to not untap a permanent, in exchange for storing a time counter on that permanent. These time counters have no inherent rules, however cards with stasis will usually interact with time counters in some way.</td>
+        </tr>
+    </table></p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Ability Words</h3>
+    <div class="content"><p>Ability words are ways of grouping similar effects. While they have no rules of their own, here are the ability words you might see on cards.</p>
+    <p><table border="0" class="alt-table"><tr><td>Talent Keyword</td><td>Rulings</td></tr>
+        <tr>
+            <td>Draconic</td>
+            <td>The people of Dragma worship the great dragon god Titaniklad. When a great feat of power takes place, it is a sign of Titaniklad.<br>
+Draconic is an ability word used to tie a number of cards together. As an ability word, it has no inherent rules, though abilities tagged with the Draconic ability word will trigger whenever you cast a spell with a mana value of 5 or greater.<br>
+As draconic abilities trigger when you cast a spell, they will still resolve even if the spell gets countered.<br>
+Draconic abilities will trigger as long as the spell that is cast has a mana value of 5 or greater, regardless of the amount of mana actually spent to cast the spell. This only reads the number in the top right of the card, not alternate casting costs or other effects that might change the amount of mana you spend to cast the spell.<br>
+Spells with an {X} in their mana cost have a mana value of 5 or greater provided that a sufficiently large value of X is chosen as the spell goes on the stack. For example, if a spell has a mana cost of {X}{W}{B}, if X is three or more as the spell goes on the stack, draconic abilities will trigger.
+</td>
+        </tr>
+        <tr>
+            <td>Repress</td>
+            <td>Chromatopia's nobility tries to keep the masses under control, and repress allows you to do just that.<br>
+As an ability word, repress appears in italics on a number of cards. It has no inherent rules meaning, instead it's used to group a number of similar effects together. In general, effects labeled with repress trigger when the card it's on enters the battlefield, or when an opponent draws their second card each turn.<br>
+Sometimes repress appears on a nonpermanent spell, in which case the ability cares whether an opponent has drawn two or more cards during the turn where it's played.<br>
+A card with repress can trigger when any opponent draws their second card, and on any player's turn. This means that in a game with more than one opponent, your cards with repress can trigger multiple times in the same turn.
+</td>
+        </tr>
+        <tr>
+            <td>Spellbind</td>
+            <td>Magic is everywhere in Favola. It's all encompassing, and has the residents of the plane entranced. You too can be spellbound with this new ability word, spellbind.<br>
+Spellbind itself has no meaning in the rules, it's just there to serve as a reminder to group a number of different abilities that all care about their controller controlling three or more enchantments.
+</td>
+        </tr>
+        <tr>
+            <td>Superheroic</td>
+            <td>Superheroic is a new ability word and variant of the heroic mechanic that triggers whenever you target the creature with superheroic with a spell or ability. As an ability word, it has no inherent rules and is just used to group similar effects together. Some superheroic effects only trigger once per turn, so make sure to read the individual card.</td>
+        </tr>
+    </table></p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Alibi</h3>
+    <div class="content"><p>Everyone claims to have an alibi. But now some cards can back this up. Alibi is an alternative casting cost on permanent cards that lets you put the card face down onto the battlefield by paying {1}. While face down, it's a clue artifact with "{2}, Sacrifice this artifact: Draw a card."<br>
+As a special action, you can turn a face down card face up by paying its alibi cost. As you do this, tap the permanent.<br>
+When you turn a card with alibi face up, choose up to one target creature on the battlefield to grant an alibi. Perform the actions listed following the text 'Alibi —' to the chosen creature. This happens whenever the card is turned face up, whether this was because you paid the alibi cost or due to another effect.<br>
+If a card with alibi is manifested or cloaked, you can choose to turn it face up using its alibi cost, even if it's not a Clue artifact.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Allegiance</h3>
+    <div class="content"><p>Some factions in Chromatopia have a stronger affinity to the color from pools that make up their home, represented by the allegiance mechanic.<br>
+Your allegiance to a color is the number of color counters of that color among permanents you control. So for example, your allegiance to green is the number of green counters among permanents you control.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Asterisms</h3>
+    <div class="content"><p>Asterism is a new enchantment subtype. They have a number of innate rules attached:<br>
+&nbsp;&bull; Asterisms have a special status that can be applied to them - they can be 'protected' by one or more creatures.<br>
+&nbsp;&bull; Asterisms have an innate rule that whenever one or more creatures enter the battlefield, for each unprotected asterism you control, you can assign one of those creatures to be protecting it.<br>
+&nbsp;&bull; A creature can't protect an asterism under someone else's control.<br>
+&nbsp;&bull; A creature cannot protect more than one asterism, if it somehow starts protecting a new asterism, it stops protecting any previous asterisms.<br>
+&nbsp;&bull; An asterism can be protected by multiple creatures, however there is no way to do that in this set.<br>
+&nbsp;&bull; As long as an asterism is protected, it has hexproof.<br>
+&nbsp;&bull; An asterism being protected is not the same as a battle being protected.<br>
+&nbsp;&bull; A creature ceases to protect an asterism if either the creature or the asterism leaves the battlefield.<br>
+&nbsp;&bull; If a creature protecting an asterism phases out, it stops protecting the asterism for as long as it's phased out, but will begin protecting it again once it phases in. The asterism doesn't phase out alongside the creature, however.<br>
+&nbsp;&bull; If an asterism phases out, all creatures protecting it stop protecting it, but once the asterism phases in, all creatures that were protecting it that can still do so begin protecting it again.<br>
+Note: Some asterisms in this set are also creatures as long as they're protected. This is not innate to asterisms, it's possible that future sets may contain asterism creatures without this rule.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Barter</h3>
+    <div class="content"><p>The artisans in the Icejade Cradle know better than anyone the right price to pay to make the most of your resources. This is represented by the barter mechanic.<br>
+Barter is an optional additional cost that can be paid by sacrificing an artifact or creature as you cast the spell. If this is performed, the spell is 'bartered', and the spell will specify an additional effect if it is bartered.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Cause Chaos</h3>
+    <div class="content"><p>Chaos is a new batching word that refers to the following actions: Rolling dice, flipping coins, cascading, or performing an action 'at random'. If you perform one of these actions, you are considered to have caused chaos.<br>
+&nbsp;&bull; If you perform a number of actions in sequence as part of the same effect, you cause chaos once for each action.<br>
+&nbsp;&bull; If an effect asks you to roll multiple dice or flip multiple coins simultaneously, this only causes chaos once.<br>
+&nbsp;&bull; For a card effect to cause you to perform an action 'at random', the card must have the words 'at random' printed as part of the effect. Other effects that use the word random, such as the effect of recycling, do not cause chaos. Chaos is also not caused if the words 'at random' appear in reminder text unless the keyword in question appears in the above list.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Cascade</h3>
+    <div class="content"><p>Cascade is a returning mechanic, however in this set it has a number of differences to how it is handled.<br>
+&nbsp;&bull; Cascade is a keyword action, not a keyword ability.<br>
+&nbsp;&bull; Cascade does not trigger when the spell is cast. On permanents, it triggers when the card says it triggers. For many cards in the set, this is when the permanent enters the battlefield. On spells, it triggers as the spell resolves, and is not a separate triggered ability. If the spell is countered, you don't cascade.<br>
+&nbsp;&bull; Cascade land is a variant of cascade that exiles cards until it hits a land card, then puts that card onto the battlefield. Lands that are cascaded into don't enter tapped unless the land would enter tapped by some other means.<br>
+&nbsp;&bull; Cascade ignores condition cards when exiling cards to determine the card you cascade into.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Climax</h3>
+    <div class="content"><p>It's the final showdown, so let's go all out! Climax is a new alternate casting cost on instant and sorcery spells that lets you give your spells a bit of extra oomph, but at an unusual cost; you can only climax a spell once each game. Additionally, if you climax a spell, it can't be countered.<br>
+&nbsp;&bull; If a spell is climaxed and somehow leaves the stack in another way without resolving, you still attempted to climax the spell, and so you can't cast another spell with the climax ability this game.<br>
+&nbsp;&bull; If you've cast a spell using its climax ability this game already, you can still cast spells that have the ability for their normal mana cost.<br>
+&nbsp;&bull; You can use the helper card to help keep track of whether you've climaxed a spell during the current game.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Color Counters</h3>
+    <div class="content"><p>Chromatopia has wells of color bubbling up from far beneath the surface, the perfect resource to give the world some color.<br>
+Color counters are a new type of counter that can go on any permanent. There are five types of color counter; white, blue, black, red, and green.<br>
+A color counter has an inherent rule attached: any permanent with one or more color counters on it is the color of those counters, in addition to its other colors.<br>
+If an effect refers to one or more color counter(s), it can affect any or all types of color counters referenced. If an effect puts a color counter on a permanent, the effect specifies which type of color counter to put on a permanent.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Come Alive</h3>
+    <div class="content"><p>Each of the auras in this set is a DFC with the new Come Alive ability. Come Alive says "When enchanted creature dies, return this card to the battlefield transformed."<br>
+Come Alive only triggers when the enchanted creature dies, not if it would leave the battlefield in any other way. Likewise, if the aura leaves the battlefield, it doesn't return (unless the creature died at the same time).<br>
+If a creature enchanted by a come alive aura would turn into another permanent type and the aura doesn't 'fall off', come alive will still trigger if the enchanted permanent would go to the graveyard from the battlefield.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Conditions</h3>
+    <div class="content"><p>Conditions are a new card type. In particular:<br>
+&nbsp;&bull; Condition cards, like tokens, cannot be included in your deck during deckbuilding.<br>
+&nbsp;&bull; Condition cards are not spells, they can't be cast.<br>
+&nbsp;&bull; Condition cards are not permanents. They can't enter the battlefield.<br>
+&nbsp;&bull; Conditions have subtypes, such as Wound. These subtypes have no inherent abilities.</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Enhance</h3>
+    <div class="content"><p>The creatures of Garrem are good at adapting to the harsh environments, getting bigger and tougher to survive the wilderness. Toughen your own creatures up with the enhance mechanic. Enhance is a keyword ability and alternative casting cost on some creatures. If the enhance cost is paid, the creature will enter the battlefield with additional counters on it, which are written after the enhance cost. These may be +1/+1 counters, keyword counters, or other types of counter, even a mixture of multiple counters.</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Fiery</h3>
+    <div class="content"><p>Representing the world of the Scorched Plains, fiery is a new supertype on some cards in the set. While it has no inherent rules, many cards in the set care about whether something is a fiery permanent or fiery spell.</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Hero Role</h3>
+    <div class="content"><p>The hero role is a new role enchantment token with the following rules: The enchanted creature gets +1/+1 for each power counter on them, and whenever they deal combat damage to a player, put another power counter on the enchanted creature.<br>
+&nbsp;&bull; As a role enchantment, a creature can only have one hero role (or another type of role token) attached at a time. If another becomes attached, only the most recent role stays attached.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Incite</h3>
+    <div class="content"><p>Incite is a new keyword action that lets you exile a card with a number of impulse counters on it. The number is determined by the number after incite; if no number is listed, this is short-hand for 'incite 1'.<br>
+&nbsp;&bull; You can play cards you've incited as long as they have at least one impulse counter on them.<br>
+&nbsp;&bull; At the beginning of your end step, remove an impulse counter from each card you incited.<br>
+&nbsp;&bull; When you remove the last impulse counter from a card, it remains in exile, but it is no longer incited. If an impulse counter is put on it later somehow, it won't become playable unless it's incited again.<br>
+&nbsp;&bull; If you incite a card an opponent controls, you can play the card, not the opponent. Similarly, impulse counters are removed on your end step, not the opponents.<br>
+&nbsp;&bull; When an incited card is played from exile, it resolves normally, and is then put into the appropriate zone.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Mystical Spells</h3>
+    <div class="content"><p>The folks at the Meltis Magitech Institute are always looking for new ways to hone their magic. Mystical is a new instant and sorcery subtype, which comes with a number shown in the bottom right of the card known as the potency. Potency is written on the card encased in a flame-like symbol, and if the potency is changed, all instances of this symbol on the card change with it. There are a number of ways of changing the potency of a mystical spell detailed below.<br>
+&nbsp;&bull; The potency of a mystical spell is determined when the spell is put on the stack. Some effects may change this number, passive effects are applied as this number is calculated, however some activated or triggered abilities can change this number.<br>
+&nbsp;&bull; If a mystical spell on the stack is copied, the copy will have the same potency, unless otherwise stated.<br>
+&nbsp;&bull; In all other zones other than the stack, the potency of the card is the number written in the bottom right.<br>
+&nbsp;&bull; If a mystical spell tries to resolve with a potency of 0 or less, the spell fails and is put into the appropriate zone. None of its effects happen.
+</p>
+    <p><table border="0" class="alt-table"><tr><td>Mystical Keyword</td><td>Rulings</td></tr>
+        <tr>
+            <td>Doublecast</td>
+            <td>Doublecast is an additional cost that appears on mystical instant and sorcery spells. If you pay the doublecast cost as you cast the spell, you copy the spell, except the copy has a potency of 1 as it goes on the stack.<br>
+&nbsp;&bull; The copy will resolve first, which may cause the original to not resolve if all valid targets are removed.<br>
+&nbsp;&bull; The potency of the copy can be manipulated separately from the original; the base potency is set to 1 when it goes on the stack, but it can be changed through abilities or spells in the same way as any other mystical spell.
+</td>
+        </tr>
+        <tr>
+            <td>Fortune</td>
+            <td>Fortune is a new keyword that appears on mystical spells. As you cast a spell with mystical, roll a d6 to determine its potency. Do this after targets for the spell have been declared and mana has been spent to cast the spell, but before any other effects and before any players gain priority.<br>
+&nbsp;&bull; Spells with fortune have a potency of 0 when in any zone other than the stack.<br>
+&nbsp;&bull; If a spell somehow gains both fortune and another effect that sets its potency as it is put onto the stack, you choose which effect is applied. (You make this choice before rolling the dice).
+</td>
+        </tr>
+        <tr>
+            <td>Pinnacle</td>
+            <td>Big creatures lead to big spells right? Well, now they can! Pinnacle is a mechanic appearing on mystical spells, which allows you to pay an alternate casting cost to let you cast the spell with an alternative potency. In this case, the potency will become the greatest power among creatures you control as the spell is put onto the stack. Notably, the potency won't change after it's put on the stack, for example, if you have a 4/4 on the battlefield and cast a spell for its pinnacle cost, but your opponent kills your creature in response, the potency of the spell will still be 4.<br>
+&nbsp;&bull; If you cast a spell for its pinnacle cost, this effect is a replacement, and you may end up with potency less than the base potency on the card. In particular, if you pinnacle a spell with no creatures on the battlefield, it will have a potency of 0.<br>
+</td>
+        </tr>
+    </table></p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Paint</h3>
+    <div class="content"><p>The flow of mana is like the flow of color. So why not turn your mana into color?<br>
+Some permanents have a paint ability. This has the rules text "{X}: For each color of mana spent to activate this ability, put a color counter of that color on this permanent. It becomes those colors in addition to its other colors. Activate only as a sorcery and only once each turn."<br>
+If you paint a permanent with two or more different colors of mana, multiple color counters are put on the permanent, one for each color.<br>
+If you spend multiple mana of a single color to paint a permanent, only one color counter is put on the permanent, regardless of how much mana was spent.<br>
+If you spend colorless mana to activate a paint ability, it has no effect.<br>
+You can only paint each permanent you control once each turn. This is per permanent, meaning that you can activate multiple paint abilities in one turn, providing they are on different permanents.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Power Counters</h3>
+    <div class="content"><p>Our heroes have been defeated by the big bad, and now they must regain their powers. One way they can do this is by amassing power counters. Power counters are a new type of counter with no inherent rules, however cards may make use of them in various ways.</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Predefined Artifact Tokens</h3>
+    <div class="content"><p>The following is a list of all predefined artifact tokens:<br>
+&nbsp;&bull; Blood, Clue, Food, Map, Prism, Rose, Scroll, Treasure</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Predefined World Enchantment Tokens</h3>
+    <div class="content"><p>The following is a list of all predefined world enchantment tokens:<br>
+&nbsp;&bull; Balnik's Sun, Balnik's Moon, Beguiled Land, Feywild, High Seas, Shadowfell, World of Color.
+    </p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Restore</h3>
+    <div class="content"><p>The wasteland restoration committee are focused on restoring Can'-Ka No Rey to its former glory. Restore is an activated ability that appears on some permanents alongside a cost.<br>
+&nbsp;&bull; To activate a restore ability, you must pay the cost an exile a card that is one or more colors from your graveyard. If you exile a multicolored card, choose one of its colors.
+&nbsp;&bull; The restore permanent has five possible back faces, one for each color. When the restore ability resolves, it transforms into the backface of the chosen color.
+&nbsp;&bull; The color identity of a card with restore is that of its front face only.
+&nbsp;&bull; If another effect would cause you to transform a card with restore, you choose which back face to transform it into. If the back face were to transform, it always transforms back into the front face.
+&nbsp;&bull; You may only activate restore abilities at sorcery speed.</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Resurrect</h3>
+    <div class="content"><p>Resurrect is a new activated keyword ability. If a permanent card with resurrect is in your graveyard, you may pay the resurrect cost any time you could cast a sorcery to return it to the battlefield with a -1/-1 counter on it.<br>
+&nbsp;&bull; If the permanent would leave the battlefield for any reason, it gets exiled instead.<br>
+&nbsp;&bull; This ability is not tied to the -1/-1 counter. If the -1/-1 counter is removed, such as through the -1/-1 and +1/+1 counter pairing rule, and the resurrected permanent then leaves the battlefield, it still gets exiled.<br>
+&nbsp;&bull; Some creatures with resurrect only have 1 toughness. If such a creature's resurrect cost would be paid, it enters the battlefield, but when state based actions are checked, it sees it has a toughness of 0, and so immediately leaves the battlefield. Enters and leaves the battlefield triggers still trigger.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Salvage</h3>
+    <div class="content"><p>In the Land of Iron, only the best will survive, and it's common practice to take your enemies and turn them into weapons to help you stay the best. You can do the same with the salvage mechanic.<br>
+Salvage is an alternate casting cost found on some creature cards. You can cast a creature with salvage from your graveyard for its salvage cost. If you do, it becomes an Equipment artifact, instead of a creature when it is on the stack or on the battlefield. When it leaves the battlefield, it ceases to be an Equipment. If it would be sent to the graveyard, exile it instead.<br>
+While the card is an Equipment, it has Equip {2}, and when it is equipped to a creature, that creature gains all the text on the card with salvage above the salvage keyword, and gets +X/+Y, where X/Y is the creature with salvage's power and toughness, as printed on the card.<br>
+While a card with salvage is an equipment, it still has all abilities written on it.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Shift and Unshift</h3>
+    <div class="content"><p>The shifters of the Frozen Wilds have evolved to take on bestial appearances to hunt and survive their natural habitat. They change as the land changes; whenever a land enters under your control, they shift. All cards with shift are DFCs, and when shift triggers, they transform. They will transform back, unshift, when a land enters under an opponent's control.<br>
+Lands entering the battlefield can trigger shift / unshift on any player's turn, an effect like evolving wilds could be used to shift your creatures on your opponent's turn or vice versa.<br>
+&nbsp;&bull; If a DFC has the line “Whenever [CARDNAME] transforms…” this is shorthand for when it transforms into that face, not out of.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Undead</h3>
+    <div class="content"><p>Undead is a new batching word that is used to refer to creatures that are one or more of spirit, vampire, werewolf, or zombie.<br>
+&nbsp;&bull; A creature is undead if it is one or more of these types. It doesn't matter what other types the creature has.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Variance</h3>
+    <div class="content"><p>Variance is a new keyword that appears on sagas. As a saga with variance enters the battlefield, roll a d6. It enters with a number of lore counters equal to the result, and the corresponding chapter ability triggers. Skipped chapters don't trigger.<br>
+&nbsp;&bull; If a saga is given variance and rolls a number greater than the number of chapters, it immediately sacrifices itself and no chapter abilities trigger.<br>
+&nbsp;&bull; If a saga has multiple ways to control how many lore counters it enters with, you choose which method the saga will use. You make this choice before the saga enters, and thus before rolling dice for variance.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Mana Types</h3>
+    <div class="content"><p>Some cards in this database use unusual mana symbols, which are described below.</p>
+    <p><table border="0" class="alt-table"><tr><td>Mana Symbol</td><td>Rulings</td></tr>
+        <tr>
+            <td><img src="assets/card-parts/void-mana-symbol.svg" width="25px"></td>
+            <td>To pay void mana, you must tap and sacrifice an untapped land. It doesn't matter what kind of mana the land would normally produce. You can't tap the land in response to this ability.</td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/gold-mana-symbol.svg" width="25px"></td>
+            <td>Aether mana represents mana that is all colors. To pay this, you must have a source which produces aether mana, however aether mana can be used as a substitute for any color of mana.</td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/prism-mana-symbol.svg" width="25px"></td>
+            <td>To pay this, you must tap and sacrifice an untapped prism artifact.</td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/treasure-mana-symbol.svg" width="25px"></td>
+            <td>To pay this, you must tap and sacrifice an untapped treasure artifact.</td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/fiery-mana-symbol.svg" width="25px"></td>
+            <td>Mana from a fiery source can be used to pay this mana cost.</td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/land-mana-symbol.svg" width="25px"></td>
+            <td>This symbol represents your land drop for the turn. You can only pay this cost if you can play a land on the turn, and it counts as playing a land.</td>
+        </tr>
+    </table></p></div>
+    <div class="footer-bar"><p class="alignr"><i>Blog by ZephySeb</i></p></div>
+</body>

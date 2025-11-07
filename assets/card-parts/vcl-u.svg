@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="vcl-u.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 16.933333 16.933334"
+   height="64"
+   width="64">
+  <defs
+     id="defs2">
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0666669,0.00263557,-0.00262906,1.0640289,-0.36416664,-72.633318)"
+       r="7.9374995"
+       fy="77.188469"
+       fx="10.453529"
+       cy="77.188469"
+       cx="10.453529"
+       id="radialGradient1201"
+       xlink:href="#linearGradient862"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient862">
+      <stop
+         style="stop-color:#c5e1eb;stop-opacity:1;"
+         offset="0"
+         id="stop858" />
+      <stop
+         style="stop-color:#80a4b3;stop-opacity:1"
+         offset="1"
+         id="stop860" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="991"
+     inkscape:window-width="1920"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="32"
+     inkscape:cx="32"
+     inkscape:zoom="11.796875"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base">
+    <inkscape:grid
+       id="grid833"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       d="m 3.1750003,1.058334 c 0,2.6347919 1.3119243,3.957217 2.6292969,4.6214241 A 3.1749995,3.1750032 0 0 0 5.291667,7.4083339 3.1749995,3.1750032 0 0 0 7.8041752,10.513572 c 0.1331373,0.595733 0.1344533,1.390986 -0.3958415,2.186429 0,0 1.0583323,2.116664 1.0583333,3.175001 -10e-7,-1.058337 1.0583334,-3.175001 1.0583334,-3.175001 C 8.9945544,11.904333 8.9959088,11.108842 9.1291588,10.513056 A 3.1749995,3.1750032 0 0 0 11.641667,7.4083339 3.1749995,3.1750032 0 0 0 11.129553,5.67924 C 12.446718,5.0149319 13.758334,3.6927139 13.758334,1.058334 12.7,4.2333339 8.466667,4.2333339 8.466667,4.2333339 c 0,0 -4.2333336,0 -5.2916667,-3.1749999 z M 8.466667,5.8208339 a 1.5875001,1.5875001 0 0 1 1.5875,1.5875 1.5875001,1.5875001 0 0 1 -1.5875,1.5874997 1.5875001,1.5875001 0 0 1 -1.5875,-1.5874997 1.5875001,1.5875001 0 0 1 1.5875,-1.5875 z M 2.6458336,6.8791681 c 0,0 -0.5291667,1.0583328 -2.11666666,1.0583328 1.58749996,0 2.11666666,1.0583327 2.11666666,1.0583327 0,0 0.5291667,-1.0583327 2.1166667,-1.0583327 -1.5875,0 -2.1166667,-1.0583328 -2.1166667,-1.0583328 z m 11.6416664,0 c 0,0 -0.529166,1.0583328 -2.116666,1.0583328 1.5875,0 2.116666,1.0583327 2.116666,1.0583327 0,0 0.529167,-1.0583327 2.116667,-1.0583327 -1.5875,0 -2.116667,-1.0583328 -2.116667,-1.0583328 z M 5.291667,10.583334 c -1.1225321,1.122532 -2.2448243,0.748274 -2.2448243,0.748274 0,0 0.3737404,1.122812 -0.7487915,2.245341 1.1225319,-1.122529 2.245341,-0.748789 2.245341,-0.748789 0,0 -0.3742573,-1.122294 0.7482748,-2.244826 z m 6.35,0 c 1.122532,1.122532 0.748277,2.244823 0.748275,2.244826 0,0 1.122809,-0.37374 2.245341,0.748789 -1.122532,-1.122529 -0.748795,-2.245339 -0.748792,-2.245341 0,0 -1.122292,0.374258 -2.244824,-0.748274 z"
+       style="fill:url(#radialGradient1201);fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path1048-6" />
+  </g>
+</svg>
