@@ -838,7 +838,7 @@ function Search() {
                         }
                     }
                 }
-                if (check.substring(0,3) == "c=" || check.substring(0,6) == "color=") {
+                if (check.substring(0,2) == "c=" || check.substring(0,6) == "color=") {
                     if (!isNaN(check.split("=")[1])) {
                         if (!(check.split("=")[1] == cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length)) include[j] = false;
                     }
@@ -1044,14 +1044,26 @@ function Search() {
                     if (cards[i].getElementsByTagName("layout")[0].textContent.toLowerCase() != "split") include[j] = false;
                 }
                 if (check == "is:permanent") {
-                    if (cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "instant" ||
-                        cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "sorcery" ||
-                        cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "condition") include[j] = false;
+                    if (cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("instant") ||
+                        cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("sorcery") ||
+                        cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("condition")) include[j] = false;
                 }
                 if (check == "is:historic") {
-                    if (!cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "artifact" &&
-                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "legendary" &&
-                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase() == "saga") include[j] = false;
+                    if (!cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("artifact") &&
+                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("legendary") &&
+                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("saga")) include[j] = false;
+                }
+                if (check == "is:undead") {
+                    if (!cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("spirit") &&
+                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("vampire") &&
+                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("werewolf") &&
+                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("zombie")) include[j] = false;
+                }
+                if (check == "is:party") {
+                    if (!cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("cleric") &&
+                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("rogue") &&
+                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("warrior") &&
+                        !cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("wizard")) include[j] = false;
                 }
                 if (check == "is:vanilla") {
                     if (!cards[i].getElementsByTagName("text")[0].textContent == "") include[j] = false;
@@ -1301,5 +1313,7 @@ function GetSetName(code) {
     if (code == "DRT") setName = "Dogan: The Rose and the Tower";
     if (code == "AZU") setName = "Azure Archives";
     if (code == "AZA") setName = "Azure Mystical Archives";
+    if (code == "FES") setName = "Festiville";
+    if (code == "PMW") setName = "Many Worlds Promo";
     return setName;
 }
