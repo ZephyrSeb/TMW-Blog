@@ -42644,7 +42644,7 @@ Create a treasure token.</text>
             </prop>
             <set>
                 <code>AZU</code>
-                <rarity>rare</rarity>
+                <rarity>uncommon</rarity>
             </set>
 			<related>Treasure Token</related>
             <tablerow>3</tablerow>

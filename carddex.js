@@ -145,6 +145,20 @@ async function LoadCards(cards) {
     }
     if (cards.length == 1) {
         var newCell = row.insertCell(-1);
+        let div = document.createElement('div');
+        div.style.width = 300;
+        div.style.marginLeft = 50;
+        div.style.textAlign = "justify";
+        newCell.appendChild(div);
+        div.innerHTML = "<b>" + cards[0].getElementsByTagName("name")[0].textContent + "</b><br><br>";
+        div.innerHTML += cards[0].getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent + "<br><br>";
+        for (let i = 0; i < cards[0].getElementsByTagName("text").length; i++) {
+            div.innerHTML += cards[0].getElementsByTagName("text")[i].textContent + "<br><br>";
+        }
+        if (cards[0].getElementsByTagName("flavor").length > 0) {div.innerHTML += "<i>" + cards[0].getElementsByTagName("flavor")[0].textContent + "</i><br><br>"};
+        if (cards[0].getElementsByTagName("pt").length > 0) {if (cards[0].getElementsByTagName("pt")[0] != "") {
+            div.innerHTML += cards[0].getElementsByTagName("pt")[0].textContent + "<br><br>";
+        }}
         let setTable = document.createElement('table');
         setTable.classList.add("alt-table");
         setTable.style.width = 400;
