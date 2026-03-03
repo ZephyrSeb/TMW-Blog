@@ -135,7 +135,7 @@ async function LoadCards(cards) {
                 }
             }
             canvas[i].addEventListener("click", function() {
-                window.location.href = "carddex.html?search=" + cards[i].getElementsByTagName("name")[0].textContent;
+                window.location.href = "carddex.html?search=" + encodeURIComponent(cards[i].getElementsByTagName("name")[0].textContent);
             });
         }
 
@@ -173,7 +173,7 @@ async function LoadCards(cards) {
             setCell2.innerHTML = "<img align='center' src='" + GetSetSymbol(cards[0].getElementsByTagName("set")[i].getElementsByTagName("code")[0].textContent, "Common") + "' height='20px'/> " + GetSetName(cards[0].getElementsByTagName("set")[i].getElementsByTagName("code")[0].textContent);
             setCell2.style.cursor = "pointer";
             setCell2.addEventListener("click", function() {
-                window.location.href = "carddex.html?search=set:" + cards[0].getElementsByTagName("set")[i].getElementsByTagName("code")[0].textContent;
+                window.location.href = "carddex.html?search=set:" + encodeURIComponent(cards[0].getElementsByTagName("set")[i].getElementsByTagName("code")[0].textContent);
             })
         }
 
@@ -200,10 +200,10 @@ async function LoadCards(cards) {
                 tableCell2.addEventListener("click", function() {
                     let set = cards[0].getElementsByTagName("set")[0].getElementsByTagName("code")[0].textContent;
                     if (cards[0].getElementsByTagName("related")[i].getElementsByTagName("name").length == 0) {
-                        window.location.href = "carddex.html?search=set:" + set + "%20" + cards[0].getElementsByTagName("related")[i].textContent;
+                        window.location.href = "carddex.html?search=set:" + set + "%20" + encodeURIComponent(cards[0].getElementsByTagName("related")[i].textContent);
                     }
                     else {
-                        window.location.href = "carddex.html?search=set:" + set + "%20" + cards[0].getElementsByTagName("related")[i].getElementsByTagName("name")[0].textContent + "%20p:" + cards[0].getElementsByTagName("related")[i].getElementsByTagName("id")[0].textContent;
+                        window.location.href = "carddex.html?search=set:" + set + "%20" + encodeURIComponent(cards[0].getElementsByTagName("related")[i].getElementsByTagName("name")[0].textContent + "%20p:" + cards[0].getElementsByTagName("related")[i].getElementsByTagName("id")[0].textContent);
                     }
             })
             }
@@ -264,7 +264,7 @@ async function DrawCard(canvas, card, size) {
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("pt").length > 0) {
         pt = card.getElementsByTagName("prop")[0].getElementsByTagName("pt")[0].textContent;
     }
-    let setno = "TMW-"+ card.getElementsByTagName("set")[0].getElementsByTagName("code")[0].textContent + " " + card.getElementsByTagName("set")[0].getElementsByTagName("rarity")[0].textContent.at(0);
+    let setno = "TMW-"+ card.getElementsByTagName("set")[0].getElementsByTagName("code")[0].textContent + " " + card.getElementsByTagName("set")[0].getElementsByTagName("rarity")[0].textContent.at(0).toUpperCase();
     let manavalue = card.getElementsByTagName("prop")[0].getElementsByTagName("cmc")[0].textContent;
     let potency = "";
     let defense = "";
@@ -640,7 +640,7 @@ async function wrapText(context, text, x, y, maxWidth, lineHeight, size, type = 
         }
         lines++;
         line = '';
-        if (type != "Saga" && type != "split"  && type != "Planeswalker") y = Math.max(y - ((lines - 1) / 2) * lineHeight, 232 * 2 * size);
+        if (type != "Saga" && type != "split" && type != "Planeswalker") y = Math.max(y - ((lines - 1) / 2) * lineHeight, 232 * 2 * size);
         if (type == "Planeswalker") {
             if (lines>=4) {
                 fontSize = 12;
@@ -796,7 +796,7 @@ function ResetSearch() {
 
 function Search() {
     window.scrollTo(0,0);
-    var searchCriteria = document.getElementById("search").value;   
+    var searchCriteria = document.getElementById("search").value;
     var rawCards = xmlDoc.getElementsByTagName("carddex")[0].getElementsByTagName("cards")[0].getElementsByTagName("card");
     var cards = [];
     let showTokens = false;
@@ -1159,7 +1159,17 @@ function Search() {
                     }
                     else include[j] = false;
                 }
-                if (check == "legal:standard") {
+                if (check.substring(0,4) == "tag:") {
+                    var tag = check.split(":")[1];
+                    let containsTag = false;
+                    if (cards[i].getElementsByTagName("tag").length > 0) {
+                        for (let k = 0; k < cards[i].getElementsByTagName("tag").length; k++) {
+                            if (tag.toLowerCase() == cards[i].getElementsByTagName("tag")[k].textContent.toLowerCase()) containsTag = true;
+                        }
+                    }
+                    if (!containsTag) include[j] = false;
+                }
+                if (check == "legal:primordial" || check == "legal:pioneer") {
                     let format = false;
                     for (let k = 0; k < cards[i].getElementsByTagName("set").length; k++) {
                         if (cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "KFS" ||
@@ -1171,7 +1181,32 @@ function Search() {
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "EXS" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "AZU" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "NAT" ||
-                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "VCL") format = true;
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "VCL" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "MSS" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "DRT" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "FES" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "POS" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "INF" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "PSB" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "BLZ" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "NGA" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "RST") format = true;
+                    }
+                    if (!format) include[j] = false;
+                }
+                if (check == "legal:standard") {
+                    let format = false;
+                    for (let k = 0; k < cards[i].getElementsByTagName("set").length; k++) {
+                        if (cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "VCL" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "MSS" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "DRT" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "FES" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "POS" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "INF" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "PSB" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "BLZ" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "NGA" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "RST") format = true;
                     }
                     if (!format) include[j] = false;
                 }
@@ -1214,6 +1249,7 @@ function GetCardBack(card) {
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "B") cardURL = cardURL + "-swamp.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "R") cardURL = cardURL + "-mountain.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "G") cardURL = cardURL + "-forest.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "") cardURL = cardURL + "-wastes.svg";
     }
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Land")) {
         if (card.getElementsByTagName("text")[0].textContent.includes("any")
@@ -1328,6 +1364,12 @@ function GetSetName(code) {
     if (code == "AZU") setName = "Azure Archives";
     if (code == "AZA") setName = "Azure Mystical Archives";
     if (code == "FES") setName = "Festiville";
+    if (code == "POS") setName = "Palace of Silence";
+    if (code == "INF") setName = "Infinite Ravine";
+    if (code == "PSB") setName = "Poisonous Swamp of Blagghrt";
+    if (code == "BLZ") setName = "Blazing Inferno";
+    if (code == "NGA") setName = "Nature's Garden";
+    if (code == "RST") setName = "World's Rest";
     if (code == "PMW") setName = "Many Worlds Promo";
     return setName;
 }

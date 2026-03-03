@@ -15,7 +15,7 @@
     <h2>Custom Mechanics</h2>
     <h3 class="collapsible" onclick="Accordion(this)">Talent Keywords</h3>
     <div class="content"><p>Many keyword abilities on permanents are referred to as 'talent' keywords. This has no inherent meaning, though it refers to the following keywords:<br>
-&nbsp;&bull; Changeling, Chilltouch, Deathtouch, Defender, Defiant, Devoid, Double Strike, Etiquette, First Strike, Flourish, Flying, Haste, Hexproof, Horsemanship, Illusory, Indestructible, Infiltrate, Lifelink, Menace, Outflank, Pickpocket, Prowess, Reach, Shadow, Skulk, Specialist, Stasis, Toxic, Trample, Vigilance, Ward, Wither</p>
+&nbsp;&bull; Changeling, Chilltouch, Climbing, Deathtouch, Defender, Defiant, Devoid, Disembody, Double Strike, Etiquette, First Strike, Flourish, Flying, Haste, Hexproof, Horsemanship, Illusory, Indestructible, Infiltrate, Lifelink, Menace, Outflank, Overgrow, Pickpocket, Prowess, Reach, Shadow, Skulk, Specialist, Stasis, Terminal, Toxic, Trample, Vigilance, Wandering Soul, Ward, Wither</p>
     <p><table border="0" class="alt-table"><tr><td>Talent Keyword</td><td>Rulings</td></tr>
         <tr>
             <td>Chilltouch</td>
@@ -26,6 +26,10 @@ A creature with chilltouch deals its damage to creatures as stun counters, inste
 &nbsp;&bull; Chilltouch functions the same regardless of which zone the object with chilltouch is in.<br>
 &nbsp;&bull; Multiple instances of chilltouch on an object are redundant.
             </td>
+        </tr>
+        <tr>
+            <td>Climbing</td>
+            <td>As long as a creature with climbing is attacking, it can't be damage by creatures unless those creatures have climbing, flying, or reach. The creature can still be damaged by non-creature sources, and it can still be damaged by creatures if it isn't attacking.</td>
         </tr>
         <tr>
             <td>Defiant</td>
@@ -39,6 +43,12 @@ Likewise, you can't target a creature or planeswalker you control, or a battle y
         <tr>
             <td>Devoid</td>
             <td>Devoid returns in this set representing the Ectropian faction. Ectropians have a resistance to color. If a color counter is put on a permanent with devoid, the color counter doesn't confer any colors to the permanent, and remains colorless. This effect only applies to color counters, and not to other replacement effects.</td>
+        </tr>
+        <tr>
+            <td>Disembody</td>
+            <td>Disembody N is a keyword that means "Whenever this creature dies, create N 0/1 colorless Ectropian Tentacle creature tokens with '{T}, Sacrifice this creature: Add {C}.'"
+&nbsp;&bull; If a creature has multiple instances of disembody, they trigger separately.
+            </td>
         </tr>
         <tr>
             <td>Etiquette</td>
@@ -66,6 +76,13 @@ Some creatures have the line of text "When this creature outflanks a creature". 
             </td>
         </tr>
         <tr>
+            <td>Overgrow</td>
+            <td>As long as a player controls ten or more permanents with overgrow, if a creature they control would deal damage to a player, that player loses the game.<br>
+&nbsp;&bull; Multiple instances of overgrow on a single permanent are redundant; ten individual permanents must be controlled for the effect to take place.<br>
+&nbsp;&bull; Note that the damage doesn't need to be combat damage. If a creature you control deals damage to you, you would also lose the game.
+            </td>
+        </tr>
+        <tr>
             <td>Pickpocket</td>
             <td></td>
         </tr>
@@ -83,10 +100,28 @@ Some creatures have the line of text "When this creature outflanks a creature". 
 If you control a creature with tenacity that you don't own, it won't go to your graveyard, so you can't exile it to trigger tenacity.
 If the creature isn't in your graveyard when the tenacity trigger resolves, you can't exile it from your graveyard, so it won't return to the battlefield during the next turn.</td>
         </tr>
+        <tr>
+            <td>Terminal</td>
+            <td>World's Rest is where all things go to end. Terminal is a new keyword associated with the ectropians. If sources with terminal have dealt 10 or more damage to a player in a single turn, they lose the game.
+&nbsp;&bull; The damage doesn't need to be combat damage.
+&nbsp;&bull; The sources don't need to be controlled by the same player.
+            </td>
+        </tr>
+        <tr>
+            <td>Wandering Soul</td>
+            <td>When a creature with wandering soul dies, you may return a target Spirit creature with lesser mana value from your graveyard to the battlefield.<br>
+&nbsp;&bull; If the targeted card is no longer in your graveyard when the trigger resolves, it doesn't enter the battlefield.<br>
+&nbsp;&bull; Most creatures with wandering soul are themselves spirits, however the ability works on any creature.
+            </td>
+        </tr>
     </table></p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Ability Words</h3>
     <div class="content"><p>Ability words are ways of grouping similar effects. While they have no rules of their own, here are the ability words you might see on cards.</p>
     <p><table border="0" class="alt-table"><tr><td>Talent Keyword</td><td>Rulings</td></tr>
+        <tr>
+            <td>Blaze</td>
+            <td>Blaze is a new ability word that ties together a number of passive and triggered abilities that care about whether you've dealt damage to an opponent this turn.</td>
+        </tr>
         <tr>
             <td>Draconic</td>
             <td>The people of Dragma worship the great dragon god Titaniklad. When a great feat of power takes place, it is a sign of Titaniklad.<br>
@@ -95,6 +130,10 @@ As draconic abilities trigger when you cast a spell, they will still resolve eve
 Draconic abilities will trigger as long as the spell that is cast has a mana value of 5 or greater, regardless of the amount of mana actually spent to cast the spell. This only reads the number in the top right of the card, not alternate casting costs or other effects that might change the amount of mana you spend to cast the spell.<br>
 Spells with an {X} in their mana cost have a mana value of 5 or greater provided that a sufficiently large value of X is chosen as the spell goes on the stack. For example, if a spell has a mana cost of {X}{W}{B}, if X is three or more as the spell goes on the stack, draconic abilities will trigger.
 </td>
+        </tr>
+        <tr>
+            <td>Null</td>
+            <td>Null is a new ability word that connects a number of abilities that care about whether a permanent has left the battlefield this turn. They don't care who the controller of the permanent was, or any of it's types.</td>
         </tr>
         <tr>
             <td>Prehistoric</td>
@@ -152,6 +191,12 @@ Barter is an optional additional cost that can be paid by sacrificing an artifac
     <h3 class="collapsible" onclick="Accordion(this)">Bind Counter</h3>
     <div class="content"><p>A bind counter is a new type of counter that removes all abilities of the permanent that it's on except for mana abilities. Bind counters only affect a permanent on the battlefield, not a card in any other zones. Bind counters only remove abilities, so other effects conferred to the card by counters or other permanents won't be removed unless they give the permanent an ability. Some abilities, such as devoid, are applied in a layer before the bind counter removes abilities, however the permanent won't be considered to have that ability.
 </p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Burst</h3>
+    <div class="content"><p>Burst is an activated abiltity that appears on creature cards that can be activated from your hand. It says "[COST], Discard this card: It deals damage equal to its power to any target."<br>
+&nbsp;&bull; The damage dealt will be that written on the card, unless an effect changes the statistics of cards in your hand.<br>
+&nbsp;&bull; Burst is an activated ability, not a spell. By default, it can be activated any time you could cast an instant.<br>
+&nbsp;&bull; Discarding the card is done as part of the cost. If the target becomes illegal before the effect resolves, the card remains discarded.
+    </p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Cause Chaos</h3>
     <div class="content"><p>Chaos is a new batching word that refers to the following actions: Rolling dice, flipping coins, cascading, or performing an action 'at random'. If you perform one of these actions, you are considered to have caused chaos.<br>
 &nbsp;&bull; If you perform a number of actions in sequence as part of the same effect, you cause chaos once for each action.<br>
@@ -190,6 +235,12 @@ If a creature enchanted by a come alive aura would turn into another permanent t
 &nbsp;&bull; Conditions have subtypes, such as Wound. These subtypes have no inherent abilities.</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Enhance</h3>
     <div class="content"><p>The creatures of Garrem are good at adapting to the harsh environments, getting bigger and tougher to survive the wilderness. Toughen your own creatures up with the enhance mechanic. Enhance is a keyword ability and alternative casting cost on some creatures. If the enhance cost is paid, the creature will enter the battlefield with additional counters on it, which are written after the enhance cost. These may be +1/+1 counters, keyword counters, or other types of counter, even a mixture of multiple counters.</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Exhaustion</h3>
+    <div class="content"><p>Exhaustion is an emblem that players can receive when they gain a level of exhaustion.<br>
+&nbsp;&bull; When they first gain a level of exhaustion, they create the emblem and are affected by its first ability only.<br>
+&nbsp;&bull; Afterwards, whenever they gain a level of exhaustion, they instead unlock the next ability.<br>
+&nbsp;&bull; Upon receiving their sixth level of exhaustion, a player loses the game. Any levels beyond this are ignored.
+    </p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Fiery</h3>
     <div class="content"><p>Representing the world of the Scorched Plains, fiery is a new supertype on some cards in the set. While it has no inherent rules, many cards in the set care about whether something is a fiery permanent or fiery spell.</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Hero Role</h3>
@@ -241,6 +292,8 @@ If you spend multiple mana of a single color to paint a permanent, only one colo
 If you spend colorless mana to activate a paint ability, it has no effect.<br>
 You can only paint each permanent you control once each turn. This is per permanent, meaning that you can activate multiple paint abilities in one turn, providing they are on different permanents.
 </p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Photosynthesize</h3>
+    <div class="content"><p>Photosynthesize is a keyword action performed by creatures that says "Put a +1/+1 counter on this creature or create a 0/1 green Plant creature token."</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Power Counters</h3>
     <div class="content"><p>Our heroes have been defeated by the big bad, and now they must regain their powers. One way they can do this is by amassing power counters. Power counters are a new type of counter with no inherent rules, however cards may make use of them in various ways.</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Predefined Artifact Tokens</h3>
@@ -248,7 +301,7 @@ You can only paint each permanent you control once each turn. This is per perman
 &nbsp;&bull; Blood, Clue, Emerald, Food, Jet, Map, Pearl, Prism, Rose, Ruby, Sapphire, Scroll, Treasure</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Predefined World Enchantment Tokens</h3>
     <div class="content"><p>The following is a list of all predefined world enchantment tokens:<br>
-&nbsp;&bull; Balnik's Sun, Balnik's Moon, Beguiled Land, Feywild, High Seas, Shadowfell, World of Color.
+&nbsp;&bull; Balnik's Sun, Balnik's Moon, Beguiled Land, Burning Field, Endless Winds, Feywild, High Seas, Reaching Vines, Shadowfell, Silent Hall, Toxic Swamp, World of Color.
     </p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Restore</h3>
     <div class="content"><p>The wasteland restoration committee are focused on restoring Can'-Ka No Rey to its former glory. Restore is an activated ability that appears on some permanents alongside a cost.<br>
