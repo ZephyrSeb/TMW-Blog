@@ -149,6 +149,7 @@ async function LoadCards(cards) {
         div.style.width = 300;
         div.style.marginLeft = 50;
         div.style.textAlign = "justify";
+        div.style.whiteSpace = "pre-wrap";
         newCell.appendChild(div);
         div.innerHTML = "<b>" + cards[0].getElementsByTagName("name")[0].textContent + "</b><br><br>";
         div.innerHTML += cards[0].getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent + "<br><br>";
@@ -856,7 +857,14 @@ function Search() {
                     if (!isNaN(check.split("=")[1])) {
                         if (!(check.split("=")[1] == cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length)) include[j] = false;
                     }
-                    else if (!(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase() == check.split("=")[1])) include[j] = false;
+                    else {
+                        for (let k = 0; k < check.split("=")[1].length; k++) {
+                            if (!(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().includes(check.split("=")[1][k]))) include[j] = false;
+                        }
+                        for (let k = 0; k < cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase().length; k++) {
+                            if (!check.split("=")[1].includes(cards[i].getElementsByTagName("colors")[0].textContent.toLowerCase()[k])) include[j] = false;
+                        }
+                    }
                 }
                 if (check.substring(0,3) == "c>=" || check.substring(0,7) == "color>=") {
                     if (!isNaN(check.split(">=")[1])) {

@@ -225,3 +225,10 @@ td {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
