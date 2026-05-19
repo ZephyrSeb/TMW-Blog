@@ -1,0 +1,46 @@
+1 Commander's Sphere
+1 Bountiful Supplies
+1 Adventurer's Guildrune
+1 Adventuring Gear
+1 Brushfire Elemental
+1 Caravan Trekker
+1 Flaming Thicket
+1 Lotus Cobra
+1 Pilgrim's Eye
+1 Wisteros Cultivator
+1 Orchid Mantis
+1 Flamelock Rider
+1 Elven Patrol Leader
+1 Chained Broodmother
+1 Boundary Lands Ranger
+1 Redcap Wolf
+1 Obanok, Portent of the Fall
+1 Sporemound
+1 Akoum Hellhound
+1 Canopy Baloth
+1 Spitfire Lagac
+1 Territorial Scythecat
+1 Sun-Baked Rex
+1 Den of the Blossoming Snake
+1 Crux of Flames
+1 Crux of Growth
+1 Terragenesis
+1 Scorched Forest
+1 Command Tower
+1 Evolving Wilds
+1 Rugged Highlands
+9 Forest
+9 Mountain
+1 Craggy Mountain
+1 Command Beacon
+1 Across the Greenbelt
+1 Edrick's Cultivation
+1 Hostile Environment
+1 Arid Sandstorm
+1 Blow the House Down
+1 Restore the Wasteland
+1 Travel Weast
+1 Barrage of Boulders
+
+1 Sasai, Scion of Urborgh
+

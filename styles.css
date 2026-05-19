@@ -160,6 +160,15 @@ td {
     height: auto;
 }
 
+.graph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .alt-table {
     border: 0px;
     display: flex;

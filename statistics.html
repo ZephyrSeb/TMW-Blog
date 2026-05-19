@@ -1,0 +1,72 @@
+<head>
+    <title>TMW Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="statistics.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body onload="OnLoad()">
+    <div class="title-bar">
+                <a class="button" href="index.html"><div class="tooltip"><img src="assets/home-icon.svg" height="30px"/><span class="tooltiptext">Home</span></div></a>
+                <a class="button" href="carddex.html"><div class="tooltip"><img src="assets/card-icon.svg" height="30px"/><span class="tooltiptext">Cards</span></div></a>
+                <input type="text" class="input-text" placeholder="Search..." id="search">
+                <a class="button"><img src="assets/search-icon.svg" height="30px" onclick="ResetSearch()"/></a>
+                <a class="button" href="info.html"><div class="tooltip"><img src="assets/info-icon.svg" height="30px"/><span class="tooltiptext">Information</span></div></a>
+                <a class="button-text" href="rules.html"><div class="tooltip"><img src="assets/rules-icon.svg" height="30px"/><span class="tooltiptext">Rules</span></div></a>
+                <a class="button-text" href="sets.html"><div class="tooltip"><img src="assets/sets-icon.svg" height="30px"/><span class="tooltiptext">Sets</span></div></a>
+                <a class="button-text" href="formats.html"><div class="tooltip"><img src="assets/formats-icon.svg" height="30px"/><span class="tooltiptext">Formats</span></div></a>
+                <a class="button-text" href="statistics.html"><div class="tooltip"><img src="assets/statistics-icon.svg" height="30px"/><span class="tooltiptext">Statistics</span></div></a>
+    </div>
+    <p><table class="alt-table">
+        <tr>
+            <td>Number of Cards</td>
+            <td id="no-cards"></td>
+        </tr>
+        <tr>
+            <td>Color Distribution</td>
+            <td>
+                <table>
+                    <tr>
+                        <td><img src="assets/card-parts/white-mana-symbol.svg" width="20px"/></td>
+                        <td><img src="assets/card-parts/blue-mana-symbol.svg" width="20px"/></td>
+                        <td><img src="assets/card-parts/black-mana-symbol.svg" width="20px"/></td>
+                        <td><img src="assets/card-parts/red-mana-symbol.svg" width="20px"/></td>
+                        <td><img src="assets/card-parts/green-mana-symbol.svg" width="20px"/></td>
+                        <td><img src="assets/card-parts/colorless-mana-symbol.svg" width="20px"/></td>
+                    </tr>
+                    <tr>
+                        <td id="cards-w"></td>
+                        <td id="cards-u"></td>
+                        <td id="cards-b"></td>
+                        <td id="cards-r"></td>
+                        <td id="cards-g"></td>
+                        <td id="cards-c"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>Average Mana Value</td>
+            <td id="mv"></td>
+        </tr>
+        <tr>
+            <td>Average Power</td>
+            <td id="pow"></td>
+        </tr>
+        <tr>
+            <td>Average Toughness</td>
+            <td id="tou"></td>
+        </tr>
+        <tr>
+            <td>Average Potency</td>
+            <td id="pot"></td>
+        </tr>
+        <tr>
+            <td>Average Typeline</td>
+            <td id="no-types"></td>
+        </tr>
+    </table></p>
+    <div class="graph"><canvas id="pt-mana"></canvas></div>
+    <div class="graph"><canvas id="type-breakdown"></canvas></div>
+    <div class="graph"><canvas id="subtype-breakdown"></canvas></div>
+    <div class="footer-bar"><p class="alignr"><i>Blog by ZephySeb</i></p></div>
+</body>

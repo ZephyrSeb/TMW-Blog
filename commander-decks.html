@@ -1,0 +1,148 @@
+<head>
+    <title>TMW Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="commander-script.js"></script>
+</head>
+<body>
+    <div class="title-bar">
+                <a class="button" href="index.html"><div class="tooltip"><img src="assets/home-icon.svg" height="30px"/><span class="tooltiptext">Home</span></div></a>
+                <a class="button" href="carddex.html"><div class="tooltip"><img src="assets/card-icon.svg" height="30px"/><span class="tooltiptext">Cards</span></div></a>
+                <a class="button" href="limited.html"><div class="tooltip"><img src="assets/limited-icon.svg" height="30px"/><span class="tooltiptext">Limited</span></div></a>
+                <a class="button" href="commander-decks.html"><div class="tooltip"><img src="assets/commander-icon.svg" height="30px"/><span class="tooltiptext">Commander Precons</span></div></a>
+    </div>
+    <p><table border="0" class="alt-table">
+        <tr>
+            <td><b>Set</b></td>
+            <td><b>Commander</b></td>
+            <td><b>Color Identity</b></td>
+            <td><b>Decklist</b></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/cro-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=milo%20demaret%2c%20assembly&20speaker">Milo Demaret, Assembly Speaker</a></td>
+            <td><img src="assets/card-parts/white-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/black-mana-symbol.svg" width="20"/></td>
+            <td><button id="milo" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/cro-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=the%20first%20painter">The First Painter</a></td>
+            <td><img src="assets/card-parts/gold-mana-symbol.svg" width="20"/></td>
+            <td><button id="first-painter" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/aby-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=general%20baxia%2c%20wu%20tactician">General Baxia, Wu Tactician</a></td>
+            <td><img src="assets/card-parts/blue-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/red-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/white-mana-symbol.svg" width="20"/></td>
+            <td><button id="baxia" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/aby-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=the%20inevitable%20bear">The Inevitable Bear</a></td>
+            <td><img src="assets/card-parts/green-mana-symbol.svg" width="20"/></td>
+            <td><button id="bear" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/ctmw-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=lord%20labine%2c%20outpost%20captain">Lord Labine, Outpost Captain</a></td>
+            <td><img src="assets/card-parts/white-mana-symbol.svg" width="20"/></td>
+            <td><button id="lord-labine" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/ctmw-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=rosie%20mason%2c%20private%20investigator">Rosie Mason, Private Investigator</a></td>
+            <td><img src="assets/card-parts/blue-mana-symbol.svg" width="20"/></td>
+            <td><button id="rosie" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/ctmw-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=idrasa%20alma%2c%20shadelord">Idrasa Alma, Shadelord</a></td>
+            <td><img src="assets/card-parts/black-mana-symbol.svg" width="20"/></td>
+            <td><button id="idrasa" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/ctmw-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=jarad%20killian%2c%20travelling%20artist">Jarad Killian, Travelling Artist</a></td>
+            <td><img src="assets/card-parts/red-mana-symbol.svg" width="20"/></td>
+            <td><button id="jarad" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/ctmw-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=dreselia%20of%20the%20pine%20grove">Dreselia of the Pine Grove</a></td>
+            <td><img src="assets/card-parts/green-mana-symbol.svg" width="20"/></td>
+            <td><button id="dreselia" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/wog-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=sasai%2c%20scion%20of%20urborgh">Sasai, Scion of Urborgh</a></td>
+            <td><img src="assets/card-parts/red-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/green-mana-symbol.svg" width="20"/></td>
+            <td><button id="sasai" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/wog-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=christian%20stensen%2c%20godslayer">Christian Stensen, Godslayer</a></td>
+            <td><img src="assets/card-parts/green-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/white-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/blue-mana-symbol.svg" width="20"/></td>
+            <td><button id="christian" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/ska-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=naia%2c%20angelic%20artifice">Naia, Angelic Artifice</a></td>
+            <td><img src="assets/card-parts/white-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/blue-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/black-mana-symbol.svg" width="20"/></td>
+            <td><button id="naia" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/ska-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=slizaar%2c%20serpentine%20artifice">Slizaar, Serpentine Artifice</a></td>
+            <td><img src="assets/card-parts/black-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/red-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/green-mana-symbol.svg" width="20"/></td>
+            <td><button id="slizaar" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/ctmw-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=the%20great%20beluging%20beast%20of%20blagghrt%20">The Great Beluging Beast of Blagghrt</a></td>
+            <td><img src="assets/card-parts/black-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/green-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/blue-mana-symbol.svg" width="20"/></td>
+            <td><button id="blagghrt" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/sei-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=artzon%2c%20tabaxi%20hero">Artzon, Tabaxi Hero</a></td>
+            <td><img src="assets/card-parts/white-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/blue-mana-symbol.svg" width="20"/></td>
+            <td><button id="artzon" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/sei-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=brack%2c%20the%20usurper">Brack, the Usurper</a></td>
+            <td><img src="assets/card-parts/red-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/green-mana-symbol.svg" width="20"/></td>
+            <td><button id="brack" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/sei-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=set:csei%20herog">Mundoug and Jorisli Herog</a></td>
+            <td><img src="assets/card-parts/red-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/white-mana-symbol.svg" width="20"/></td>
+            <td><button id="mundoug-jorisli" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/sei-c.svg" width="20"/></td>
+            <td><a href="carddex.html?search=ornwin%2c%20spiritual%20guide">Ornwin, Spiritual Guide</a></td>
+            <td><img src="assets/card-parts/green-mana-symbol.svg" width="20"/>
+            <img src="assets/card-parts/blue-mana-symbol.svg" width="20"/></td>
+            <td><button id="ornwin" onclick="CopyDeck(this)">Copy to Clipboard</button></td>
+        </tr>
+    </table>
+    <i>In Cockatrice, go to Deck Editor > Load deck from clipboard... to view the deck.</i>
+    </p>
+    <div class="footer-bar"><p class="alignr"><i>Blog by ZephySeb</i></p></div>
+</body>

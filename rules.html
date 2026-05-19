@@ -11,11 +11,15 @@
                 <a class="button-text" href="rules.html"><div class="tooltip"><img src="assets/rules-icon.svg" height="30px"/><span class="tooltiptext">Rules</span></div></a>
                 <a class="button-text" href="sets.html"><div class="tooltip"><img src="assets/sets-icon.svg" height="30px"/><span class="tooltiptext">Sets</span></div></a>
                 <a class="button-text" href="formats.html"><div class="tooltip"><img src="assets/formats-icon.svg" height="30px"/><span class="tooltiptext">Formats</span></div></a>
+                <a class="button-text" href="statistics.html"><div class="tooltip"><img src="assets/statistics-icon.svg" height="30px"/><span class="tooltiptext">Statistics</span></div></a>
     </div>
     <h2>Custom Mechanics</h2>
     <h3 class="collapsible" onclick="Accordion(this)">Talent Keywords</h3>
-    <div class="content"><p>Many keyword abilities on permanents are referred to as 'talent' keywords. This has no inherent meaning, though it refers to the following keywords:<br>
-&nbsp;&bull; Changeling, Chilltouch, Climbing, Deathtouch, Defender, Defiant, Devoid, Disembody, Double Strike, First Strike, Flourish, Flying, Haste, Hexproof, Horsemanship, Illusory, Indestructible, Infiltrate, Lifelink, Menace, Outflank, Overgrow, Prowess, Reach, Shadow, Skulk, Specialist, Stasis, Tenacity, Terminal, Toxic, Trample, Vigilance, Wandering Soul, Ward, Wither</p>
+    <div class="content"><p>Many keyword abilities on permanents are referred to as 'talent' keywords. This has no inherent meaning, though in general it refers to any passive or triggered keyword ability that affects a creature while that creature is on the battlefield. The following is the full list of talent keywords:<br>
+&nbsp;&bull; Changeling, Chilltouch, Climbing, Deathtouch, Defender, Defiant, Devoid, Devour, Disembody, Double Strike, First Strike, Flourish, Flying, Haste, Hexproof, Horsemanship, Illusory, Indestructible, Infiltrate, Lifelink, Menace, Myriad, Outflank, Overgrow, Phasing, Prowess, Reach, Shadow, Skulk, Specialist, Stasis, Tenacity, Terminal, Toxic, Trample, Vigilance, Wandering Soul, Ward, Wither.<br>
+Sometimes, an effect might ask you to choose a talent keyword counter; not all talent keywords have a corresponding counter. You can't choose a keyword that doesn't have a counter in this situation. The following talents don't have corresponding counters:<br>
+&nbsp;&bull; Devour [Quality], Hexproof from [Quality], [Quality] Specialist, Ward.<br>
+&nbsp;&bull; In addition, keywords that are written [Keyword] N, such as Disembody or Toxic, will always produce a keyword counter where N = 1, regardless of the number written on the original card.</p>
     <p><table border="0" class="alt-table"><tr><td>Talent Keyword</td><td>Rulings</td></tr>
         <tr>
             <td>Chilltouch</td>
@@ -134,6 +138,10 @@ A creature with no abilities can arise from a number of scenarios - whether it b
             </td>
         </tr>
         <tr>
+            <td>Preserve</td>
+            <td>Magic in Seivia is scarce, and must be preserved. Preserve is an ability word that applies to various abilities, caring about whether you own seven or more cards in exile.</td>
+        </tr>
+        <tr>
             <td>Repress</td>
             <td>Chromatopia's nobility tries to keep the masses under control, and repress allows you to do just that.<br>
 As an ability word, repress appears in italics on a number of cards. It has no inherent rules meaning, instead it's used to group a number of similar effects together. In general, effects labeled with repress trigger when the card it's on enters the battlefield, or when an opponent draws their second card each turn.<br>
@@ -225,6 +233,14 @@ If a creature enchanted by a come alive aura would turn into another permanent t
 &nbsp;&bull; Condition cards are not spells, they can't be cast.<br>
 &nbsp;&bull; Condition cards are not permanents. They can't enter the battlefield.<br>
 &nbsp;&bull; Conditions have subtypes, such as Wound. These subtypes have no inherent abilities.</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Conflict</h3>
+    <div class="content"><p>Conflict is a battle subtype.<br>
+As a conflict enters, you choose an opponent to protect it.
+When the last defense counter is removed from a conflict, it's defeated, and its controller draws a card.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Deploy</h3>
+    <div class="content"><p>Deploy is a new keyword action that applies to permanents. If an effect asks you to deploy a permanent of a certain quality, you must tap an untapped permanent that you control that meets the quality. It doesn't matter how long you've controlled the permanent.
+</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Enhance</h3>
     <div class="content"><p>The creatures of Garrem are good at adapting to the harsh environments, getting bigger and tougher to survive the wilderness. Toughen your own creatures up with the enhance mechanic. Enhance is a keyword ability and alternative casting cost on some creatures. If the enhance cost is paid, the creature will enter the battlefield with additional counters on it, which are written after the enhance cost. These may be +1/+1 counters, keyword counters, or other types of counter, even a mixture of multiple counters.</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Exhaustion</h3>
@@ -246,6 +262,9 @@ If a creature enchanted by a come alive aura would turn into another permanent t
 &nbsp;&bull; When you remove the last impulse counter from a card, it remains in exile, but it is no longer incited. If an impulse counter is put on it later somehow, it won't become playable unless it's incited again.<br>
 &nbsp;&bull; If you incite a card an opponent controls, you can play the card, not the opponent. Similarly, impulse counters are removed on your end step, not the opponents.<br>
 &nbsp;&bull; When an incited card is played from exile, it resolves normally, and is then put into the appropriate zone.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Indulge</h3>
+    <div class="content"><p>Indulge is an additional cost that appears on spells. Indulge N means 'as an additional cost to cast this spell, exile N cards from your graveyard.' if you pay this cost, the spell becomes indulged, and may have an additional effect.
 </p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Mystical Spells</h3>
     <div class="content"><p>The folks at the Meltis Magitech Institute are always looking for new ways to hone their magic. Mystical is a new instant and sorcery subtype, which comes with a number shown in the bottom right of the card known as the potency. Potency is written on the card encased in a flame-like symbol, and if the potency is changed, all instances of this symbol on the card change with it. There are a number of ways of changing the potency of a mystical spell detailed below.<br>

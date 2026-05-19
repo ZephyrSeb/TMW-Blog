@@ -10,9 +10,10 @@
                 <input type="text" class="input-text" placeholder="Search..." id="search">
                 <a class="button"><img src="assets/search-icon.svg" height="30px" onclick="ResetSearch()"/></a>
                 <a class="button" href="info.html"><div class="tooltip"><img src="assets/info-icon.svg" height="30px"/><span class="tooltiptext">Information</span></div></a>
-                <a class="button-text" href="rules.html"><div class="tooltip"><img src="assets/rules-icon.svg" height="30px"/><span class="tooltiptext">Rules</span></div></a>
-                <a class="button-text" href="sets.html"><div class="tooltip"><img src="assets/sets-icon.svg" height="30px"/><span class="tooltiptext">Sets</span></div></a>
-                <a class="button-text" href="formats.html"><div class="tooltip"><img src="assets/formats-icon.svg" height="30px"/><span class="tooltiptext">Formats</span></div></a>
+                <a class="button" href="rules.html"><div class="tooltip"><img src="assets/rules-icon.svg" height="30px"/><span class="tooltiptext">Rules</span></div></a>
+                <a class="button" href="sets.html"><div class="tooltip"><img src="assets/sets-icon.svg" height="30px"/><span class="tooltiptext">Sets</span></div></a>
+                <a class="button" href="formats.html"><div class="tooltip"><img src="assets/formats-icon.svg" height="30px"/><span class="tooltiptext">Formats</span></div></a>
+                <a class="button" href="statistics.html"><div class="tooltip"><img src="assets/statistics-icon.svg" height="30px"/><span class="tooltiptext">Statistics</span></div></a>
     <p><label>Sort By:</label>
         <select name="sort" id="sort" onchange="ResetSearch()">
             <option value="name">Alphabetical</option>
@@ -20,7 +21,7 @@
             <option value="mv">Mana Value</option>
         </select>
     </p>
-    <p class="alignr" id="card-count">Placeholder Text</p>
+    <p class="alignr" id="card-count">Showing 1-0 of 0 cards.</p>
     <div align="right" style="margin-right: 200px"><table border="0"><tr>
         <td><a class="button" onclick="Prev()">Previous</a></td>
         <td><a class="button" onclick="Next()">Next</a></td>

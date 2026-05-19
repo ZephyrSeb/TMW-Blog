@@ -1,6 +1,7 @@
 var parser = new DOMParser();
 var xmlDoc;
 var format;
+var packSize;
 var cardPool = [];
 var sideboard = [];
 var draftPacks = [,];
@@ -22,6 +23,7 @@ async function OnLoad() {
     if (set == "ska") jsonPath = await fetch("assets/limited/SKA.json");
     if (set == "nat") jsonPath = await fetch("assets/limited/NAT.json");
     if (set == "vcl") jsonPath = await fetch("assets/limited/VCL.json");
+    if (set == "sei") jsonPath = await fetch("assets/limited/SEI.json");
     let text;
     if (set != "custom") {
         document.getElementById("custom-set").disabled = true;
@@ -60,16 +62,34 @@ function getImage(url) {
 }
 
 function Generate() {
-    let format = document.getElementById("format-select").value;
-    if (format == "sealed") GenerateSealed();
-    if (format == "draft") GenerateDraft();
+    let formatSelect = document.getElementById("format-select").value;
+    let replace = true;
+    if (format.format.length > 0) {
+        let cardCount = 0;
+        if (format.format == "cube") {
+            for (let loop in format.lists) {
+                cardCount += format.lists[loop].list.length;
+            }
+        }
+        let pulls = 0;
+        for (let loop in format.slots) {
+            pulls += format.slots[loop].rolls;
+        }
+        if (cardCount >= pulls * 24) replace = false;
+    }
+    packSize = 0;
+    for (let i in format.slots) {
+        packSize += format.slots[i].rolls;
+    }
+    if (formatSelect == "sealed") GenerateSealed(replace);
+    if (formatSelect == "draft") GenerateDraft(replace);
 }
 
-function GenerateSealed() {
+function GenerateSealed(replace) {
     cardPool = [];
     sideboard = [];
-    for (let i = 0; i < 6; i++) {
-        cardPool = cardPool.concat(GeneratePacks());
+    for (let i = 0; i < 2 * format.packs; i++) {
+        cardPool = cardPool.concat(GeneratePacks(replace));
     }
     document.getElementById("land-w").value = 0;
     document.getElementById("land-u").value = 0;
@@ -80,11 +100,11 @@ function GenerateSealed() {
     UpdateDeckCount();
 }
 
-function GenerateDraft() {
+function GenerateDraft(replace) {
     cardPool = [];
     sideboard = [];
-    for (let i = 0; i < 24; i++) {
-        draftPacks[i] = GeneratePacks();
+    for (let i = 0; i < 8 * format.packs; i++) {
+        draftPacks[i] = GeneratePacks(replace);
     }
     document.getElementById("land-w").value = 0;
     document.getElementById("land-u").value = 0;
@@ -111,9 +131,9 @@ function UpdateDeckCount() {
     let landR = Number(document.getElementById("land-r").value);
     let landG = Number(document.getElementById("land-g").value);
     deckSize.textContent = landW + landU + landB + landR + landG + cardPool.length;
-    if (currentPack > -1 && currentSet < 3) {
+    if (currentPack > -1 && currentSet < format.packs) {
         let set = currentSet + 1;
-        let pack = 15 - draftPacks[currentPack].length;
+        let pack = 1 + packSize - draftPacks[currentPack].length;
         document.getElementById("draft-count").innerHTML = "Pack " + set + ", Pick " + pack;
     }
 }
@@ -240,7 +260,7 @@ function RemoveCardAtRandom(pack) {
     draftPacks[pack].splice(finalCard, 1);
 }
 
-function GeneratePacks() {
+function GeneratePacks(replace) {
     let cardPool = [];
     for (let j in format.slots) {
         for (let roll = 0; roll < format.slots[j].rolls; roll++) {
@@ -259,14 +279,18 @@ function GeneratePacks() {
                 }
                 for (let loop in format.lists) {
                     if (format.lists[loop].name == format.slots[j].slot[finalSlot].name) {
-                        cardPool.push(format.lists[loop].list[Math.floor(Math.random() * format.lists[loop].list.length)]);
+                        let rand = Math.floor(Math.random() * format.lists[loop].list.length);
+                        cardPool.push(format.lists[loop].list[rand]);
+                        if (!replace) format.lists[loop].list.splice(rand, 1);
                     }
                 }
             }
             else {
                 for (let loop in format.lists) {
                     if (format.lists[loop].name == format.slots[j].slot.name) {
-                        cardPool.push(format.lists[loop].list[Math.floor(Math.random() * format.lists[loop].list.length)]);
+                        let rand = Math.floor(Math.random() * format.lists[loop].list.length);
+                        cardPool.push(format.lists[loop].list[rand]);
+                        if (!replace) format.lists[loop].list.splice(rand, 1);
                     }
                 }
             }
@@ -537,7 +561,7 @@ async function DrawCard(canvas, card, size) {
                     context.textAlign = "center";
                     context.fillText(card.getElementsByTagName("text")[s].textContent.split(": ")[0], 52 * size, (477 + 64 * s + layout) * size);
                 }
-                if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) < 0) {
+                if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) < 0 || card.getElementsByTagName("text")[s].textContent.split(": ")[0] == "-X") {
                     let img = await getImage("assets/card-parts/loyalty-down.svg");
                     context.drawImage(img, 22 * size, (456 + 64 * s + layout) * size, 64 * size, 40 * size);
                     context.font="Bold " + 17 * size + "pt Beleren";
@@ -711,11 +735,14 @@ function GetCardBack(card) {
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WR") cardURL = cardURL + "-boros.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-simic.svg";
     else cardURL = cardURL + "-gold.svg";
+
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent.includes("V")) cardURL = cardURL.substring(0, cardURL.length - 4) + "-void.svg";
     return cardURL;
 }
 
 function GetCardPT(card) {
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Artifact")) cardURL = "assets/card-parts/pt-colorless.svg";
+    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent.includes("hybrid")) cardURL = "assets/card-parts/pt-colorless.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "W") cardURL = "assets/card-parts/pt-white.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "U") cardURL = "assets/card-parts/pt-blue.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "B") cardURL = "assets/card-parts/pt-black.svg";

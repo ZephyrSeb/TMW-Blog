@@ -1,0 +1,45 @@
+1 Bearded Axe
+1 Dwarven Hammer
+1 Frostrife Warpick
+1 Frostrife Vow
+1 Commander's Sphere
+1 Engineer's Guildrune
+1 Mana Geode
+1 Training Weapon
+1 Diamond Pick-Axe
+1 Cavern Armorer
+1 Dwarven Mineralogist
+1 Warchanter Skald
+1 Frostrife Acolyte
+1 Subterranean Farmer
+1 Dwarfhold Champion
+1 Battleminer Trainee
+1 Gaddom Earthenhelm, Low King
+1 Essence Miner
+1 Lightstaff Apprentice
+1 Lightstaff Master
+1 Careless Guard
+1 Dwarven Battleminer
+1 Scion of Winter
+1 Frostrife Miner
+1 Frostrife Protector
+1 War Priest
+1 Blechemon's Blessing
+1 Combat Knowledge
+1 Explosion Shield
+1 Kindred Hope
+1 Miners' Ward
+1 Glyph of Zeal
+1 Steal Evidence
+1 Command Tower
+1 Command Beacon
+9 Mountain
+9 Plains
+1 Wind-Scarred Crag
+1 Spectator Seating
+1 Brilliant Sanctum
+1 Deserted Plains
+1 Reckless Crew
+
+1 Jorisli Herog
+1 Mundoug Herog

@@ -13,6 +13,7 @@ async function OnLoad() {
     xmlDoc = parser.parseFromString(text, "text/xml");
     urlParams = new URLSearchParams(window.location.search)
     document.getElementById("search").value = urlParams.get('search');
+    if (urlParams.get('sort') != null) document.getElementById("sort").value = urlParams.get('sort');
     Search();
 
     var input = document.getElementById("search")?.addEventListener("keypress", function(event) {
@@ -416,7 +417,7 @@ async function DrawCard(canvas, card, size) {
                     context.textAlign = "center";
                     context.fillText(card.getElementsByTagName("text")[s].textContent.split(": ")[0], 52 * size, (477 + 64 * s + layout) * size);
                 }
-                if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) < 0) {
+                if (Number(card.getElementsByTagName("text")[s].textContent.split(": ")[0]) < 0 || card.getElementsByTagName("text")[s].textContent.split(": ")[0] == "-X") {
                     let img = await getImage("assets/card-parts/loyalty-down.svg");
                     context.drawImage(img, 22 * size, (456 + 64 * s + layout) * size, 64 * size, 40 * size);
                     context.font="Bold " + 17 * size + "pt Beleren";
@@ -792,7 +793,7 @@ function findManaSymbol(s) {
 }
 
 function ResetSearch() {
-    window.location.href = "carddex.html?search=" + document.getElementById("search").value;
+    window.location.href = "carddex.html?search=" + document.getElementById("search").value + "&sort=" + document.getElementById("sort").value;
 }
 
 function Search() {
@@ -959,8 +960,22 @@ function Search() {
                 if (check.substring(0,2) == "t:" || check.substring(0,5) == "type:") {
                     if (!cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes(check.split(":")[1])) include[j] = false;
                 }
+                if (check.substring(0,3) == "mc:" || check.substring(0,5) == "mana:") {
+                    if (!cards[i].getElementsByTagName("manacost")[0].textContent.toLowerCase().includes(check.split(":")[1])) include[j] = false;
+                }
+                if (check.substring(0,7) == "flavor:") {
+                    if (cards[i].getElementsByTagName("flavor").length > 0) {
+                        if (!cards[i].getElementsByTagName("flavor")[0].textContent.toLowerCase().includes(check.split(":")[1])) include[j] = false;
+                    }
+                    else include[j] = false;
+                }
                 if (check.substring(0,2) == "o:" || check.substring(0,5) == "oracle:") {
-                    if (!cards[i].getElementsByTagName("text")[0].textContent.toLowerCase().includes(check.split(":")[1])) include[j] = false;
+                    let temp = false;
+                    for (let j = 0; j < cards[i].getElementsByTagName("text").length; j++) {
+                        if (cards[i].getElementsByTagName("text")[j].textContent.toLowerCase().includes(check.split(":")[1]))
+                        temp = true;
+                    }
+                    if (!temp) include[j] = false;
                 }
                 if (check.substring(0,2) == "p:" || check.substring(0,4) == "pow:") {
                     if (cards[i].getElementsByTagName("pt").length == 0) include[j] = false;
@@ -1065,6 +1080,9 @@ function Search() {
                 if (check == "is:split") {
                     if (cards[i].getElementsByTagName("layout")[0].textContent.toLowerCase() != "split") include[j] = false;
                 }
+                if (check == "is:hybrid") {
+                    if (cards[i].getElementsByTagName("layout")[0].textContent.toLowerCase() != "hybrid") include[j] = false;
+                }
                 if (check == "is:permanent") {
                     if (cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("instant") ||
                         cards[i].getElementsByTagName("type")[0].textContent.toLowerCase().includes("sorcery") ||
@@ -1089,6 +1107,9 @@ function Search() {
                 }
                 if (check == "is:vanilla") {
                     if (!cards[i].getElementsByTagName("text")[0].textContent == "") include[j] = false;
+                }
+                if (check == "is:flavor") {
+                    if (cards[i].getElementsByTagName("flavor").length == 0) include[j] = false;
                 }
                 if (check == "is:watermark") {
                     if (cards[i].getElementsByTagName("prop")[0].getElementsByTagName("watermark").length == 0) include[j] = false;
@@ -1198,14 +1219,15 @@ function Search() {
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "PSB" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "BLZ" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "NGA" ||
-                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "RST") format = true;
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "RST" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "SEI") format = true;
                     }
                     if (!format) include[j] = false;
                 }
                 if (check == "legal:standard") {
                     let format = false;
                     for (let k = 0; k < cards[i].getElementsByTagName("set").length; k++) {
-                        if (cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "VCL" ||
+                        if (
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "MSS" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "DRT" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "FES" ||
@@ -1214,7 +1236,8 @@ function Search() {
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "PSB" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "BLZ" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "NGA" ||
-                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "RST") format = true;
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "RST" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "SEI") format = true;
                     }
                     if (!format) include[j] = false;
                 }
@@ -1332,18 +1355,23 @@ function GetCardBack(card) {
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WR") cardURL = cardURL + "-boros.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-simic.svg";
     else cardURL = cardURL + "-gold.svg";
+
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent.includes("V")
+        && !card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Planeswalker")
+        && !card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Artifact")) cardURL = cardURL.substring(0, cardURL.length - 4) + "-void.svg";
     return cardURL;
 }
 
 function GetCardPT(card) {
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Artifact")) cardURL = "assets/card-parts/pt-colorless.svg";
+    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent.includes("hybrid")) cardURL = "assets/card-parts/pt-colorless.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "W") cardURL = "assets/card-parts/pt-white.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "U") cardURL = "assets/card-parts/pt-blue.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "B") cardURL = "assets/card-parts/pt-black.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "R") cardURL = "assets/card-parts/pt-red.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "G") cardURL = "assets/card-parts/pt-green.svg";
     else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "") cardURL = "assets/card-parts/pt-colorless.svg";
-    else  cardURL = "assets/card-parts/pt-gold.svg";
+    else cardURL = "assets/card-parts/pt-gold.svg";
     return cardURL;
 }
 
