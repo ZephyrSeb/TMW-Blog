@@ -1406,6 +1406,8 @@ function GetSetName(code) {
     if (code == "BLZ") setName = "Blazing Inferno";
     if (code == "NGA") setName = "Nature's Garden";
     if (code == "RST") setName = "World's Rest";
+    if (code == "SEI") setName = "Seivia";
+    if (code == "HGR") setName = "Heroes of Greece";
     if (code == "PMW") setName = "Many Worlds Promo";
     return setName;
 }

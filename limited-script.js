@@ -24,6 +24,7 @@ async function OnLoad() {
     if (set == "nat") jsonPath = await fetch("assets/limited/NAT.json");
     if (set == "vcl") jsonPath = await fetch("assets/limited/VCL.json");
     if (set == "sei") jsonPath = await fetch("assets/limited/SEI.json");
+    if (set == "hgr") jsonPath = await fetch("assets/limited/HGR.json");
     let text;
     if (set != "custom") {
         document.getElementById("custom-set").disabled = true;
@@ -63,6 +64,8 @@ function getImage(url) {
 
 function Generate() {
     let formatSelect = document.getElementById("format-select").value;
+    let generateButton = document.getElementById("generate-button");
+    generateButton.disabled = true;
     let replace = true;
     if (format.format.length > 0) {
         let cardCount = 0;

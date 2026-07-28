@@ -16,7 +16,7 @@
     <h2>Custom Mechanics</h2>
     <h3 class="collapsible" onclick="Accordion(this)">Talent Keywords</h3>
     <div class="content"><p>Many keyword abilities on permanents are referred to as 'talent' keywords. This has no inherent meaning, though in general it refers to any passive or triggered keyword ability that affects a creature while that creature is on the battlefield. The following is the full list of talent keywords:<br>
-&nbsp;&bull; Changeling, Chilltouch, Climbing, Deathtouch, Defender, Defiant, Devoid, Devour, Disembody, Double Strike, First Strike, Flourish, Flying, Haste, Hexproof, Horsemanship, Illusory, Indestructible, Infiltrate, Lifelink, Menace, Myriad, Outflank, Overgrow, Phasing, Prowess, Reach, Shadow, Skulk, Specialist, Stasis, Tenacity, Terminal, Toxic, Trample, Vigilance, Wandering Soul, Ward, Wither.<br>
+&nbsp;&bull; Changeling, Chilltouch, Climbing, Deathtouch, Defender, Defiant, Devoid, Devour, Disembody, Double Strike, Exploit, First Strike, Flourish, Flying, Haste, Hexproof, Horsemanship, Illusory, Increment, Indestructible, Infiltrate, Lifelink, Melee, Menace, Myriad, Outflank, Overgrow, Phasing, Prowess, Reach, Shadow, Skulk, Soulbond, Specialist, Stasis, Tenacity, Terminal, Toxic, Training, Trample, Vigilance, Wandering Soul, Ward, Wither.<br>
 Sometimes, an effect might ask you to choose a talent keyword counter; not all talent keywords have a corresponding counter. You can't choose a keyword that doesn't have a counter in this situation. The following talents don't have corresponding counters:<br>
 &nbsp;&bull; Devour [Quality], Hexproof from [Quality], [Quality] Specialist, Ward.<br>
 &nbsp;&bull; In addition, keywords that are written [Keyword] N, such as Disembody or Toxic, will always produce a keyword counter where N = 1, regardless of the number written on the original card.</p>
@@ -132,6 +132,10 @@ Spells with an {X} in their mana cost have a mana value of 5 or greater provided
             <td>Null is a new ability word that connects a number of abilities that care about whether a permanent has left the battlefield this turn. They don't care who the controller of the permanent was, or any of it's types.</td>
         </tr>
         <tr>
+            <td>Odyssey</td>
+            <td>Going on an adventure is a group activity, not just for one person. Odyssey is a new ability word that groups a number of triggered abilities that care about when a creature you control explores. This can be any creature you control, not just the one with odyssey.</td>
+        </tr>
+        <tr>
             <td>Prehistoric</td>
             <td>Fossils of dinosaurs and prehistoric creatures are well preserved in the snowy climate of Festiville. Prehistoric is an ability word used to group a number of abilities that affect or care about creatures with no abilities.<br>
 A creature with no abilities can arise from a number of scenarios - whether it be a card printed with no ability text, a creature token with no abilities, or a creature with a bind counter on it that has lost its abilities.
@@ -183,6 +187,9 @@ Your allegiance to a color is the number of color counters of that color among p
 &nbsp;&bull; If a creature protecting an asterism phases out, it stops protecting the asterism for as long as it's phased out, but will begin protecting it again once it phases in. The asterism doesn't phase out alongside the creature, however.<br>
 &nbsp;&bull; If an asterism phases out, all creatures protecting it stop protecting it, but once the asterism phases in, all creatures that were protecting it that can still do so begin protecting it again.<br>
 Note: Some asterisms in this set are also creatures as long as they're protected. This is not innate to asterisms, it's possible that future sets may contain asterism creatures without this rule.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Automate</h3>
+    <div class="content"><p>Automate N is a new keyword that appears on Equipment. It is a triggered ability that means "When this Equipment enters the battlefield, create a 0/0 colorless Assembly-Worker artifact creature token, put N +1/+1 counters on it, then attach this Equipment to it."
 </p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Barter</h3>
     <div class="content"><p>The artisans in the Icejade Cradle know better than anyone the right price to pay to make the most of your resources. This is represented by the barter mechanic.<br>
@@ -238,8 +245,26 @@ If a creature enchanted by a come alive aura would turn into another permanent t
 As a conflict enters, you choose an opponent to protect it.
 When the last defense counter is removed from a conflict, it's defeated, and its controller draws a card.
 </p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Defy the Gods</h3>
+    <div class="content"><p>Do you dare defy the gods? Defy the Gods is a new keyword that grants the status "Hero of Mortals" to a player.<br>
+&nbsp;&bull;The keyword works a little differently on permanents and non-permanents. On permanents, the keyword grants the "Hero of Mortals" status as it enters the battlefield, whereas on instants and sorceries, it grants the status as the spell resolves.<br>
+&nbsp;&bull;The "Hero of Mortals" status is only granted if no player already holds the status.<br>
+&nbsp;&bull;At the beginning of the hero's end step, they "Steal from the gods"; they choose to create a Clue token, a Food token, or a Treasure token.<br>
+&nbsp;&bull;Some effects offer a replacement effect that allows a different type of token to be created, worded as 'as you steal from the gods', in which case, this type of token is added to the list of options to be created.<br>
+&nbsp;&bull;Whenever another player deals combat damage to a player, the "Hero of Mortals" status is transferred to that player as a triggered ability.<br>
+&nbsp;&bull;If the player that is the "Hero of Mortals" loses the game without being dealt combat damage, the status also stop existing in the game.
+</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Deploy</h3>
-    <div class="content"><p>Deploy is a new keyword action that applies to permanents. If an effect asks you to deploy a permanent of a certain quality, you must tap an untapped permanent that you control that meets the quality. It doesn't matter how long you've controlled the permanent.
+    <div class="content"><p>Deploy is a new keyword action that applies to permanents. If an effect asks you to deploy a permanent of a certain quality, you must tap an untapped permanent that you control that meets the quality. It doesn't matter how long you've controlled the permanent. You can't deploy a permanent that is already tapped, or a permanent you don't control.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Divine Champion</h3>
+    <div class="content"><p>Divine Champion is a new partner variant that appears on some legendary creatures. In commander and commander variants, if your commander has divine champion, you may choose a Divine Asterism to be a second commander, and use the combined color identity of the two cards as you commander's color identity. The asterism chosen must be Divine specifically, other Asterisms may not be used as a second commander.
+</p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Divine Protection</h3>
+    <div class="content"><p>Divine Protection is a new keyword that appears on Divine Asterisms. In commander and commander variants, when the Asterism enters the battlefield, if you control a commander creature, you can assign it to protect the Asterism.<br>
+&nbsp;&bull;A creature can only protect one Asterism at a time, if it begins protecting a new Asterism, it stops protecting previous Asterisms.<br>
+&nbsp;&bull;As this is a triggered ability, if a creature enters the battlefield before the trigger has resolved, it could be assigned to protect the Asterism. In this case, both that creature and your commander are now protecting the Asterism.<br>
+&nbsp;&bull;Divine Protection will trigger regardless whether the Asterism is your commander or not.
 </p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Enhance</h3>
     <div class="content"><p>The creatures of Garrem are good at adapting to the harsh environments, getting bigger and tougher to survive the wilderness. Toughen your own creatures up with the enhance mechanic. Enhance is a keyword ability and alternative casting cost on some creatures. If the enhance cost is paid, the creature will enter the battlefield with additional counters on it, which are written after the enhance cost. These may be +1/+1 counters, keyword counters, or other types of counter, even a mixture of multiple counters.</p></div>
@@ -368,6 +393,10 @@ Lands entering the battlefield can trigger shift / unshift on any player's turn,
         <tr>
             <td><img src="assets/card-parts/treasure-mana-symbol.svg" width="25px"></td>
             <td>To pay this, you must tap and sacrifice an untapped treasure artifact.</td>
+        </tr>
+        <tr>
+            <td><img src="assets/card-parts/clue-mana-symbol.svg" width="25px"></td>
+            <td>To pay this, you must tap and sacrifice an untapped clue artifact.</td>
         </tr>
         <tr>
             <td><img src="assets/card-parts/fiery-mana-symbol.svg" width="25px"></td>
