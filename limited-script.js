@@ -442,6 +442,7 @@ async function DrawCard(canvas, card, size) {
         if (card.getElementsByTagName("watermark")[0].textContent == "Despia") watermark = await getImage("assets/card-parts/watermark-despia.svg");
         context.drawImage(watermark, 156 * size, 448 * size, 192 * size, 192 * size);
     }
+    //Split cards
     if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "split") {
         for (let sp = 0; sp < 2; sp++) {
             if (sp == 0) {
@@ -462,7 +463,7 @@ async function DrawCard(canvas, card, size) {
             context.font=18 * size + "pt Beleren";
             context.fillText(type, 48 * size, (312 + 312 * sp) * size, 384 * size);
             context.font=16 * size + "pt MPlantin";
-            wrapText(context, card.getElementsByTagName("text")[sp].textContent, 48 * size, (104 + 312 * sp) * size, 192 * size, 20 * size, size, "split");
+            wrapText(context, card.getElementsByTagName("text")[sp].textContent, 48 * size, (184 + 312 * sp) * size, 192 * size, 200 * size, 20 * size, size, "split");
             context.drawImage(imgRarity, 432 * size, (288 + 312 * sp) * size, 32 * size, 32 * size);
         }
     }
@@ -490,13 +491,15 @@ async function DrawCard(canvas, card, size) {
         context.fillStyle = "#000000";
         context.textAlign = "left";
         context.fillText(name, 48 * size, (64 - pw) * size, (396 - 20 * manalength) * size);
+        //Normal cards
         if (!type.includes("Saga") && !type.includes("Planeswalker") && !type.includes("Class")) {
             context.font=18 * size + "pt Beleren";
             context.fillText(type, 48 * size, 424 * size, 384 * size);
             context.font=16 * size + "pt MPlantin";
-            wrapText(context, textbox, 48 * size, 544 * size, 408 * size, 20 * size, size);
+            wrapText(context, textbox, 48 * size, 558 * size, 408 * size, 196 * size, 20 * size, size);
             context.drawImage(imgRarity, 432 * size, 400 * size, 32 * size, 32 * size);
         }
+        //Class cards
         if (type.includes("Class")) {
             context.font=18 * size + "pt Beleren";
             context.fillText(type, 48 * size, 624 * size, 384 * size);
@@ -504,14 +507,15 @@ async function DrawCard(canvas, card, size) {
             context.font="Italic " + 14 * size + "pt MPlantin";
             context.fillStyle = "#000000";
             context.textAlign = "left";
-            wrapText(context, card.getElementsByTagName("text")[0].textContent, 258 * size, 104 * size, 206 * size, 20 * size, size, "Saga");
+            wrapText(context, card.getElementsByTagName("text")[0].textContent, 258 * size, 116 * size, 200 * size, 48 * size, 20 * size, size, "Saga");
             context.font=14 * size + "pt MPlantin";
-            wrapText(context, card.getElementsByTagName("text")[1].textContent, 258 * size, 160 * size, 206 * size, 20 * size, size, "Saga");
-            wrapText(context, card.getElementsByTagName("text")[3].textContent, 258 * size, 328 * size, 206 * size, 20 * size, size, "Saga");
-            wrapText(context, card.getElementsByTagName("text")[5].textContent, 258 * size, 488 * size, 206 * size, 20 * size, size, "Saga");
-            wrapText(context, card.getElementsByTagName("text")[2].textContent, 258 * size, 296 * size, 206 * size, 20 * size, size, "Saga");
-            wrapText(context, card.getElementsByTagName("text")[4].textContent, 258 * size, 456 * size, 206 * size, 20 * size, size, "Saga");
+            wrapText(context, card.getElementsByTagName("text")[1].textContent, 258 * size, 212 * size, 200 * size, 128 * size, 20 * size, size, "Saga");
+            wrapText(context, card.getElementsByTagName("text")[3].textContent, 258 * size, 376 * size, 200 * size, 128 * size, 20 * size, size, "Saga");
+            wrapText(context, card.getElementsByTagName("text")[5].textContent, 258 * size, 540 * size, 200 * size, 128 * size, 20 * size, size, "Saga");
+            wrapText(context, card.getElementsByTagName("text")[2].textContent, 258 * size, 300 * size, 200 * size, 32 * size, 20 * size, size, "Saga");
+            wrapText(context, card.getElementsByTagName("text")[4].textContent, 258 * size, 460 * size, 200 * size, 32 * size, 20 * size, size, "Saga");
         }
+        //Saga cards
         if (type.includes("Saga")) {
             chapter_dict = {
                 "1": saga1,
@@ -528,19 +532,25 @@ async function DrawCard(canvas, card, size) {
             context.font=16 * size + "pt MPlantin";
             let uniqueChapters = card.getElementsByTagName("text").length;
             let chapters = card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(": ")[0].split(",")[card.getElementsByTagName("text")[uniqueChapters - 1].textContent.split(": ")[0].split(",").length - 1];
-            wrapText(context, card.getElementsByTagName("text")[0].textContent, 42 * size, 102 * size, 206 * size, 20 * size, size, "Saga");
+            wrapText(context, card.getElementsByTagName("text")[0].textContent, 42 * size, 162 * size, 206 * size, 112 * size, 20 * size, size);
             let chapterSeparator = await getImage("assets/card-parts/chapter-separator.svg");
             for (let s = 0; s < uniqueChapters - 1; s++) {
-                let chapterText = card.getElementsByTagName("text")[s + 1].textContent.split(": ")[1];
-                wrapText(context, chapterText, 64 * size, (228 + (s * 428 / uniqueChapters)) * size, 184 * size, 20 * size, size, "Saga");
-                context.drawImage(chapterSeparator, 56 * size, (208 + ((s+1) * 428 / uniqueChapters)) * size, 192 * size, 4 * size);
-                let currentChapters = card.getElementsByTagName("text")[s + 1].textContent.split(": ")[0].split(",");
-                for (let t = 0; t < currentChapters.length; t++) {
-                    let chapterBanner = chapter_dict[currentChapters[t]];
-                    context.drawImage(chapterBanner, 18 * size, (260 + (s * 428 / uniqueChapters) + (t * 46) - currentChapters.length * 23) * size, 40 * size, 46 * size);
+                let chapterText = "";
+                if (card.getElementsByTagName("text")[s + 1].textContent.indexOf(":") > -1) chapterText = card.getElementsByTagName("text")[s + 1].textContent.split(": ")[1];
+                else chapterText = card.getElementsByTagName("text")[s + 1].textContent;
+                wrapText(context, chapterText, 64 * size, 216 * size + (s + 0.5) * 308 * size / (uniqueChapters - 1), 184 * size, 282 * size / (uniqueChapters - 1), 20 * size, size);
+                context.drawImage(chapterSeparator, 56 * size, 208 * size + (s+1) * 308 * size / (uniqueChapters - 1), 192 * size, 4 * size);
+                if (card.getElementsByTagName("text")[s + 1].textContent.indexOf(":") > -1) {
+                    let currentChapters = card.getElementsByTagName("text")[s + 1].textContent.split(": ")[0].split(",");
+                
+                    for (let t = 0; t < currentChapters.length; t++) {
+                        let chapterBanner = chapter_dict[currentChapters[t]];
+                        context.drawImage(chapterBanner, 18 * size, (216 + ((s + 0.25) * 308 / (uniqueChapters - 1) - (currentChapters.length - 1) * 20) + (t * 46)) * size, 40 * size, 46 * size);
+                    }
                 }
             }
         }
+        //Planeswalker cards
         context.font="Bold " + 22 * size + "pt MPlantin"
         context.textAlign = "center";
         context.fillText(pt, 434 * size, 656 * size);
@@ -579,7 +589,7 @@ async function DrawCard(canvas, card, size) {
                 context.textAlign = "left";
                 context.font=14 * size + "pt MPlantin";
                 context.fillStyle = "#000000";
-                wrapText(context, text, 92 * size, (472 + s * 64 + layout - 12) * size, (460-92) * size, 16 * size, size, "Planeswalker");
+                wrapText(context, text, 92 * size, (496 + s * 64 + layout - 12) * size, (460-92) * size, 68 * size, 16 * size, size, "Planeswalker");
             }
             context.font="Bold " + 22 * size + "pt Beleren";
             context.textAlign = "center";
@@ -647,54 +657,90 @@ async function DrawCardTruncated(canvas, card, size) {
 
 function GetCardBack(card) {
     cardURL = "assets/card-parts/card";
-    if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Legendary")) cardURL = cardURL + "-legend";
-    if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent.includes("hybrid")) cardURL = cardURL + "-hybrid";
-    if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Basic")) cardURL = cardURL + "-basic";
-    if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Snow")) cardURL = cardURL + "-snow";
-    if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Fiery")) cardURL = cardURL + "-fiery";
-    if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Land")) cardURL = cardURL + "-land";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Artifact")) cardURL = cardURL + "-artifact";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Saga")) cardURL = cardURL + "-saga";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Class")) cardURL = cardURL + "-class";
+    if (card.getElementsByTagName("frameoverride").length > 0) {
+        cardURL = "assets/card-parts/" + card.getElementsByTagName("frameoverride")[0].textContent + ".svg";
+    }
+    else {
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Legendary")) cardURL = cardURL + "-legend";
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent.includes("hybrid")) cardURL = cardURL + "-hybrid";
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Basic")) cardURL = cardURL + "-basic";
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Snow")) cardURL = cardURL + "-snow";
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Fiery")) cardURL = cardURL + "-fiery";
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Land")) cardURL = cardURL + "-land";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Artifact")) cardURL = cardURL + "-artifact";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Saga")) cardURL = cardURL + "-saga";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Class")) cardURL = cardURL + "-class";
 
-    if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Basic")) {
-        if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "W") cardURL = cardURL + "-plains.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "U") cardURL = cardURL + "-island.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "B") cardURL = cardURL + "-swamp.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "R") cardURL = cardURL + "-mountain.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "G") cardURL = cardURL + "-forest.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "") cardURL = cardURL + "-wastes.svg";
-    }
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Land")) {
-        if (card.getElementsByTagName("text")[0].textContent.includes("any")
-            && card.getElementsByTagName("text")[0].textContent.includes("color")) cardURL = cardURL + "-gold.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "W") cardURL = cardURL + "-white.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "U") cardURL = cardURL + "-blue.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "B") cardURL = cardURL + "-black.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "R") cardURL = cardURL + "-red.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "G") cardURL = cardURL + "-green.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "") cardURL = cardURL + "-colorless.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "WU") cardURL = cardURL + "-azorius.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "UB") cardURL = cardURL + "-dimir.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "BR") cardURL = cardURL + "-rakdos.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "RG") cardURL = cardURL + "-gruul.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "WG") cardURL = cardURL + "-selesnya.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "WB") cardURL = cardURL + "-orzhov.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "UR") cardURL = cardURL + "-izzet.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "BG") cardURL = cardURL + "-golgari.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "WR") cardURL = cardURL + "-boros.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "UG") cardURL = cardURL + "-simic.svg";
-        else cardURL = cardURL + "-gold.svg";
-        return cardURL;
-    }
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Planeswalker")) {
-        cardURL = cardURL + "-planeswalker";
-        if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "tall") cardURL = cardURL + "-tall";
-        if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "W") cardURL = cardURL + "-white.svg";
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Basic")) {
+            if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "W") cardURL = cardURL + "-plains.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "U") cardURL = cardURL + "-island.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "B") cardURL = cardURL + "-swamp.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "R") cardURL = cardURL + "-mountain.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "G") cardURL = cardURL + "-forest.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "") cardURL = cardURL + "-wastes.svg";
+        }
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Land")) {
+            if (card.getElementsByTagName("text")[0].textContent.includes("any")
+                && card.getElementsByTagName("text")[0].textContent.includes("color")) cardURL = cardURL + "-gold.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "W") cardURL = cardURL + "-white.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "U") cardURL = cardURL + "-blue.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "B") cardURL = cardURL + "-black.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "R") cardURL = cardURL + "-red.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "G") cardURL = cardURL + "-green.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "") cardURL = cardURL + "-colorless.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "WU") cardURL = cardURL + "-azorius.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "UB") cardURL = cardURL + "-dimir.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "BR") cardURL = cardURL + "-rakdos.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "RG") cardURL = cardURL + "-gruul.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "WG") cardURL = cardURL + "-selesnya.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "WB") cardURL = cardURL + "-orzhov.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "UR") cardURL = cardURL + "-izzet.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "BG") cardURL = cardURL + "-golgari.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "WR") cardURL = cardURL + "-boros.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("coloridentity")[0].textContent == "UG") cardURL = cardURL + "-simic.svg";
+            else cardURL = cardURL + "-gold.svg";
+            return cardURL;
+        }
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Planeswalker")) {
+            cardURL = cardURL + "-planeswalker";
+            if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "tall") cardURL = cardURL + "-tall";
+            if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "W") cardURL = cardURL + "-white.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "U") cardURL = cardURL + "-blue.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "B") cardURL = cardURL + "-black.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "R") cardURL = cardURL + "-red.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "G") cardURL = cardURL + "-green.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WU") cardURL = cardURL + "-azorius.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UB") cardURL = cardURL + "-dimir.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BR") cardURL = cardURL + "-rakdos.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "RG") cardURL = cardURL + "-gruul.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WG") cardURL = cardURL + "-selesnya.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WB") cardURL = cardURL + "-orzhov.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UR") cardURL = cardURL + "-izzet.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BG") cardURL = cardURL + "-golgari.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WR") cardURL = cardURL + "-boros.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-simic.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "") cardURL = cardURL + "-colorless.svg";
+            else cardURL = cardURL + "-gold.svg";
+        }
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "split") {
+            if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WU") cardURL = cardURL + "-split-azorius.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UB") cardURL = cardURL + "-split-dimir.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BR") cardURL = cardURL + "-split-rakdos.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "RG") cardURL = cardURL + "-split-gruul.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WG") cardURL = cardURL + "-split-selesnya.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WB") cardURL = cardURL + "-split-orzhov.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UR") cardURL = cardURL + "-split-izzet.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BG") cardURL = cardURL + "-split-golgari.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WR") cardURL = cardURL + "-split-boros.svg";
+            else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-split-simic.svg";
+        }
+
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "W") cardURL = cardURL + "-white.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "U") cardURL = cardURL + "-blue.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "B") cardURL = cardURL + "-black.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "R") cardURL = cardURL + "-red.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "G") cardURL = cardURL + "-green.svg";
+        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "") cardURL = cardURL + "-colorless.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WU") cardURL = cardURL + "-azorius.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UB") cardURL = cardURL + "-dimir.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BR") cardURL = cardURL + "-rakdos.svg";
@@ -705,41 +751,12 @@ function GetCardBack(card) {
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BG") cardURL = cardURL + "-golgari.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WR") cardURL = cardURL + "-boros.svg";
         else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-simic.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "") cardURL = cardURL + "-colorless.svg";
         else cardURL = cardURL + "-gold.svg";
-    }
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "split") {
-        if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WU") cardURL = cardURL + "-split-azorius.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UB") cardURL = cardURL + "-split-dimir.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BR") cardURL = cardURL + "-split-rakdos.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "RG") cardURL = cardURL + "-split-gruul.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WG") cardURL = cardURL + "-split-selesnya.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WB") cardURL = cardURL + "-split-orzhov.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UR") cardURL = cardURL + "-split-izzet.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BG") cardURL = cardURL + "-split-golgari.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WR") cardURL = cardURL + "-split-boros.svg";
-        else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-split-simic.svg";
-    }
 
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "W") cardURL = cardURL + "-white.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "U") cardURL = cardURL + "-blue.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "B") cardURL = cardURL + "-black.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "R") cardURL = cardURL + "-red.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "G") cardURL = cardURL + "-green.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "") cardURL = cardURL + "-colorless.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WU") cardURL = cardURL + "-azorius.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UB") cardURL = cardURL + "-dimir.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BR") cardURL = cardURL + "-rakdos.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "RG") cardURL = cardURL + "-gruul.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WG") cardURL = cardURL + "-selesnya.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WB") cardURL = cardURL + "-orzhov.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UR") cardURL = cardURL + "-izzet.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "BG") cardURL = cardURL + "-golgari.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "WR") cardURL = cardURL + "-boros.svg";
-    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("colors")[0].textContent == "UG") cardURL = cardURL + "-simic.svg";
-    else cardURL = cardURL + "-gold.svg";
-
-    if (card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent.includes("V")) cardURL = cardURL.substring(0, cardURL.length - 4) + "-void.svg";
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent.includes("V")
+            && !card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Planeswalker")
+            && !card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Artifact")) cardURL = cardURL.substring(0, cardURL.length - 4) + "-void.svg";
+    }
     return cardURL;
 }
 
@@ -791,11 +808,8 @@ function GetSetName(code) {
     return setName;
 }
 
-async function wrapText(context, text, x, y, maxWidth, lineHeight, size, type = "") {
-    let words = text.split(' ');
-    let line = '';
-    let lines = 0;
-    mana_dict = {
+async function wrapText(context, text, x, y, maxWidth, maxHeight, lineHeight, size, type = "") {
+    let mana_dict = {
         "{W}": "assets/card-parts/white-mana-symbol.svg",
         "{U}": "assets/card-parts/blue-mana-symbol.svg",
         "{B}": "assets/card-parts/black-mana-symbol.svg",
@@ -874,123 +888,160 @@ async function wrapText(context, text, x, y, maxWidth, lineHeight, size, type = 
     writeText();
 
     async function writeText() {
-        context.textAlign = "left";
-        context.font=16 * size + "pt MPlantin";
-        let fontSize = 16;
-        context.fillStyle = "#000000";
-        for (let n = 0; n < words.length; n++) {
-            var testLine = line + words[n] + ' ';
-            var metrics = context.measureText(testLine);
-            var testWidth = metrics.width;
-            if (testWidth > maxWidth && n > 0) {
-                line = words[n].split('\n')[0] + ' ';
-                if (words[n].includes('\n')) {
-                    if (words[n].split('\n')[1].length > 0) {
-                        lines += 1.5;
+        let textboxHeight = 0;
+        let preline = 0;
+        let prekerning = 0;
+        let precurrentString = "";
+        for (let i = 0; i < text.length; i++) {
+            if (text[i] == "{") {
+                let bool = false;
+                let nextChar = 0;
+                precurrentString = "";
+                while (!bool) {
+                    if (i + nextChar >= text.length) bool = true;
+                    else {
+                        precurrentString = precurrentString + text[i + nextChar];
+                        if (text[i + nextChar] == "}") bool = true;
+                        if (text[i + nextChar + 1] == "*") bool = true;
+                        if (text[i + nextChar + 1] == "_") bool = true;
                     }
+                    nextChar++;
                 }
-                lines++;
+                prekerning += 20 * size;
+                i += nextChar - 1;
+            }
+            else if (text[i] == "*") {}
+            else if (text[i] == "_") {}
+            else if (text[i] == "\n") {
+                preline += 1.5;
+                prekerning = 0;
             }
             else {
-                if (words[n].includes('\n')) {
-                    lines += 1.5;
+                let bool = false;
+                let nextChar = 0;
+                precurrentString = "";
+                while (!bool) {
+                    if (i + nextChar >= text.length) bool = true;
+                    else {
+                        precurrentString = precurrentString + text[i + nextChar];
+                        if (text[i + nextChar] == " ") bool = true;
+                        if (text[i + nextChar] == "\n") bool = true;
+                        if (text[i + nextChar + 1] == "*") bool = true;
+                        if (text[i + nextChar + 1] == "_") bool = true;
+                    }
+                    nextChar++;
                 }
-                else line = testLine;
-            }
+                if (prekerning + context.measureText(precurrentString).width > maxWidth) {
+                    preline++;
+                    prekerning = 0;
+                }
+                if (precurrentString[precurrentString.length - 1] == "\n") {
+                    preline += 1.5;
+                    prekerning = 0;
+                }
+                else prekerning += context.measureText(precurrentString).width;
+                i += nextChar - 1;}
         }
-        lines++;
-        line = '';
-        if (type != "Saga" && type != "split" && type != "Planeswalker") y = Math.max(y - ((lines - 1) / 2) * lineHeight, 232 * 2 * size);
-        if (type == "Planeswalker") {
-            if (lines>=4) {
-                fontSize = 12;
-                lineHeight = 14 * size;
-                y -= 4;
-            }
-            if (lines>=5) {
-                fontSize = 10;
-                lineHeight = 12 * size;
-                y -= 4;
-            }
-            if (lines>=6) {
-                fontSize = 8;
-                lineHeight = 10 * size;
-                y -= 4;
-            }
-        }
-        
-        if (type == "Saga" && lines>=6) {
-            fontSize = 14;
-            lineHeight = 16 * size;
-            y -= 6;
-        }
-        if (type == "Saga" && lines>=8) {
-            fontSize = 12;
-            lineHeight = 14 * size;
-            y -= 6;
-        }
-        if (type != "Saga" && lines >= 10) {
-            fontSize = 14;
-            lineHeight = 18 * size;
-        }
-        if (type != "Saga" && lines >= 14) {
-            fontSize = 12;
-            lineHeight = 14 * size;
-        }
+        preline++;
+        let modifier = 1;
+        if ((preline + 1) * lineHeight > maxHeight) modifier = maxHeight / ((preline + 1) * lineHeight);
+        textboxHeight = modifier * preline * lineHeight / 2;
 
-        for(let n = 0; n < words.length; n++) {
-            context.font=fontSize * size + "pt MPlantin";
+        let line = 0;
+        let kerning = 0;
+        let currentString = "";
+        let style = "";
+        for (let i = 0; i < text.length; i++) {
+            let fontSize = (lineHeight - 4) * modifier;
+            context.textAlign = "left";
+            context.font = fontSize + "pt MPlantin";
             context.fillStyle = "#000000";
-            if (words[n].includes("\n")) {
-                
-                let testLine = line + words[n].split('\n')[0];
-                let metrics = context.measureText(testLine);
-                let testWidth = metrics.width;
-                if (testWidth > maxWidth && n > 0) {
-                    context.fillText(line, x, y);
-                    line = words[n].split('\n')[0];
-                    y += lineHeight;
-                    context.fillText(words[n].split('\n')[0], x, y);
-                    y += lineHeight * 1.5;
+            currentString = text[i];
+            if (style == "bold") context.font = "bold " + fontSize + "pt MPlantin";
+            if (style == "italic") context.font = "italic " + fontSize + "pt MPlantin";
+            //Test for mana symbols
+            if (text[i] == "{") {
+                let bool = false;
+                let nextChar = 0;
+                currentString = "";
+                while (!bool) {
+                    if (i + nextChar >= text.length) bool = true;
+                    else {
+                        currentString = currentString + text[i + nextChar];
+                        if (text[i + nextChar] == "}") bool = true;
+                    }
+                    nextChar++;
+                }
+                if (kerning + 20 * size > maxWidth) {
+                    line += modifier;
+                    kerning = 0;
+                }
+                let img = await getImage(mana_dict[currentString]);
+                height = 1;
+                width = 1;
+                woffset = 0;
+                hoffset = 0;
+                kerningSize = 20 * size;
+                if (currentString.substring(0,2) == "{P") {height *= 1.5; hoffset = -6;}
+                if (currentString.substring(0,3) == "{S/") {width *= 3; height *= 1.8; woffset = -5 * size; hoffset = -6 * size; kerningSize = 50 * size;}
+                context.drawImage(img, x + kerning + woffset, y + line * lineHeight - fontSize - textboxHeight - size + hoffset, fontSize * 1.2 * width, fontSize * 1.2 * height);
+                kerning += kerningSize;
+                i += nextChar - 1;
+            }
+            //Test for formatting tags
+            else if (text[i] == "*") {
+                if (style == "") {
+                    context.font = "bold " + fontSize + "pt MPlantin";
+                    style = "bold";
                 }
                 else {
-                    line = testLine;
-                    context.fillText(line, x, y);
-                    y += lineHeight * 1.5;
+                    context.font = fontSize + "pt MPlantin";
+                    style = "";
                 }
-                words[n] = words[n].split('\n')[1]
-                n--;
-                line = '';
             }
-            else if (words[n].substring(0,1) == "{") {
-                let img = await getImage(mana_dict[words[n].substring(0, words[n].indexOf("}") + 1)])
-                let height = 1;
-                let width = 1;
-                let woffset = 0;
-                let hoffset = 0;
-                if (words[n].substring(0,2) == "{P") {height *= 1.5; hoffset = -6;}
-                if (words[n].substring(0,3) == "{S/") {width *= 3; height *= 1.8; woffset = -5; hoffset = -6;}
-                context.drawImage(img, x + context.measureText(line).width + 1 + woffset * size, y - lineHeight + 4 + hoffset * size, width * (lineHeight - 2), height * (lineHeight - 2));
-                if (words[n].substring(0,3) == "{S/") line = line + '    ';
-                words[n] = words[n].slice(words[n].indexOf("}") + 1);
-                n--;
-                line = line + '    ';
+            else if (text[i] == "_") {
+                if (style == "") {
+                    context.font = "italic " + fontSize + "pt MPlantin";
+                    style = "italic";
+                }
+                else {
+                    context.font = fontSize + "pt MPlantin";
+                    style = "";
+                }
+            }
+            else if (text[i] == "\n") {
+                line += 1.5 * modifier;
+                kerning = 0;
             }
             else {
-                var testLine = line + words[n] + ' ';
-                var metrics = context.measureText(testLine);
-                var testWidth = metrics.width;
-                if (testWidth > maxWidth && n > 0) {
-                    context.fillText(line, x, y);
-                    line = words[n] + ' ';
-                    y += lineHeight;
+                let bool = false;
+                let nextChar = 0;
+                currentString = "";
+                while (!bool) {
+                    if (i + nextChar >= text.length) bool = true;
+                    else {
+                        currentString = currentString + text[i + nextChar];
+                        if (text[i + nextChar] == " ") bool = true;
+                        if (text[i + nextChar] == "\n") bool = true;
+                        if (text[i + nextChar + 1] == "*") bool = true;
+                        if (text[i + nextChar + 1] == "_") bool = true;
+                        if (text[i + nextChar + 1] == "{") bool = true;
+                    }
+                    nextChar++;
                 }
-                else {
-                    line = testLine;
+                if (kerning + context.measureText(currentString).width > maxWidth) {
+                    line += modifier;
+                    kerning = 0;
                 }
+                context.fillText(currentString, x + kerning, y + lineHeight * line - textboxHeight);
+                if (currentString[currentString.length - 1] == "\n") {
+                    line += 1.5 * modifier;
+                    kerning = 0;
+                }
+                else kerning += context.measureText(currentString).width;
+                i += nextChar - 1;
             }
         }
-        context.fillText(line, x, y);
     }
 }
 
