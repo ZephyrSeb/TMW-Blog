@@ -267,7 +267,7 @@ function Search() {
     else {
         terms = [];
         if (searchCriteria.search("\[:=<>\]") > -1) {
-            while (searchCriteria.search("\[:=<>\]") > -1) {
+            while (searchCriteria.length > 0) {
                 let termStart = searchCriteria.toLowerCase().substring(0, searchCriteria.search("\[:=<>\]"));
                 let modifiedSearchCriteria = searchCriteria.toLowerCase().substring(searchCriteria.search("\[:=<>\]"), searchCriteria.length);
                 let termEnd = "";

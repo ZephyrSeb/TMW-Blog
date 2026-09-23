@@ -18,6 +18,10 @@ async function CopyDeck(id) {
     if (id.id == "brack") path = await fetch("assets/commander-decks/brack, the usurper.txt");
     if (id.id == "mundoug-jorisli") path = await fetch("assets/commander-decks/mundoug and jorisli herog.txt");
     if (id.id == "ornwin") path = await fetch("assets/commander-decks/ornwin, spiritual guide.txt");
+    if (id.id == "bellenyss") path = await fetch("assets/commander-decks/bellenyss, guided by stars.txt");
+    if (id.id == "doug") path = await fetch("assets/commander-decks/doug, the booming blade.txt");
+    if (id.id == "felix") path = await fetch("assets/commander-decks/felix, elemental dualist.txt");
+    if (id.id == "trivaz") path = await fetch("assets/commander-decks/trivaz galvanized.txt");
     let text = await path.text();
     await navigator.clipboard.writeText(text);
     alert("Copied deck");

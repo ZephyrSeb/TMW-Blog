@@ -1,0 +1,46 @@
+1 Lightning Rod
+1 Wand of Lightning Bolts
+1 Artificer's Guildrune
+1 Mana Geode
+1 Commander's Sphere
+1 Trivaz, Hero of Seodrizia
+1 Nemoran Mad Scientist
+1 Spell Conducter
+1 Third Path Iconoclast
+1 Curious Inventor
+1 Unwitting Accomplice
+1 Institute Adept
+1 Herald of the Storm
+1 Festival Crasher
+1 Reality Warper
+1 Hambry Innovator
+1 Snapping Book
+1 Kami of Stormy Weather
+1 Arcane Bombardment
+1 Fire Bolt
+1 Trivaz' Lightning
+1 Lightning Strike
+1 Tactical Assault
+1 Negative Twist
+1 Dark and Stormy Night
+1 Slick Sequence
+1 Opt
+1 Command Beacon
+1 Command Tower
+1 Kindling Techworks
+1 Rainbow Spring
+1 Swiftwater Cliffs
+1 Evolving Wilds
+9 Island
+9 Mountain
+1 Trivaz, Lightning Slinger
+1 Icicle Dagger
+1 Witch Bolt
+1 Arcane Recovery
+1 Spell Surge
+1 Conjure Dragon
+1 Lightning Hands
+1 Scroll Stash
+
+1 Trivaz Galvanized
+

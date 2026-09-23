@@ -223,7 +223,7 @@ async function DrawCard(canvas, card, size) {
     manaBack = await getImage("assets/card-parts/mana-symbol-back.svg");
     var manaSymbol = [];
     let manacost = card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent.split(" // ")[0];
-    manalength = 0;
+    let manalength = 0;
     let j = 0;
     let pos = 0;
     while (pos < manacost.length) {
@@ -239,8 +239,10 @@ async function DrawCard(canvas, card, size) {
         j++;
     }
     manalength = j;
-    if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "split") {
-        var manacost2 = card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent.split(" // ")[1];
+    if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "split" || card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "prepared") {
+        var manacost2;
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "split") manacost2 = card.getElementsByTagName("prop")[0].getElementsByTagName("manacost")[0].textContent.split(" // ")[1];
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "prepared") manacost2 = card.getElementsByTagName("prop")[0].getElementsByTagName("preparedspell")[0].getElementsByTagName("manacost")[0].textContent;
         var manaSymbol2 = [];
         let j = 0;
         let pos = 0;
@@ -316,9 +318,36 @@ async function DrawCard(canvas, card, size) {
             context.font=18 * size + "pt Beleren";
             context.fillText(type, 48 * size, (312 + 312 * sp) * size, 384 * size);
             context.font=16 * size + "pt MPlantin";
-            wrapText(context, card.getElementsByTagName("text")[sp].textContent, 48 * size, (184 + 312 * sp) * size, 192 * size, 200 * size, 20 * size, size, "split");
+            wrapText(context, card.getElementsByTagName("text")[sp].textContent, 48 * size, (192 + 312 * sp) * size, 192 * size, 200 * size, 20 * size, size, "split");
             context.drawImage(imgRarity, 432 * size, (288 + 312 * sp) * size, 32 * size, 32 * size);
         }
+    }
+    //Prepared Spells
+    else if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent == "prepared") {
+        context.font=20 * size + "pt Beleren";
+        context.fillStyle = "#000000";
+        context.textAlign = "left";
+        context.fillText(name, 48 * size, (64 - pw) * size, (396 - 20 * manalength) * size);//name
+        context.font=18 * size + "pt Beleren";
+        context.fillText(type, 48 * size, 424 * size, 384 * size);//typeline
+        context.font=16 * size + "pt MPlantin";
+        wrapText(context, textbox, 48 * size, 558 * size, 200 * size, 196 * size, 20 * size, size);//textbox
+        context.drawImage(imgRarity, 432 * size, 400 * size, 32 * size, 32 * size);//rarity symbol
+        for (let j = 0; j < manaSymbol.length; j++) {
+            context.drawImage(manaBack, (439.5 - 26 * (manaSymbol.length - j - 1)) * size, (42 - pw) * size, 24 * size, 24 * size);
+            context.drawImage(manaSymbol[j], (440 - 26 * (manaSymbol.length - j - 1)) * size, (40 - pw) * size, 24 * size, 24 * size);
+        }
+        context.font=16 * size + "pt Beleren";
+        context.fillStyle = "#FFFFFF";
+        context.textAlign = "left";
+        context.fillText(card.getElementsByTagName("preparedspell")[0].getElementsByTagName("name")[0].textContent, 260 * size, 464 * size, (208 - 20 * manalength) * size);//name
+        context.fillText(card.getElementsByTagName("preparedspell")[0].getElementsByTagName("type")[0].textContent, 260 * size, 496 * size, 208 * size);//typeline
+        for (let j = 0; j < manaSymbol2.length; j++) {
+            context.drawImage(manaBack, (447.5 - 18 * (manaSymbol2.length - j - 1)) * size, 450 * size, 16 * size, 16 * size);
+            context.drawImage(manaSymbol2[j], (448 - 18 * (manaSymbol2.length - j - 1)) * size, 448 * size, 16 * size, 16 * size);
+        }
+        context.font=16 * size + "pt MPlantin";
+        wrapText(context, card.getElementsByTagName("preparedspell")[0].getElementsByTagName("text")[0].textContent, 260 * size, 576 * size, 200 * size, 144 * size, 20 * size, size);//textbox
     }
     else {
         if (type.includes("Creature") || type.includes("Vehicle")) context.drawImage(imgPT, 390 * size, 626 * size, 88 * size, 42 * size);
@@ -614,7 +643,12 @@ async function wrapText(context, text, x, y, maxWidth, maxHeight, lineHeight, si
         "{S/-8}": "assets/card-parts/spark-down-8.svg",
         "{S/-9}": "assets/card-parts/spark-down-9.svg",
         "{S/-10}": "assets/card-parts/spark-down-10.svg",
-        "{V}": "assets/card-parts/void-mana-symbol.svg"
+        "{V}": "assets/card-parts/void-mana-symbol.svg",
+        "{V/W}": "assets/card-parts/white-void-mana-symbol.svg",
+        "{V/U}": "assets/card-parts/blue-void-mana-symbol.svg",
+        "{V/B}": "assets/card-parts/black-void-mana-symbol.svg",
+        "{V/R}": "assets/card-parts/red-void-mana-symbol.svg",
+        "{V/G}": "assets/card-parts/green-void-mana-symbol.svg"
     };
 
     for (let n = 0; n < Object.entries(mana_dict).length; n++) {
@@ -833,6 +867,11 @@ function findManaSymbol(s) {
     else if (s == "P/5") return "assets/card-parts/potency-symbol-5.svg";
     else if (s == "P/*") return "assets/card-parts/potency-symbol-star.svg";
     else if (s == "V") return "assets/card-parts/void-mana-symbol.svg";
+    else if (s == "V/W") return "assets/card-parts/white-void-mana-symbol.svg";
+    else if (s == "V/U") return "assets/card-parts/blue-void-mana-symbol.svg";
+    else if (s == "V/B") return "assets/card-parts/black-void-mana-symbol.svg";
+    else if (s == "V/R") return "assets/card-parts/red-void-mana-symbol.svg";
+    else if (s == "V/G") return "assets/card-parts/green-void-mana-symbol.svg";
     else return "assets/card-parts/white-mana-symbol.svg";
 }
 
@@ -870,7 +909,7 @@ function Search() {
     else {
         terms = [];
         if (searchCriteria.search("\[:=<>\]") > -1) {
-            while (searchCriteria.search("\[:=<>\]") > -1) {
+            while (searchCriteria.length > 0) {
                 let termStart = searchCriteria.toLowerCase().substring(0, searchCriteria.search("\[:=<>\]"));
                 let modifiedSearchCriteria = searchCriteria.toLowerCase().substring(searchCriteria.search("\[:=<>\]"), searchCriteria.length);
                 let termEnd = "";
@@ -887,7 +926,7 @@ function Search() {
                 else termEnd = modifiedSearchCriteria.split(" ")[0];
                 terms.push(termStart + termEnd);
                 searchCriteria = searchCriteria.substring((termStart + termEnd).length, searchCriteria.length);
-                if (searchCriteria.charAt(0) == " ") searchCriteria = searchCriteria.substring(1, searchCriteria.length);
+                if (searchCriteria.charAt(0) == " " || searchCriteria.charAt(0) == '"') searchCriteria = searchCriteria.substring(1, searchCriteria.length);
             }
         }
         else terms = [searchCriteria.toLowerCase()];
@@ -1328,7 +1367,8 @@ function Search() {
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "BLZ" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "NGA" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "RST" ||
-                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "SEI") format = true;
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "SEI" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "TRP") format = true;
                     }
                     if (!format) include[j] = false;
                 }
@@ -1336,8 +1376,6 @@ function Search() {
                     let format = false;
                     for (let k = 0; k < cards[i].getElementsByTagName("set").length; k++) {
                         if (
-                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "MSS" ||
-                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "DRT" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "FES" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "POS" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "INF" ||
@@ -1345,7 +1383,8 @@ function Search() {
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "BLZ" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "NGA" ||
                         cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "RST" ||
-                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "SEI") format = true;
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "SEI" ||
+                        cards[i].getElementsByTagName("set")[k].getElementsByTagName("code")[0].textContent == "TRP") format = true;
                     }
                     if (!format) include[j] = false;
                 }
@@ -1378,6 +1417,7 @@ function GetCardBack(card) {
     else {
         if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Legendary")) cardURL = cardURL + "-legend";
         if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent.includes("hybrid")) cardURL = cardURL + "-hybrid";
+        if (card.getElementsByTagName("prop")[0].getElementsByTagName("layout")[0].textContent.includes("prepared")) cardURL = cardURL + "-prepared";
         if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Basic")) cardURL = cardURL + "-basic";
         if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Snow")) cardURL = cardURL + "-snow";
         if (card.getElementsByTagName("prop")[0].getElementsByTagName("type")[0].textContent.includes("Fiery")) cardURL = cardURL + "-fiery";
@@ -1507,6 +1547,7 @@ function GetSetName(code) {
     if (code == "VCL") setName = "Vlad's Castle";
     if (code == "NAT") setName = "Naturia";
     if (code == "SKA") setName = "Shinkara";
+    if (code == "CSKA") setName = "Shinkara Commander";
     if (code == "EXS") setName = "Excavation Site";
     if (code == "MSS") setName = "Murders at the Swingin' Speakeasy";
     if (code == "DRT") setName = "Dogan: The Rose and the Tower";
@@ -1520,7 +1561,10 @@ function GetSetName(code) {
     if (code == "NGA") setName = "Nature's Garden";
     if (code == "RST") setName = "World's Rest";
     if (code == "SEI") setName = "Seivia";
+    if (code == "CSEI") setName = "Seivia Commander";
     if (code == "HGR") setName = "Heroes of Greece";
+    if (code == "TRP") setName = "Terra Primordium";
+    if (code == "CTRP") setName = "Terra Primordium Commander";
     if (code == "PMW") setName = "Many Worlds Promo";
     return setName;
 }

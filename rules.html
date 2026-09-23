@@ -157,7 +157,12 @@ A card with repress can trigger when any opponent draws their second card, and o
             <td>Spellbind</td>
             <td>Magic is everywhere in Favola. It's all encompassing, and has the residents of the plane entranced. You too can be spellbound with this new ability word, spellbind.<br>
 Spellbind itself has no meaning in the rules, it's just there to serve as a reminder to group a number of different abilities that all care about their controller controlling three or more enchantments.
-</td>
+            </td>
+        </tr>
+        <tr>
+            <td>Spellsling</td>
+            <td>Spellslingers like to cast their spells in quick succession. Spellsling in an ability word that cares whether the spell it is on is the second spell you've cast this turn.
+            </td>
         </tr>
         <tr>
             <td>Superheroic</td>
@@ -229,6 +234,9 @@ Color counters are a new type of counter that can go on any permanent. There are
 A color counter has an inherent rule attached: any permanent with one or more color counters on it is the color of those counters, in addition to its other colors.<br>
 If an effect refers to one or more color counter(s), it can affect any or all types of color counters referenced. If an effect puts a color counter on a permanent, the effect specifies which type of color counter to put on a permanent.
 </p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Combined Permanents</h3>
+    <div class="content"><p>Rules TBA.
+</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Come Alive</h3>
     <div class="content"><p>Each of the auras in this set is a DFC with the new Come Alive ability. Come Alive says "When enchanted creature dies, return this card to the battlefield transformed."<br>
 Come Alive only triggers when the enchanted creature dies, not if it would leave the battlefield in any other way. Likewise, if the aura leaves the battlefield, it doesn't return (unless the creature died at the same time).<br>
@@ -291,6 +299,9 @@ When the last defense counter is removed from a conflict, it's defeated, and its
     <h3 class="collapsible" onclick="Accordion(this)">Indulge</h3>
     <div class="content"><p>Indulge is an additional cost that appears on spells. Indulge N means 'as an additional cost to cast this spell, exile N cards from your graveyard.' if you pay this cost, the spell becomes indulged, and may have an additional effect.
 </p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Merge</h3>
+    <div class="content"><p>Merge with [Quality] is an alternate casting cost that lets you combine the spell being cast with a permanent of type Quality on the battlefield. See 'Combined permanents' for full rules.
+</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Mystical Spells</h3>
     <div class="content"><p>The folks at the Meltis Magitech Institute are always looking for new ways to hone their magic. Mystical is a new instant and sorcery subtype, which comes with a number shown in the bottom right of the card known as the potency. Potency is written on the card encased in a flame-like symbol, and if the potency is changed, all instances of this symbol on the card change with it. There are a number of ways of changing the potency of a mystical spell detailed below.<br>
 &nbsp;&bull; The potency of a mystical spell is determined when the spell is put on the stack. Some effects may change this number, passive effects are applied as this number is calculated, however some activated or triggered abilities can change this number.<br>
@@ -300,10 +311,19 @@ When the last defense counter is removed from a conflict, it's defeated, and its
 </p>
     <p><table border="0" class="alt-table"><tr><td>Mystical Keyword</td><td>Rulings</td></tr>
         <tr>
+            <td>Disperse</td>
+            <td>Disperse is a keyword that appears on some mystical spells that have a single target. As you are choosing targets for the spell, you may choose additional targets (the targets must be legal and distinct). For each target beyond the first, reduce the potency of the mystical spell by 1.<br>
+&nbsp;&bull; While you can choose any number of targets, if you choose enough targets such that the potency of the card is 0 or less, it will fail to resolve and is put into the appropriate zone.<br>
+&nbsp;&bull; You must target at least one legal target.<br>
+&nbsp;&bull; If you target multiple targets and one or more targets become illegal, the reduced potency is still applied.
+</td>
+        </tr>
+        <tr>
             <td>Doublecast</td>
             <td>Doublecast is an additional cost that appears on mystical instant and sorcery spells. If you pay the doublecast cost as you cast the spell, you copy the spell, except the copy has a potency of 1 as it goes on the stack.<br>
 &nbsp;&bull; The copy will resolve first, which may cause the original to not resolve if all valid targets are removed.<br>
 &nbsp;&bull; The potency of the copy can be manipulated separately from the original; the base potency is set to 1 when it goes on the stack, but it can be changed through abilities or spells in the same way as any other mystical spell.
+&nbsp;&bull; You may choose new targets for the copy. If the spell is a modal spell, you may choose different modes for the copy.
 </td>
         </tr>
         <tr>
@@ -311,6 +331,12 @@ When the last defense counter is removed from a conflict, it's defeated, and its
             <td>Fortune is a new keyword that appears on mystical spells. As you cast a spell with mystical, roll a d6 to determine its potency. Do this after targets for the spell have been declared and mana has been spent to cast the spell, but before any other effects and before any players gain priority.<br>
 &nbsp;&bull; Spells with fortune have a potency of 0 when in any zone other than the stack.<br>
 &nbsp;&bull; If a spell somehow gains both fortune and another effect that sets its potency as it is put onto the stack, you choose which effect is applied. (You make this choice before rolling the dice).
+</td>
+        </tr>
+        <tr>
+            <td>Multicast</td>
+            <td>Multicast is a variant of doublecast that lets you pay the additional cost any number of times. Each time you pay the additional cost, you copy the spell, except the copy has potency 1.<br>
+&nbsp;&bull; Like with doublecast, the copies resolve first. Each copy can have the same or different targets.
 </td>
         </tr>
         <tr>

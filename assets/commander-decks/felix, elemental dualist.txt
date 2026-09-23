@@ -1,0 +1,52 @@
+1 Staff of the Three Elements
+1 The Azure Stone
+1 Felix's Spellbook
+1 Commander's Sphere
+1 Felix, Azure Researcher
+1 Curious Rat
+1 Felix's Familiar
+1 Transitive Skywhale
+1 Bloodseeker Shark
+1 Killijori Shaman
+1 Cavern Looter
+1 Reckless Flamesinger
+1 Spellshaper
+1 Fortunate Dragon
+1 Unnatural Octopus
+1 Elemental Bane
+1 Aspect of Fire
+1 Aspect of Ice
+1 Practiced Spell
+1 Twin Beam
+1 Stolen Knowledge
+1 Felix's Curiosity
+1 Heated Hands
+1 Deadly Enlightenment
+1 Vobahn's Insight
+1 Energy Barrage
+1 Heavenly Blitz
+1 Inflict Wounds
+1 Command Tower
+1 Command Beacon
+3 Forest
+3 Island
+3 Mountain
+3 Plains
+3 Swamp
+1 Thriving Isle
+1 Thriving Bluff
+1 Thriving Moor
+1 Thriving Heath
+1 Thriving Grove
+1 Evolving Wilds
+1 Prismatic Grotto
+1 Promise of Adventure
+1 Scuttling Terror
+1 Divine Night
+1 Edrick's Cultivation
+1 Frost Fingers
+1 Ophior's Familiar
+1 Commune with the Land
+
+1 Felix, Elemental Dualist
+
