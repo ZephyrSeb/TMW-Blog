@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sets>
+    <set>
+        <name>Many World Promo</name>
+        <code>PMW</code>
+        <release>Various</release>
+        <cards>10</cards>
+    </set>
+    <set>
+        <name>Favola Starter Set</name>
+        <code>KFS</code>
+        <release>02/2024</release>
+        <cards>55</cards>
+    </set>
+    <set>
+        <name>Kingdom of Favola</name>
+        <code>KOF</code>
+        <release>02/2024</release>
+        <cards>280</cards>
+    </set>
+    <set>
+        <name>Chromatopia Commander</name>
+        <code>CCRO</code>
+        <release>06/2024</release>
+        <cards>30</cards>
+    </set>
+    <set>
+        <name>Chromatopia</name>
+        <code>CRO</code>
+        <release>06/2024</release>
+        <cards>266</cards>
+    </set>
+    <set>
+        <name>Tales From the Abyss Commander</name>
+        <code>CABY</code>
+        <release>08/2024</release>
+        <cards>18</cards>
+    </set>
+    <set>
+        <name>Tales From the Abyss: Adventures in Nautilus</name>
+        <code>ABY</code>
+        <release>08/2024</release>
+        <cards>271</cards>
+    </set>
+    <set>
+        <name>The Many Worlds Origins</name>
+        <code>CTMW</code>
+        <release>09/2024</release>
+        <cards>102</cards>
+    </set>
+    <set>
+        <name>Garrem Commander</name>
+        <code>CWOG</code>
+        <release>10/2024</release>
+        <cards>8</cards>
+    </set>
+    <set>
+        <name>Garrem Expeditions</name>
+        <code>GEX</code>
+        <release>10/2024</release>
+        <cards>30</cards>
+    </set>
+    <set>
+        <name>Garrem</name>
+        <code>WOG</code>
+        <release>10/2024</release>
+        <cards>288</cards>
+    </set>
+    <set>
+        <name>Shinkara Commander</name>
+        <code>CSKA</code>
+        <release>02/2025</release>
+        <cards>12</cards>
+    </set>
+    <set>
+        <name>Shinkara</name>
+        <code>SKA</code>
+        <release>02/2025</release>
+        <cards>267</cards>
+    </set>
+    <set>
+        <name>Excavation Site</name>
+        <code>EXS</code>
+        <release>02/2025</release>
+        <cards>43</cards>
+    </set>
+    <set>
+        <name>Azure Mystical Archives</name>
+        <code>AZA</code>
+        <release>04/2025</release>
+        <cards>60</cards>
+    </set>
+    <set>
+        <name>The Azure Archives</name>
+        <code>AZU</code>
+        <release>04/2025</release>
+        <cards>283</cards>
+    </set>
+    <set>
+        <name>Naturia</name>
+        <code>NAT</code>
+        <release>06/2025</release>
+        <cards>266</cards>
+    </set>
+    <set>
+        <name>Vlad's Castle</name>
+        <code>VCL</code>
+        <release>08/2025</release>
+        <cards>268</cards>
+    </set>
+    <set>
+        <name>Murders at the Swingin' Speakeasy</name>
+        <code>MSS</code>
+        <release>10/2025</release>
+        <cards>49</cards>
+    </set>
+    <set>
+        <name>Dogan: The Rose and the Tower</name>
+        <code>DRT</code>
+        <release>10/2025</release>
+        <cards>44</cards>
+    </set>
+    <set>
+        <name>Festiville</name>
+        <code>FES</code>
+        <release>12/2025</release>
+        <cards>284</cards>
+    </set>
+    <set>
+        <name>Palace of Silence</name>
+        <code>POS</code>
+        <release>03/2026</release>
+        <cards>31</cards>
+    </set>
+    <set>
+        <name>Infinite Ravine</name>
+        <code>INF</code>
+        <release>03/2026</release>
+        <cards>31</cards>
+    </set>
+    <set>
+        <name>Poisonous Swamp of Blagghrt</name>
+        <code>PSB</code>
+        <release>03/2026</release>
+        <cards>31</cards>
+    </set>
+    <set>
+        <name>Blazing Inferno</name>
+        <code>BLZ</code>
+        <release>03/2026</release>
+        <cards>31</cards>
+    </set>
+    <set>
+        <name>Nature's Garden</name>
+        <code>NGA</code>
+        <release>03/2026</release>
+        <cards>31</cards>
+    </set>
+    <set>
+        <name>World's Rest</name>
+        <code>RST</code>
+        <release>03/2026</release>
+        <cards>31</cards>
+    </set>
+    <set>
+        <name>Seivia Commander</name>
+        <code>CSEI</code>
+        <release>05/2025</release>
+        <cards>55</cards>
+    </set>
+    <set>
+        <name>Seivia</name>
+        <code>SEI</code>
+        <release>05/2025</release>
+        <cards>278</cards>
+    </set>
+    <set>
+        <name>Heroes of Greece</name>
+        <code>HGR</code>
+        <release>07/2026</release>
+        <cards>368</cards>
+    </set>
+    <set>
+        <name>Terra Primordium Commander</name>
+        <code>CTRP</code>
+        <release>09/2026</release>
+        <cards>60</cards>
+    </set>
+    <set>
+        <name>Terra Primordium</name>
+        <code>TRP</code>
+        <release>09/2026</release>
+        <cards>44</cards>
+    </set>
+    <set>
+        <name>Zelador Commander</name>
+        <code>CZEL</code>
+        <release>11/2026</release>
+        <cards>24</cards>
+    </set>
+    <set>
+        <name>Zelador</name>
+        <code>ZEL</code>
+        <release>11/2026</release>
+        <cards>283</cards>
+    </set>
+</sets>

@@ -3,6 +3,7 @@ canvas = [];
 
 var parser = new DOMParser();
 var xmlDoc;
+var xmlSet;
 var page = 0;
 var maxPage = 0;
 
@@ -11,6 +12,9 @@ async function OnLoad() {
     var xml = await fetch("assets/cards.xml");
     var text = await xml.text();
     xmlDoc = parser.parseFromString(text, "text/xml");
+    var xml2 = await fetch("assets/sets.xml");
+    var set = await xml2.text();
+    xmlSet = parser.parseFromString(set, "text/xml");
     urlParams = new URLSearchParams(window.location.search)
     document.getElementById("search").value = urlParams.get('search');
     if (urlParams.get('sort') != null) document.getElementById("sort").value = urlParams.get('sort');
@@ -648,7 +652,12 @@ async function wrapText(context, text, x, y, maxWidth, maxHeight, lineHeight, si
         "{V/U}": "assets/card-parts/blue-void-mana-symbol.svg",
         "{V/B}": "assets/card-parts/black-void-mana-symbol.svg",
         "{V/R}": "assets/card-parts/red-void-mana-symbol.svg",
-        "{V/G}": "assets/card-parts/green-void-mana-symbol.svg"
+        "{V/G}": "assets/card-parts/green-void-mana-symbol.svg",
+        "{I/W}": "assets/card-parts/white-color-indicator.svg",
+        "{I/U}": "assets/card-parts/blue-color-indicator.svg",
+        "{I/B}": "assets/card-parts/black-color-indicator.svg",
+        "{I/R}": "assets/card-parts/red-color-indicator.svg",
+        "{I/G}": "assets/card-parts/green-color-indicator.svg"
     };
 
     for (let n = 0; n < Object.entries(mana_dict).length; n++) {
@@ -872,6 +881,11 @@ function findManaSymbol(s) {
     else if (s == "V/B") return "assets/card-parts/black-void-mana-symbol.svg";
     else if (s == "V/R") return "assets/card-parts/red-void-mana-symbol.svg";
     else if (s == "V/G") return "assets/card-parts/green-void-mana-symbol.svg";
+    else if (s == "I/W") return "assets/card-parts/white-color-indicator.svg";
+    else if (s == "I/U") return "assets/card-parts/blue-color-indicator.svg";
+    else if (s == "I/B") return "assets/card-parts/black-color-indicator.svg";
+    else if (s == "I/R") return "assets/card-parts/red-color-indicator.svg";
+    else if (s == "I/G") return "assets/card-parts/green-color-indicator.svg";
     else return "assets/card-parts/white-mana-symbol.svg";
 }
 
@@ -925,8 +939,10 @@ function Search() {
                 }
                 else termEnd = modifiedSearchCriteria.split(" ")[0];
                 terms.push(termStart + termEnd);
-                searchCriteria = searchCriteria.substring((termStart + termEnd).length, searchCriteria.length);
-                if (searchCriteria.charAt(0) == " " || searchCriteria.charAt(0) == '"') searchCriteria = searchCriteria.substring(1, searchCriteria.length);
+                searchCriteria = searchCriteria.substring((termStart + termEnd).length + 1, searchCriteria.length);
+                while (searchCriteria.charAt(0) == " " || searchCriteria.charAt(0) == '"') {
+                    searchCriteria = searchCriteria.substring(1, searchCriteria.length);
+                }
             }
         }
         else terms = [searchCriteria.toLowerCase()];
@@ -1534,37 +1550,9 @@ function GetSetSymbol(set, rarity) {
 
 function GetSetName(code) {
     setName = "";
-    if (code == "KFS") setName = "Favola Starter Set";
-    if (code == "KOF") setName = "Kingdom of Favola";
-    if (code == "CRO") setName = "Chromatopia";
-    if (code == "CCRO") setName = "Chromatopia Commander";
-    if (code == "ABY") setName = "Tales From the Abyss - Adventures in Nautilus";
-    if (code == "CABY") setName = "Tales From the Abyss Commander";
-    if (code == "WOG") setName = "Garrem";
-    if (code == "GEX") setName = "Garrem Expeditions";
-    if (code == "CWOG") setName = "Garrem Commander";
-    if (code == "CTMW") setName = "The Many Worlds Origins";
-    if (code == "VCL") setName = "Vlad's Castle";
-    if (code == "NAT") setName = "Naturia";
-    if (code == "SKA") setName = "Shinkara";
-    if (code == "CSKA") setName = "Shinkara Commander";
-    if (code == "EXS") setName = "Excavation Site";
-    if (code == "MSS") setName = "Murders at the Swingin' Speakeasy";
-    if (code == "DRT") setName = "Dogan: The Rose and the Tower";
-    if (code == "AZU") setName = "Azure Archives";
-    if (code == "AZA") setName = "Azure Mystical Archives";
-    if (code == "FES") setName = "Festiville";
-    if (code == "POS") setName = "Palace of Silence";
-    if (code == "INF") setName = "Infinite Ravine";
-    if (code == "PSB") setName = "Poisonous Swamp of Blagghrt";
-    if (code == "BLZ") setName = "Blazing Inferno";
-    if (code == "NGA") setName = "Nature's Garden";
-    if (code == "RST") setName = "World's Rest";
-    if (code == "SEI") setName = "Seivia";
-    if (code == "CSEI") setName = "Seivia Commander";
-    if (code == "HGR") setName = "Heroes of Greece";
-    if (code == "TRP") setName = "Terra Primordium";
-    if (code == "CTRP") setName = "Terra Primordium Commander";
-    if (code == "PMW") setName = "Many Worlds Promo";
+    var rawSets = xmlSet.getElementsByTagName("sets")[0].getElementsByTagName("set");
+    for (let i = 0; i < rawSets.length; i++) {
+        if (rawSets[i].getElementsByTagName("code")[0].textContent == code) setName = rawSets[i].getElementsByTagName("name")[0].textContent;
+    }
     return setName;
 }

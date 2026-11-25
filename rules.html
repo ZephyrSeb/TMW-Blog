@@ -128,6 +128,10 @@ Spells with an {X} in their mana cost have a mana value of 5 or greater provided
 </td>
         </tr>
         <tr>
+            <td>Duel</td>
+            <td>Duel is a new ability word that represents a triggered ability that triggers whenever a creature you control attacks alone. The creature that attacks doesn't have to be the creature with duel.</td>
+        </tr>
+        <tr>
             <td>Null</td>
             <td>Null is a new ability word that connects a number of abilities that care about whether a permanent has left the battlefield this turn. They don't care who the controller of the permanent was, or any of it's types.</td>
         </tr>
@@ -185,6 +189,7 @@ Your allegiance to a color is the number of color counters of that color among p
 &nbsp;&bull; Asterisms have an innate rule that whenever one or more creatures enter the battlefield, for each unprotected asterism you control, you can assign one of those creatures to be protecting it.<br>
 &nbsp;&bull; A creature can't protect an asterism under someone else's control.<br>
 &nbsp;&bull; A creature cannot protect more than one asterism, if it somehow starts protecting a new asterism, it stops protecting any previous asterisms.<br>
+&nbsp;&bull; An asterism creature cannot protect itself.
 &nbsp;&bull; An asterism can be protected by multiple creatures, however there is no way to do that in this set.<br>
 &nbsp;&bull; As long as an asterism is protected, it has hexproof.<br>
 &nbsp;&bull; An asterism being protected is not the same as a battle being protected.<br>
@@ -222,6 +227,8 @@ Barter is an optional additional cost that can be paid by sacrificing an artifac
 &nbsp;&bull; Cascade land is a variant of cascade that exiles cards until it hits a land card, then puts that card onto the battlefield. Lands that are cascaded into don't enter tapped unless the land would enter tapped by some other means.<br>
 &nbsp;&bull; Cascade ignores condition cards when exiling cards to determine the card you cascade into.
 </p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Champion</h3>
+    <div class="content"><p>Champion is a new type of cost. A champion cost will be specified as a mana cost after the word champion. Any member of your team can tap a creature they control to reduce the champion cost by {1} as you pay the cost. In a non-team format, only you are on your team, so the only creatures you can tap are your own. You can't tap a creature that is already tapped.</p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Climax</h3>
     <div class="content"><p>It's the final showdown, so let's go all out! Climax is a new alternate casting cost on instant and sorcery spells that lets you give your spells a bit of extra oomph, but at an unusual cost; you can only climax a spell once each game. Additionally, if you climax a spell, it can't be countered.<br>
 &nbsp;&bull; If a spell is climaxed and somehow leaves the stack in another way without resolving, you still attempted to climax the spell, and so you can't cast another spell with the climax ability this game.<br>
@@ -363,6 +370,13 @@ You can only paint each permanent you control once each turn. This is per perman
     <h3 class="collapsible" onclick="Accordion(this)">Predefined World Enchantment Tokens</h3>
     <div class="content"><p><a href="carddex.html?search=tag:predefined-world%20t:token">Here</a> is a list of all predefined world enchantment tokens.
     </p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Prismatic</h3>
+    <div class="content"><p>Prismatic is a returning digital only keyword, with rules here for clarification. If a spell has prismatic, it means you can spend mana as though it were mana of any type to cast the spell.<br>
+&nbsp;&bull; If you have mana that has a restriction on what it can be used for (such as powerstone mana), or a mana symbol that requires the mana to have been produced in a specific way (snow or fiery mana), you must still abide by that restriction when casting prismatic spells.<br>
+&nbsp;&bull; The types of mana are normally colorless, white, blue, black, red, green, and aether (gold) mana.<br>
+&nbsp;&bull; If you give prismatic to a spell that normally uses a special mana symbol, such as land, void, or artifact mana, you must still pay these costs normally.<br>
+&nbsp;&bull; Prismatic has no effect on the costs of activated abilities.
+    </p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Recycle</h3>
     <div class="content"><p>Recycle is a keyword action that tells you to put a card on the bottom of your library. If an effect causes you to recycle multiple cards at once, they are put on the bottom of your library in a random order.<br>
 &nbsp;&bull; Some cards may spell out to put cards on the bottom of you library in any order; unlike in the official rules, this is shorthand for the cards being put in a random order.</p></div>
@@ -395,6 +409,15 @@ Lands entering the battlefield can trigger shift / unshift on any player's turn,
 &nbsp;&bull; In all constructed formats and commander, your sideboard may consist of up to 15 cards.<br>
 &nbsp;&bull; In limited formats, your sideboard consists of all cards that you opened or drafted, but didn't put in your deck.
 </p></div>
+    <h3 class="collapsible" onclick="Accordion(this)">Touchdown</h3>
+    <div class="content"><p>Touchdown is a new keyword that appears on instants and sorceries, followed by a number of modes. As you choose the modes, you can choose any number of modes, provided your team controls a land with a basic land type that corresponds to the color of the bullet point by that mode.<br>
+&nbsp;&bull; Plains corresponds to white, Island to blue, Swamp to black, Mountain to red, and Forest to green.<br>
+&nbsp;&bull; Controlling, for example, a Plains considers any lands with the type Plains, not just basic lands.<br>
+&nbsp;&bull; As long as you control the requisite land types, you can choose as many modes as you like.<br>
+&nbsp;&bull; You don't have to choose all modes available to you.<br>
+&nbsp;&bull; If you can't choose any modes, you can't cast the spell.<br>
+&nbsp;&bull; Like with other modal effects, the modes will always resolve in the order they are written on the card, not the order in which you choose them.
+    </p></div>
     <h3 class="collapsible" onclick="Accordion(this)">Undead</h3>
     <div class="content"><p>Undead is a new batching word that is used to refer to creatures that are one or more of spirit, vampire, werewolf, or zombie.<br>
 &nbsp;&bull; A creature is undead if it is one or more of these types. It doesn't matter what other types the creature has.
@@ -413,7 +436,7 @@ Lands entering the battlefield can trigger shift / unshift on any player's turn,
         </tr>
         <tr>
             <td><img src="assets/card-parts/gold-mana-symbol.svg" width="25px"></td>
-            <td>Aether mana represents mana that is all colors. To pay this, you must have a source which produces aether mana, however aether mana can be used as a substitute for any color of mana.</td>
+            <td>Aether mana represents mana that is all colors. To pay this, you must have a source which produces aether mana, however aether mana can be used as a substitute for any color of mana (but not colorless mana).</td>
         </tr>
         <tr>
             <td><img src="assets/card-parts/prism-mana-symbol.svg" width="25px"></td>

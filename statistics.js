@@ -283,8 +283,10 @@ function Search() {
                 }
                 else termEnd = modifiedSearchCriteria.split(" ")[0];
                 terms.push(termStart + termEnd);
-                searchCriteria = searchCriteria.substring((termStart + termEnd).length, searchCriteria.length);
-                if (searchCriteria.charAt(0) == " ") searchCriteria = searchCriteria.substring(1, searchCriteria.length);
+                searchCriteria = searchCriteria.substring((termStart + termEnd).length + 1, searchCriteria.length);
+                while (searchCriteria.charAt(0) == " " || searchCriteria.charAt(0) == '"') {
+                    searchCriteria = searchCriteria.substring(1, searchCriteria.length);
+                }
             }
         }
         else terms = [searchCriteria.toLowerCase()];

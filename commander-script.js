@@ -22,6 +22,8 @@ async function CopyDeck(id) {
     if (id.id == "doug") path = await fetch("assets/commander-decks/doug, the booming blade.txt");
     if (id.id == "felix") path = await fetch("assets/commander-decks/felix, elemental dualist.txt");
     if (id.id == "trivaz") path = await fetch("assets/commander-decks/trivaz galvanized.txt");
+    if (id.id == "office") path = await fetch("assets/commander-decks/office party.txt");
+    if (id.id == "bernard") path = await fetch("assets/commander-decks/bernard garrett.txt");
     let text = await path.text();
     await navigator.clipboard.writeText(text);
     alert("Copied deck");

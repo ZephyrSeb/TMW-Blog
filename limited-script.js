@@ -14,19 +14,9 @@ var currentSet = 0;
 async function OnLoad() {
     let set = document.getElementById("set-select").value;
     let jsonPath = "";
-    if (set == "fes") jsonPath = await fetch("assets/limited/FES.json");
-    if (set == "wog") jsonPath = await fetch("assets/limited/WOG.json");
-    if (set == "kof") jsonPath = await fetch("assets/limited/KOF.json");
-    if (set == "cro") jsonPath = await fetch("assets/limited/CRO.json");
-    if (set == "aby") jsonPath = await fetch("assets/limited/ABY.json");
-    if (set == "azu") jsonPath = await fetch("assets/limited/AZU.json");
-    if (set == "ska") jsonPath = await fetch("assets/limited/SKA.json");
-    if (set == "nat") jsonPath = await fetch("assets/limited/NAT.json");
-    if (set == "vcl") jsonPath = await fetch("assets/limited/VCL.json");
-    if (set == "sei") jsonPath = await fetch("assets/limited/SEI.json");
-    if (set == "hgr") jsonPath = await fetch("assets/limited/HGR.json");
     let text;
     if (set != "custom") {
+        jsonPath = await fetch("assets/limited/" + set.toUpperCase() + ".json");
         document.getElementById("custom-set").disabled = true;
         text = await jsonPath.text();
         format = JSON.parse(text);
@@ -907,7 +897,17 @@ async function wrapText(context, text, x, y, maxWidth, maxHeight, lineHeight, si
         "{S/-8}": "assets/card-parts/spark-down-8.svg",
         "{S/-9}": "assets/card-parts/spark-down-9.svg",
         "{S/-10}": "assets/card-parts/spark-down-10.svg",
-        "{V}": "assets/card-parts/void-mana-symbol.svg"
+        "{V}": "assets/card-parts/void-mana-symbol.svg",
+        "{V/W}": "assets/card-parts/white-void-mana-symbol.svg",
+        "{V/U}": "assets/card-parts/blue-void-mana-symbol.svg",
+        "{V/B}": "assets/card-parts/black-void-mana-symbol.svg",
+        "{V/R}": "assets/card-parts/red-void-mana-symbol.svg",
+        "{V/G}": "assets/card-parts/green-void-mana-symbol.svg",
+        "{I/W}": "assets/card-parts/white-color-indicator.svg",
+        "{I/U}": "assets/card-parts/blue-color-indicator.svg",
+        "{I/B}": "assets/card-parts/black-color-indicator.svg",
+        "{I/R}": "assets/card-parts/red-color-indicator.svg",
+        "{I/G}": "assets/card-parts/green-color-indicator.svg"
     };
 
     for (let n = 0; n < Object.entries(mana_dict).length; n++) {
@@ -1126,6 +1126,16 @@ function findManaSymbol(s) {
     else if (s == "P/5") return "assets/card-parts/potency-symbol-5.svg";
     else if (s == "P/*") return "assets/card-parts/potency-symbol-star.svg";
     else if (s == "V") return "assets/card-parts/void-mana-symbol.svg";
+    else if (s == "V/W") return "assets/card-parts/white-void-mana-symbol.svg";
+    else if (s == "V/U") return "assets/card-parts/blue-void-mana-symbol.svg";
+    else if (s == "V/B") return "assets/card-parts/black-void-mana-symbol.svg";
+    else if (s == "V/R") return "assets/card-parts/red-void-mana-symbol.svg";
+    else if (s == "V/G") return "assets/card-parts/green-void-mana-symbol.svg";
+    else if (s == "I/W") return "assets/card-parts/white-color-indicator.svg";
+    else if (s == "I/U") return "assets/card-parts/blue-color-indicator.svg";
+    else if (s == "I/B") return "assets/card-parts/black-color-indicator.svg";
+    else if (s == "I/R") return "assets/card-parts/red-color-indicator.svg";
+    else if (s == "I/G") return "assets/card-parts/green-color-indicator.svg";
     else return "assets/card-parts/white-mana-symbol.svg";
 }
 

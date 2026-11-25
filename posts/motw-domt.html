@@ -1,0 +1,153 @@
+<head>
+    <title>Mechanic of the Week: Deck of Many Things</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="title-bar">
+                <a class="button" href="../index.html"><img src="../assets/home-icon.svg" height="30px"/></a>
+                <a class="button" href="../carddex.html"><img src="../assets/card-icon.svg" height="30px"/></a>
+    </div>
+    <h1>Mechanic of the Week: Deck of Many Things</h1>
+
+    <p>It's the winter festival, and you've received a package from a mysterious benefactor. You open it, to find it's simply a pack of cards. The cards are very ornate, and so you draw a card. It says Donjon. Before you know it, you've been imprisoned somewhere, awaiting your fate to be sacrificed to a blood ritual.</p>
+    <p class="centred"><img src="../assets/motw-domt/domt-donjon.png" width="250"/></p>
+    <p class="centred"><i>D.O.M.T. Donjon</i></p>
+
+    <h3>The Deck of Many Things</h3>
+    <p>Festiville was based on a D&D one-shot that was run a few years ago based around a classic D&D item, the <i>Deck of Many Things</i>. In the story, the character Hayward Eve is gifted the deck, and whatever happened next was left to chance by him drawing from the deck. By chance, he drew the Donjon card, exiling him to a faraway dungeon and setting a quest for the player characters to go and rescue him.</p>
+    <p>When designing the Festiville set, it was clear that the deck should have a strong presence in the set. This led us to ask, how do you mimic the chaos and risk that the <i>Deck of Many Things</i> warrants in MTG?</p>
+
+    <p>The first thing we tried was if you had access to the deck of many things as an extra deck - effects could let you draw from the deck, but some of the cards might have negative effects. This approach had some issues - if the risk was too great, the mechanic would never see play; but modern design philosophy often says that you 'may' play a card, which turns all the bad effects into completely blank cards.</p>
+
+    <p>Therefore the cards would need to be part of the main set. 22 cards isn't quite enough for a bonus sheet, so instead they filled 22 uncommon slots, but to prevent awkward draft packs, the uncommon slots are split up to always have one D.O.M.T. card, and two non-D.O.M.T. cards.</p>
+    <p class="centred"><img src="../assets/motw-domt/domt-skull.png" width="250"/>
+    <img src="../assets/motw-domt/avatar-of-death.png" width="250"/></p>
+    <p class="centred"><i>D.O.M.T. Skull and Avatar of Death</i></p>
+
+    <p>The next question the design had to answer was how to include risk in the cards design? As mentioned before, if a card is just a negative effect on you, the cards won't see play outside of some very specific combo lines. So we turn back to the <i>Deck of Many Things</i>. When you use it in D&D, you choose how many cards to draw, then draw them all at once. The more you draw, the more likely you'll hit a bad effect. We can simulate this in MTG using counters to track progress. When you cast a DOMT spell, you roll a d20 and get a card counter. If you roll low enough on the dice that the result is less than or equal to the number of card counters you have, something bad happens: you lose the game. There aren't any results worse than that in MTG. This means that D.O.M.T. cards have some risk, but if you only play one or two, you'll probably be fine. Probably. Play more, and the risk gets greater. Below is a table of the cumulative probability that you'll have lost the game after a certain number of D.O.M.T. cards, as worked out by one of my D&D players:</p>
+    <p><table class="alt-table">
+        <tr>
+            <td>Number of D.O.M.T. cards played</td>
+            <td>Chance to survive this card</td>
+            <td>Cumulative chance</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>95%</td>
+            <td>95.0%</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>90%</td>
+            <td>85.5%</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>85%</td>
+            <td>72.7%</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>80%</td>
+            <td>58.1%</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>75%</td>
+            <td>43.6%</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>70%</td>
+            <td>30.5%</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>65%</td>
+            <td>19.8%</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>60%</td>
+            <td>11.9%</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>55%</td>
+            <td>6.55%</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>50%</td>
+            <td>3.27%</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>45%</td>
+            <td>1.47%</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>40%</td>
+            <td>0.589%</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>35%</td>
+            <td>0.206%</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>30%</td>
+            <td>0.0619%</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>25%</td>
+            <td>0.0155%</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>20%</td>
+            <td>0.00309%</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>15%</td>
+            <td>0.000464%</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>10%</td>
+            <td>0.0000464%</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>5%</td>
+            <td>0.00000232%</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>0%</td>
+            <td>0%</td>
+        </tr>
+    </table></p>
+
+    <p>Now the cards have an inherent risk to playing them. The designs of each card need to be valuable enough that the risk is worth it - the cards need to be slightly more powerful.</p>
+    <p class="centred"><img src="../assets/motw-domt/domt-vizier.png" width="250"/></p>
+    <p class="centred"><i>D.O.M.T. Vizier</i></p>
+
+    <p>The last piece of the puzzle was the inclusion of a card that cared about these D.O.M.T. cards. This card was Hayward's Deck of Many Things, which replaces your library with the deck, giving you a last ditch strategy to try and win the game with. This card went through a number of redesigns throughout the design process.</p>
+    <p class="centred"><img src="../assets/motw-domt/haywards-deck-of-many-things-0.png" width="250"/>
+    <img src="../assets/motw-domt/haywards-deck-of-many-things-1.png" width="250"/>
+    <img src="../assets/motw-domt/haywards-deck-of-many-things-2.png" width="250"/></p>
+    <p class="centred"><i>Versions of Hayward's Deck of Many Things throughout design</i></p>
+    <p>In the previous articles on this website, we talked about the storm scale and how it applied to different mechanics. D.O.M.T. had quite a high storm rating, despite it being a popular and powerful mechanic. The reason for this was design space. The deck consists of 22 cards. Festiville features all 22 cards. It would be strange to invent new cards for such a famous item (though not impossible, 22 is the number of major arcana cards in a standard tarot deck, and a certain game series that heavily features tarot cards manages to invent new tarot cards all the time). It is more likely that, if the need for a similar mechanic should arise in the future, that a more general take on the idea could absolutely become a mainstay mechanic. After all, everyone loves powerful cards, except when they cause you to lose the game.</p>
+    <p class="centred"><img src="../assets/motw-domt/domt-flames.png" width="250"/>
+    <img src="../assets/motw-domt/domt-star.png" width="250"/></p>
+    <p class="centred"><i>D.O.M.T. Flames and Star, the backbone of a very risky izzet spells deck</i></p>
+
+    <p>I hope you roll natural 20s, until next time,</p>
+    <p>ZephyrSeb</p>
+    <div class="footer-bar"><p class="alignr"><i>Blog by ZephySeb</i></p></div>
+</body>
